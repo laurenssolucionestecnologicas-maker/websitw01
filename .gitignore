@@ -1,3 +1,7 @@
+
+# Documentación (no necesaria en producción)
+conalz-html-documentations/
+
 # Archivos del sistema
 .DS_Store
 Thumbs.db
