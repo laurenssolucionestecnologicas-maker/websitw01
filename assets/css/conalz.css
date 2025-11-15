@@ -16,6 +16,191 @@
 /*--------------------------------------------------------------
 # Common
 --------------------------------------------------------------*/
+
+/* Testimonios horizontales en grid 2x2 - Versión compacta */
+.testimonials-one__single-horizontal {
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    padding: 20px 25px;
+    border-radius: 4px;
+    border-left: 4px solid #182657;
+    height: 100%;
+    min-height: 160px;
+    transition: all 0.3s ease;
+}
+
+.testimonials-one__single-horizontal:hover {
+    background: #ffffff;
+    box-shadow: 0 5px 25px rgba(24, 38, 87, 0.15);
+    transform: translateX(5px);
+    border-left-color: #19245a;
+}
+
+.testimonials-one__horizontal-left {
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+.testimonials-one__horizontal-left .testimonials-one__client-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #182657;
+}
+
+.testimonials-one__horizontal-left .testimonials-one__client-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonials-one__horizontal-right {
+    flex: 1;
+}
+
+.testimonials-one__horizontal-right .testimonials-one__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.testimonials-one__horizontal-right .testimonials-one__tagline {
+    font-size: 14px;
+    font-weight: 600;
+    color: #182657;
+    margin: 0;
+}
+
+.testimonials-one__horizontal-right .testimonials-one__icon {
+    display: flex;
+    gap: 2px;
+}
+
+.testimonials-one__horizontal-right .testimonials-one__icon i {
+    font-size: 12px;
+    color: #ffa800;
+}
+
+.testimonials-one__horizontal-right .testimonials-one__text {
+    font-size: 13px;
+    line-height: 1.5em;
+    color: #555555;
+    margin-bottom: 10px;
+}
+
+.testimonials-one__horizontal-right .testimonials-one__client-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #182657;
+    margin-bottom: 2px;
+}
+
+.testimonials-one__horizontal-right .testimonials-one__client-sub-title {
+    font-size: 12px;
+    color: #777777;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .testimonials-one__single-horizontal {
+        flex-direction: column;
+        text-align: center;
+        min-height: auto;
+    }
+    
+    .testimonials-one__horizontal-left {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .testimonials-one__horizontal-right .testimonials-one__top {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+/* Estilos personalizados PAXLO - Hero compacto */
+
+/* Título más pequeño */
+.main-slider__title {
+    font-size: 80px !important;
+    line-height: 1.2em !important;
+    margin-bottom: 20px;
+}
+
+/* Texto descriptivo más pequeño */
+.main-slider__text {
+    position: relative;
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: 400;
+    line-height: 1.6em;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+/* Lista de diferenciadores en 2 columnas */
+.why-choose-one__points {
+    margin: 25px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+}
+
+.why-choose-one__points li {
+    font-size: 15px;
+    line-height: 28px;
+    color: #353535;
+    font-weight: 500;
+}
+
+.why-choose-one__points li i {
+    color: #182657;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+/* Responsive - en móviles vuelve a 1 columna */
+@media (max-width: 767px) {
+    .why-choose-one__points {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Subtítulo más pequeño */
+.main-slider__sub-title {
+    font-size: 25px !important;
+    margin-bottom: 15px;
+}
+
+/* Botón secundario */
+.main-slider__btn-two {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    margin-left: 15px;
+}
+
+.main-slider__btn-two:hover {
+    background-color: #ffffff;
+    color: #182657;
+}
+
+/* Reducir altura del slider */
+.main-slider .swiper-slide {
+    min-height: 600px !important;
+    
+}
+
+/* Ajustar padding del contenido */
+.main-slider__content {
+    padding: 100px 0 !important;
+}
+
+
 :root {
   --conalz-font: 'Kumbh Sans', sans-serif;
   --conalz-font-two: 'Titillium Web', sans-serif;
@@ -9579,8 +9764,467 @@ ul {
 }
 
 
+/* ===============================================
+   HERO MODERNA - OPCIÓN 1
+   =============================================== */
 
+.modern-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0a0f2b 0%, #1a237e 100%);
+}
 
+.modern-hero__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.modern-hero__video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.modern-hero__video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+}
+
+.modern-hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(10, 15, 43, 0.9) 0%, rgba(26, 35, 126, 0.7) 100%);
+    z-index: -1;
+}
+
+.modern-hero__content {
+    position: relative;
+    z-index: 2;
+    padding: 100px 0;
+}
+
+.modern-hero__badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #ffa800 0%, #ff6b00 100%);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.modern-hero__title {
+    margin-bottom: 25px;
+}
+
+.modern-hero__title-line {
+    display: block;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.modern-hero__title-highlight {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
+
+.modern-hero__text {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+.modern-hero__text strong {
+    color: #ffa800;
+    font-weight: 600;
+}
+
+.modern-hero__stats {
+    display: flex;
+    gap: 2rem;
+    margin: 2.5rem 0;
+    flex-wrap: wrap;
+}
+
+.modern-hero__stat {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modern-hero__stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffa800;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.modern-hero__stat-text {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+}
+
+.modern-hero__cta-box {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.modern-hero__cta-primary {
+    background: linear-gradient(135deg, #ffa800 0%, #ff6b00 100%);
+    border: none;
+    padding: 18px 35px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 220px;
+}
+
+.modern-hero__cta-primary span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.modern-hero__cta-primary small {
+    font-size: 12px;
+    opacity: 0.9;
+    margin-top: 5px;
+    font-weight: 400;
+}
+
+.modern-hero__cta-secondary {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 16px 30px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.modern-hero__cta-secondary:hover {
+    background: white;
+    color: #182657;
+}
+
+.modern-hero__visual {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modern-hero__image {
+    position: relative;
+    z-index: 2;
+}
+
+.modern-hero__image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modern-hero__testimonial-card {
+    position: absolute;
+    bottom: 50px;
+    right: -30px;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    max-width: 280px;
+    z-index: 3;
+}
+
+.modern-hero__testimonial-stars {
+    color: #ffa800;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.modern-hero__testimonial-content p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.modern-hero__testimonial-author strong {
+    display: block;
+    color: #182657;
+    font-size: 14px;
+}
+
+.modern-hero__testimonial-author span {
+    font-size: 12px;
+    color: #666;
+}
+
+.modern-hero__scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+}
+
+.modern-hero__scroll-arrow {
+    width: 20px;
+    height: 20px;
+    border-right: 2px solid rgba(255, 255, 255, 0.7);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+    transform: rotate(45deg);
+    margin: 10px auto 0;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: rotate(45deg) translateY(0);
+    }
+    40% {
+        transform: rotate(45deg) translateY(-10px);
+    }
+    60% {
+        transform: rotate(45deg) translateY(-5px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .modern-hero__title-line {
+        font-size: 3rem;
+    }
+    
+    .modern-hero__testimonial-card {
+        right: 0;
+    }
+}
+
+@media (max-width: 991px) {
+    .modern-hero__visual {
+        margin-top: 50px;
+    }
+    
+    .modern-hero__testimonial-card {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin-top: 30px;
+        max-width: 100%;
+    }
+    
+    .modern-hero__title-line {
+        font-size: 2.5rem;
+    }
+    
+    .modern-hero__text {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .modern-hero__title-line {
+        font-size: 2rem;
+    }
+    
+    .modern-hero__stats {
+        gap: 1rem;
+    }
+    
+    .modern-hero__stat {
+        flex: 1;
+        min-width: 120px;
+    }
+    
+    .modern-hero__stat-number {
+        font-size: 2rem;
+    }
+    
+    .modern-hero__cta-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .modern-hero__cta-primary,
+    .modern-hero__cta-secondary {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .modern-hero__title-line {
+        font-size: 1.8rem;
+    }
+    
+    .modern-hero__text {
+        font-size: 1rem;
+    }
+    
+    .modern-hero__stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .modern-hero__stat {
+        width: 100%;
+    }
+}
+
+/* Efectos de animación para elementos al cargar */
+.modern-hero__badge,
+.modern-hero__title,
+.modern-hero__text,
+.modern-hero__stats,
+.modern-hero__cta-box {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.modern-hero__badge {
+    animation-delay: 0.2s;
+}
+
+.modern-hero__title {
+    animation-delay: 0.4s;
+}
+
+.modern-hero__text {
+    animation-delay: 0.6s;
+}
+
+.modern-hero__stats {
+    animation-delay: 0.8s;
+}
+
+.modern-hero__cta-box {
+    animation-delay: 1s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mejoras para elementos existentes */
+.text-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Mejorar los botones existentes */
+.thm-btn {
+    position: relative;
+    border: none;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.thm-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #182657 0%, #0a0f2b 100%);
+    z-index: -1;
+    transition: transform 0.3s ease;
+}
+
+.thm-btn:hover::before {
+    transform: scale(1.05);
+}
+
+/* WhatsApp Floating Button mejorado */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+}
+
+/* Mejorar las tarjetas de servicios */
+.services-one__single {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services-one__single:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
 
 
 
