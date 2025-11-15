@@ -9892,7 +9892,7 @@ ul {
 
 .modern-hero__stat-text {
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(2, 0, 14, 0.8);
     font-weight: 500;
 }
 
@@ -9905,7 +9905,7 @@ ul {
 }
 
 .modern-hero__cta-primary {
-    background: linear-gradient(135deg, #ffffff 0%, #cccbca 100%);
+    background: linear-gradient(135deg, #01011b 0%, #cccbca 100%);
     border: none;
     padding: 18px 35px;
     font-size: 16px;
