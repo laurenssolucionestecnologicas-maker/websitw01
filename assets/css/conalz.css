@@ -94,7 +94,7 @@
 .testimonials-one__horizontal-right .testimonials-one__client-name {
     font-size: 15px;
     font-weight: 600;
-    color: #182657;
+    color: #3397bd;
     margin-bottom: 2px;
 }
 
@@ -209,7 +209,7 @@
   --conalz-gray-rgb: 35, 35, 35;
   --conalz-white: #ffffff;
   --conalz-white-rgb: 255, 255, 255;
-  --conalz-base: #005cff;
+  --conalz-base: #3397bd;
   --conalz-base-rgb: 0, 92, 255;
   --conalz-black: #13121d;
   --conalz-black-rgb: 19, 18, 29;
@@ -736,7 +736,7 @@ ul {
 .main-header__top-address-list li .icon span {
   position: relative;
   font-size: 22px;
-  color: #0606ff;
+  color: #042c3b;
 }
 
 .main-header__top-address-list li .text {
