@@ -24,17 +24,18 @@
     background: #f8f9fa;
     padding: 20px 25px;
     border-radius: 4px;
-    border-left: 4px solid #01061a;
+    border-left: 4px solid #3397bd
+;
     height: 100%;
     min-height: 160px;
     transition: all 0.3s ease;
 }
 
 .testimonials-one__single-horizontal:hover {
-    background: #ffffff;
-    box-shadow: 0 5px 25px rgba(2, 9, 36, 0.15);
+    background: #e0e0e1;
+    box-shadow: 0 5px 25px #192559;
     transform: translateX(5px);
-    border-left-color: #020720;
+    border-left-color: #3397bd;
 }
 
 .testimonials-one__horizontal-left {
@@ -47,7 +48,7 @@
     height: 70px;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid #113cd6;
+    border: 3px solid  #3397bd;
 }
 
 .testimonials-one__horizontal-left .testimonials-one__client-img img {
@@ -87,7 +88,7 @@
 .testimonials-one__horizontal-right .testimonials-one__text {
     font-size: 13px;
     line-height: 1.5em;
-    color: #555555;
+    color: #51555e;
     margin-bottom: 10px;
 }
 
@@ -136,7 +137,7 @@
 .main-slider__text {
     position: relative;
     font-size: 30px;
-    color: #ffffff;
+    color:  #192559;
     font-weight: 400;
     line-height: 1.6em;
     margin-top: 15px;
@@ -159,7 +160,7 @@
 }
 
 .why-choose-one__points li i {
-    color: #182657;
+    color:  #192559;
     margin-right: 10px;
     font-size: 16px;
 }
@@ -186,7 +187,7 @@
 
 .main-slider__btn-two:hover {
     background-color: #ffffff;
-    color: #182657;
+    color: #010513;
 }
 
 /* Reducir altura del slider */
@@ -205,13 +206,13 @@
   --conalz-font: 'Kumbh Sans', sans-serif;
   --conalz-font-two: 'Titillium Web', sans-serif;
   --conalz-reey-font: "reeyregular";
-  --conalz-gray: #232323;
+  --conalz-gray: ;
   --conalz-gray-rgb: 35, 35, 35;
   --conalz-white: #ffffff;
   --conalz-white-rgb: 255, 255, 255;
   --conalz-base: #3397bd;
   --conalz-base-rgb: 0, 92, 255;
-  --conalz-black: #13121d;
+   
   --conalz-black-rgb: 19, 18, 29;
 
 }
@@ -1196,7 +1197,7 @@ ul {
   transition: transform 500ms ease, visibility 500ms ease;
   transition: transform 500ms ease, visibility 500ms ease, -webkit-transform 500ms ease;
   -webkit-box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.05);
-  box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 10px 60px 0px #0000000d;
 }
 
 @media (max-width: 1199px) {
@@ -2647,6 +2648,16 @@ ul {
   margin-right: 50px;
   margin-bottom: 45px;
   text-align: justify;
+  
+}
+.about-one__left-text1 {
+  font-size: 21px;
+  font-weight: 500;
+  color:   #192559;
+  line-height: 34px;
+  margin-right: 50px;
+  margin-bottom: 45px;
+  text-align: bold;
   
 }
 
