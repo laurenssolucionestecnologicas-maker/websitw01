@@ -24,7 +24,7 @@
     background: #f8f9fa;
     padding: 20px 25px;
     border-radius: 4px;
-    border-left: 4px solid #182657;
+    border-left: 4px solid #01061a;
     height: 100%;
     min-height: 160px;
     transition: all 0.3s ease;
@@ -32,9 +32,9 @@
 
 .testimonials-one__single-horizontal:hover {
     background: #ffffff;
-    box-shadow: 0 5px 25px rgba(24, 38, 87, 0.15);
+    box-shadow: 0 5px 25px rgba(2, 9, 36, 0.15);
     transform: translateX(5px);
-    border-left-color: #19245a;
+    border-left-color: #020720;
 }
 
 .testimonials-one__horizontal-left {
@@ -47,7 +47,7 @@
     height: 70px;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid #182657;
+    border: 3px solid #113cd6;
 }
 
 .testimonials-one__horizontal-left .testimonials-one__client-img img {
@@ -736,7 +736,7 @@ ul {
 .main-header__top-address-list li .icon span {
   position: relative;
   font-size: 22px;
-  color: #727276;
+  color: #0606ff;
 }
 
 .main-header__top-address-list li .text {
@@ -846,7 +846,7 @@ ul {
 .main-menu {
   position: relative;
   display: block;
-  background-color: #f8f8f8;
+  background-color: #f3f3f3;
   z-index: 1;
 }
 
@@ -3988,6 +3988,7 @@ ul {
   position: relative;
   display: block;
   left: 13px;
+  color: var(--conalz-pantone);
 }
 
 .testimonials-one__client-name {
