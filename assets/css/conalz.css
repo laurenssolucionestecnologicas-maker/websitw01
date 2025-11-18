@@ -846,7 +846,7 @@ ul {
 .main-menu {
   position: relative;
   display: block;
-  background-color: #f3f3f3;
+  background-color: #fefeff1f;
   z-index: 1;
 }
 
@@ -940,7 +940,7 @@ ul {
 }
 
 .main-menu__call-icon:hover {
-  background-color: var(--conalz-base);
+  background-color: var(--conalz-pantone);
   color: var(--conalz-white);
 }
 
