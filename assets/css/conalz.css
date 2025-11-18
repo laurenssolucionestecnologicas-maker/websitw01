@@ -9351,19 +9351,17 @@ ul {
 }
 
 .contact-form__btn-box {
-  position: relative;
+  position: center;
   display: block;
 }
 
 .contact-form__btn {
   padding: 9px 35px 9px;
   border: none;
-  background-color: var(--conalz-black);
+  background-color:  #192559;
+  position: center;
 }
 
-.contact-form__btn:before {
-  background-color: var(--conalz-base);
-}
 
 /*--------------------------------------------------------------
 ## Error Page
