@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> Contact || conalz || conalz HTML 5 Template </title>
     <!-- favicons Icons -->
-        <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/logo1.jpeg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/logo1.jpeg" />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/logo1.jpeg" />
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/logo1.jpeg" />
     <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
@@ -51,6 +51,30 @@
     <!-- template styles -->
     <link rel="stylesheet" href="assets/css/conalz.css" />
     <link rel="stylesheet" href="assets/css/conalz-responsive.css" />
+    
+    <style>
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+        .alert-success {
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+        .alert-danger {
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+        .alert-warning {
+            color: #856404;
+            background-color: #fff3cd;
+            border-color: #ffeaa7;
+        }
+    </style>
 </head>
 
 <body class="custom-cursor">
@@ -58,66 +82,58 @@
     <div class="custom-cursor__cursor"></div>
     <div class="custom-cursor__cursor-two"></div>
 
-
-
-
-
     <div class="preloader">
         <div class="preloader__image"></div>
     </div>
     <!-- /.preloader -->
 
+    <nav class="main-menu clearfix">
+        <div class="main-menu__wrapper clearfix">
+            <div class="main-menu__wrapper-inner clearfix">
+                <div class="main-menu__left">
+                    <div class="main-menu__logo">
+                        <a href="index.html">
+                            <img src="assets/images/resources/logo111.jpeg" alt="PAXLO Group"
+                                style="max-height: 85px; width: auto;">
+                        </a>
+                    </div>
+                    <div class="main-menu__main-menu-box">
+                        <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                        <ul class="main-menu__list">
+                            <li class="current">
+                                <a href="index.html">Inicio</a>
+                            </li>
+                            <li>
+                                <a href="about.html">Nosotros</a>
+                            </li>
 
-  <nav class="main-menu clearfix">
-                <div class="main-menu__wrapper clearfix">
-                    <div class="main-menu__wrapper-inner clearfix">
-                        <div class="main-menu__left">
-                          <div class="main-menu__logo">
-    <a href="index.html">
-        <img src="assets/images/resources/logo111.jpeg" alt="PAXLO Group" style="max-height: 85px; width: auto;">
-    </a>
-</div>
-                            <div class="main-menu__main-menu-box">
-                                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
-                                <ul class="main-menu__list">
-    <li class="current">
-        <a href="index.html">Inicio</a>
-    </li>
-     <li>
-            <a href="about.html">Nosotros</a>
-        </li>
-
-    <li class="dropdown">
-    <a href="#">Servicios</a>
-    <ul>
-        <li><a href="business-consulting.html">PAXLO Business</a></li>
-        <li><a href="Leadership-consulting.html">PAXLO Leadership</a></li>
-       
-        <li><a href="Coaching-consulting.html">PAXLO Coaching</a></li>
-         <li><a href="finance-consulting.html">PAXLO Finance</a></li>
-    </ul>
-</li>
-        
-
-        
-        <li>
-            <a href="contact.html">Contacto</a>
-        </li>
-            </ul>
-                                </div>
+                            <li class="dropdown">
+                                <a href="#">Servicios</a>
+                                <ul>
+                                    <li><a href="business-consulting.html">PAXLO Business</a></li>
+                                    <li><a href="Leadership-consulting.html">PAXLO Leadership</a></li>
+                                    <li><a href="Coaching-consulting.html">PAXLO Coaching</a></li>
+                                    <li><a href="finance-consulting.html">PAXLO Finance</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="contact.html">Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-menu__right">
+                    <div class="main-menu__call-search">
+                        <div class="main-menu__call">
+                            <div class="main-menu__call-icon">
+                                <span class="icon-phone"></span>
+                            </div>
+                            <div class="main-menu__call-content">
+                                <span>Telefono</span>
+                                <p><a href="tel:+18293336865">+1 (829) 333-6865</a></p>
+                            </div>
                         </div>
                         <div class="main-menu__right">
-                            <div class="main-menu__call-search">
-                                <div class="main-menu__call">
-                                    <div class="main-menu__call-icon">
-                                        <span class="icon-phone"></span>
-                                    </div>
-                                    <div class="main-menu__call-content">
-                                        <span>Telefono</span>
-                                        <p><a href="tel:+18293336865">+1 (829) 333-6865</a></p>
-                                    </div>
-                                </div>
-                                <div class="main-menu__right">
                             <div class="main-menu__call-search">
                                 <div class="main-menu__call">
                                     <div class="main-menu__call-icon">
@@ -132,256 +148,285 @@
                         </div>
                     </div>
                 </div>
-            </nav>
-        </header>
+            </div>
+        </div>
+    </nav>
+    </header>
 
-        <div class="stricky-header stricked-menu main-menu">
-            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-        </div><!-- /.stricky-header -->
-       
+    <div class="stricky-header stricked-menu main-menu">
+        <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+    </div><!-- /.stricky-header -->
 
-      
-
-        <!--Contact Form Start-->
-        <section class="contact-form-box">
-            <div class="container">
-                <div class="contact-form__title-box">
-                    <span>Contactactanos Ahora!</span>
-                    <h3>Estamos Emocionados de saber de ti! <br> </h3>
+    <!--Contact Form Start-->
+    <section class="contact-form-box">
+        <div class="container">
+            <div class="contact-form__title-box">
+                <span>Contactactanos Ahora!</span>
+                <h3>Estamos Emocionados de saber de ti! <br> </h3>
+            </div>
+            
+            <!-- Mensajes de estado -->
+            <div id="success-message" class="alert alert-success" style="display: none;">
+                ¡Mensaje enviado con éxito! Te contactaremos pronto.
+            </div>
+            <div id="error-message" class="alert alert-danger" style="display: none;">
+                Error al enviar el mensaje. Por favor, inténtalo de nuevo.
+            </div>
+            <div id="rate-limit-message" class="alert alert-warning" style="display: none;">
+                Has enviado muchos mensajes recientemente. Por favor, espera unos minutos antes de intentar de nuevo.
+            </div>
+            
+            <!-- FORMULARIO CON SEGURIDAD MEJORADA -->
+            <form id="contact-form" class="contact-form">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="contact-form__input-box">
+                            <p>Nombre</p>
+                            <input type="text" placeholder="Tu nombre completo" name="user_name" id="user_name" required>
+                        </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <div class="contact-form__input-box">
+                            <p>Email</p>
+                            <input type="email" placeholder="tu@email.com" name="user_email" id="user_email" required>
+                        </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <div class="contact-form__input-box">
+                            <p>Teléfono</p>
+                            <input type="tel" placeholder="+1 (829) 333-6865" name="user_phone" id="user_phone">
+                        </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <div class="contact-form__input-box text-message-box">
+                            <p>Mensaje</p>
+                            <br>
+                            <textarea name="message" id="message" placeholder="¿En qué podemos ayudarte?" required></textarea>
+                        </div>
+                        
+                        <!-- CAMPO HONEYPOT (OCULTO PARA BOTS) -->
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                            <input type="text" name="b_contact" tabindex="-1" value="">
+                        </div>
+                        
+                        <div class="contact-form__btn-box">
+                            <button type="submit" class="thm-btn contact-form__btn" id="submit-btn">ENVIAR MENSAJE</button>
+                        </div>
+                    </div>
                 </div>
-                <form action="assets/inc/sendemail.php" class="contact-form contact-form-validated"
-                    novalidate="novalidate">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="contact-form__input-box">
-                                <p>NOmbre</p>
-                                <input type="text" placeholder="Mahfuz Riad" name="name">
-                            </div>
+            </form>
+        </div>
+    </section>
+    <!--Contact Form End-->
+
+    <!--Address Start-->
+    <section class="address">
+        <div class="container">
+            <div class="row">
+                <!--Address Single Start-->
+                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
+                    <div class="address__single">
+                        <div class="address__icon">
+                            <span class="icon-location"></span>
                         </div>
-                        <div class="col-xl-12">
-                            <div class="contact-form__input-box">
-                                <p>Email</p>
-                                <input type="email" placeholder="agency@sitename.com" name="email">
-                            </div>
-                        </div>
-                        <div class="col-xl-12">
-                            <div class="contact-form__input-box text-message-box">
-                                <textarea name="message" placeholder="Type your message"></textarea>
-                            </div>
-                            <div class="contact-form__btn-box">
-                                <button type="submit" class="thm-btn contact-form__btn">ENVIAR</button>
+                        <div class="address__content">
+                            <h4 class="address__title">Address</h4>
+                            <div class="address__phone-email">
+                                <p>Spirit.Edificio La Isla. Ave. Tiradentes <br> Ensanche Naco. Santo Domingo,
+                                    República Dominicana.</p>
                             </div>
                         </div>
                     </div>
-                </form>
+                </div>
+                <!--Address Single End-->
+                <!--Address Single Start-->
+                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
+                    <div class="address__single">
+                        <div class="address__icon">
+                            <span class="icon-phone-income"></span>
+                        </div>
+                        <div class="address__content">
+                            <h4 class="address__title">Phone</h4>
+                            <div class="address__phone-email">
+                                <p><br>
+                                    <a href="tel:8801682648101">+18293336865</a><br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Address Single End-->
+                <!--Address Single Start-->
+                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="300ms">
+                    <div class="address__single">
+                        <div class="address__icon">
+                            <span class="icon-email"></span>
+                        </div>
+                        <div class="address__content">
+                            <h4 class="address__title">Email Address</h4>
+                            <div class="address__phone-email">
+                                <p><br>
+                                    <a href="mailto:Info24@gmail.com">info@paxlogroup.comm</a><br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Address Single End-->
             </div>
-        </section>
-        <!--Contact Form End-->
+        </div>
+    </section>
+    <!--Address End-->
 
-          <!--Address Start-->
-        <section class="address">
+    <!--Google Map Start-->
+    <section class="google-map">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7568.230728705782!2d-69.93763270642091!3d18.478432899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf89dc982698a9%3A0xf83a4c807e6cd2b!2sSPIRIT%20COWORKING!5e0!3m2!1ses!2sdo!4v1763267761254!5m2!1ses!2sdo"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" class="google-map__one" allowfullscreen></iframe>
+    </section>
+    <!--Google Map End-->
+
+    <!--Newsletter Two start-->
+    <section class="newsletter-one">
+        <div class="container">
+            <div class="newsletter-one__inner">
+                <div class="newsletter-one__left">
+                    <div class="newsletter-one__title">
+                        <h4>SUSCRÍBETE</h4>
+                        <p>PARA DESCUBRIR TU GENIALIDAD.</p>
+                    </div>
+                    <div class="newsletter-one__email-box">
+                        <form class="newsletter-one__form">
+                            <div class="newsletter-one__form-input-box1">
+                                <input type="email" placeholder="CORREO ELECTRÓNICO " name="email">
+                                <button type="submit" class="newsletter-one__newsletter-btn"><i
+                                        class="icon-send"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="newsletter-one__right">
+                    <a href="services-v-2.html" class="thm-btn newsletter-one__button">Sí, quiero descubrir mi
+                        GENIALIDAD</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Newsletter Two end-->
+
+    <!--Site Footer Start-->
+    <footer class="site-footer">
+        <div class="site-footer-bg" style="background-image: url(assets/images/resources/Back_ground_blue.jpg);">
+        </div>
+        <div class="site-footer__top">
             <div class="container">
                 <div class="row">
-                    <!--Address Single Start-->
-                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
-                        <div class="address__single">
-                            <div class="address__icon">
-                                <span class="icon-location"></span>
-                            </div>
-                            <div class="address__content">
-                                <h4 class="address__title">Address</h4>
-                                <div class="address__phone-email">
-                                    <p>Spirit.Edificio La Isla. Ave. Tiradentes  <br> Ensanche Naco.  Santo Domingo,  República Dominicana.</p>
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="footer-widget__column footer-widget__about">
+                            <div class="footer-widget__about-logo-box">
+                                <div class="footer-widget__about-logo">
+                                    <a href="index.html">
+                                        <img src="assets/images/resources/PAXLO-LOGO1.png" alt="PAXLO Group"
+                                            style="max-height: 200px; width: auto; margin-top: 0%;">
+                                    </a>
                                 </div>
+                            </div>
+                            <div class="footer-widget__about-content">
+                                <p>Firma de capacitación, consultoría <br>y coaching; especializada en liderazgo,
+                                    <br>cultura organizacional e inteligencia financiera. <br> en liderazgo, cultura
+                                    organizacional y <br> bienestar financiero.
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <!--Address Single End-->
-                    <!--Address Single Start-->
-                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
-                        <div class="address__single">
-                            <div class="address__icon">
-                                <span class="icon-phone-income"></span>
-                            </div>
-                            <div class="address__content">
-                                <h4 class="address__title">Phone</h4>
-                                <div class="address__phone-email">
-                                    <p><br>
-                                        <a href="tel:8801682648101">+18293336865</a><br>
-                                        
-                                    </p>
-                                </div>
-                            </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                        <div class="footer-widget__areas">
+                            <h4 class="footer-widget__tag">Áreas de Negocio</h4>
+                            <ul class="footer-widget__services-list list-unstyled">
+                                <li><a href="business-consulting.html">PAXLO Business</a></li>
+                                <li><a href="Leadership-consulting.html">PAXLO Leadership</a></li>
+                                <li><a href="Coaching-consulting.html">PAXLO Coaching</a></li>
+                                <li><a href="finance-consulting.html">PAXLO Finance</a></li>
+                            </ul>
                         </div>
                     </div>
-                    <!--Address Single End-->
-                    <!--Address Single Start-->
-                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="300ms">
-                        <div class="address__single">
-                            <div class="address__icon">
-                                <span class="icon-email"></span>
-                            </div>
-                            <div class="address__content">
-                                <h4 class="address__title">Email Address</h4>
-                                <div class="address__phone-email">
-                                    <p><br>
-                                        <a href="mailto:Info24@gmail.com">info@paxlogroup.comm</a><br>
-                                     
-                                    </p>
-                                </div>
-                            </div>
+                    <div class="col-xl-2 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                        <div class="footer-widget__services">
+                            <h4 class="footer-widget__tag">Enlaces</h4>
+                            <ul class="footer-widget__services-list list-unstyled">
+                                <li><a href="about.html">Nosotros</a></li>
+                                <li><a href="contact.html">Contacto</a></li>
+                            </ul>
                         </div>
                     </div>
-                    <!--Address Single End-->
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                        <div class="footer-widget__contact">
+                            <h4 class="footer-widget__tag">Contacto</h4>
+                            <ul class="footer-widget__contact-box list-unstyled">
+                                <li>
+                                    <div class="icon">
+                                        <i class="icon-email-1"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p><a href="mailto:info@paxlogroup.com">info@paxlogroup.com</a></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="icon-phone"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p><a href="tel:+18293336865">+1 (829) 333-6865</a></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="icon-location"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>Spirit. Edificio La Isla. Ave. Tiradentes <br> esquina Presidente González.
+                                            Ensanche Naco. <br> Santo Domingo, República Dominicana.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- Reemplaza esta sección en el footer -->
+                            <ul class="footer-widget__social-box list-unstyled">
+                                <li>
+                                    <a href="https://www.linkedin.com/company/paxlo-group/" target="_blank"><i
+                                            class="fab fa-linkedin-in"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/paxlogroup?igsh=ZW8zNDk4djljcDVz"
+                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/@paxlogroup4096" target="_blank"><i
+                                            class="fab fa-youtube"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
-        <!--Address End-->
-
-
-<!--Google Map Start-->
-        <section class="google-map">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7568.230728705782!2d-69.93763270642091!3d18.478432899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf89dc982698a9%3A0xf83a4c807e6cd2b!2sSPIRIT%20COWORKING!5e0!3m2!1ses!2sdo!4v1763267761254!5m2!1ses!2sdo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                class="google-map__one" allowfullscreen></iframe>
-
-        </section>
-        <!--Google Map End-->
-
-        <!--Newsletter Two start-->
-        <section class="newsletter-one">
+        </div>
+        <div class="site-footer__bottom">
             <div class="container">
-                <div class="newsletter-one__inner">
-                    <div class="newsletter-one__left">
-                        <div class="newsletter-one__title">
-                            <h4>SUSCRÍBETE</h4>
-                            <p>PARA DESCUBRIR TU GENIALIDAD.</p>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="site-footer__bottom-inner">
+                            <div class="site-footer__bottom-text">
+                                <p>Copyright © 2025 PAXLO Group. Todos los derechos reservados.</p>
+                            </div>
                         </div>
-                        <div class="newsletter-one__email-box">
-                            <form class="newsletter-one__form">
-                                <div class="newsletter-one__form-input-box1">
-                                    <input type="email" placeholder="CORREO ELECTRÓNICO " name="email">
-                                    <button type="submit" class="newsletter-one__newsletter-btn"><i
-                                            class="icon-send"></i></button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="newsletter-one__right">
-                        <a href="services-v-2.html" class="thm-btn newsletter-one__button">Sí, quiero descubrir mi GENIALIDAD</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--Newsletter Two end-->
-
-           <!--Site Footer Start-->
-<footer class="site-footer">
-    <div class="site-footer-bg" style="background-image: url(assets/images/resources/Back_ground_blue.jpg);">
-    </div>
-    <div class="site-footer__top">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
-                    <div class="footer-widget__column footer-widget__about">
-                        <div class="footer-widget__about-logo-box">
-                            <div class="footer-widget__about-logo">
-    <a href="index.html">
-        <img src="assets/images/resources/PAXLO-LOGO1.png" alt="PAXLO Group" style="max-height: 200px; width: auto; margin-top: 0%;">
-    </a>
-</div>
-                        </div>
-                        <div class="footer-widget__about-content">
-                            <p>Firma de capacitación, consultoría  <br>y coaching; especializada en liderazgo,  <br>cultura organizacional e inteligencia financiera. <br> en liderazgo, cultura organizacional y <br> bienestar financiero.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
-                    <div class="footer-widget__areas">
-                        <h4 class="footer-widget__tag">Áreas de Negocio</h4>
-                        <ul class="footer-widget__services-list list-unstyled">
-    <li><a href="business-consulting.html">PAXLO Business</a></li>
-    <li><a href="Leadership-consulting.html">PAXLO Leadership</a></li>
-    <li><a href="Coaching-consulting.html">PAXLO Coaching</a></li>
-      <li><a href="finance-consulting.html">PAXLO Finance</a></li>
-</ul>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
-                    <div class="footer-widget__services">
-                        <h4 class="footer-widget__tag">Enlaces</h4>
-                        <ul class="footer-widget__services-list list-unstyled">
-                            <li><a href="about.html">Nosotros</a></li>
-                            <li><a href="contact.html">Contacto</a></li>
-                            
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
-                    <div class="footer-widget__contact">
-                        <h4 class="footer-widget__tag">Contacto</h4>
-                        <ul class="footer-widget__contact-box list-unstyled">
-                            <li>
-                                <div class="icon">
-                                    <i class="icon-email-1"></i>
-                                </div>
-                                <div class="text">
-                                    <p><a href="mailto:info@paxlogroup.com">info@paxlogroup.com</a></p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="icon">
-                                    <i class="icon-phone"></i>
-                                </div>
-                                <div class="text">
-                                    <p><a href="tel:+18293336865">+1 (829) 333-6865</a></p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="icon">
-                                    <i class="icon-location"></i>
-                                </div>
-                                <div class="text">
-                                    <p>Spirit. Edificio La Isla. Ave. Tiradentes <br> esquina Presidente González. Ensanche Naco. <br> Santo Domingo, República Dominicana.</p>
-                                </div>
-                            </li>
-                        </ul>
-                        <!-- Reemplaza esta sección en el footer -->
-<ul class="footer-widget__social-box list-unstyled">
-    <li>
-        <a href="https://www.linkedin.com/company/paxlo-group/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-    </li>
-    <li>
-        <a href="https://www.instagram.com/paxlogroup?igsh=ZW8zNDk4djljcDVz" target="_blank"><i class="fab fa-instagram"></i></a>
-    </li>
-    <li>
-        <a href="https://www.youtube.com/@paxlogroup4096" target="_blank"><i class="fab fa-youtube"></i></a>
-    </li>
-</ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="site-footer__bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="site-footer__bottom-inner">
-                        <div class="site-footer__bottom-text">
-                            <p>Copyright © 2025 PAXLO Group. Todos los derechos reservados.</p>
-                        </div>
-                     
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<!--Site Footer End-->
+    </footer>
+    <!--Site Footer End-->
 
     </div><!-- /.page-wrapper -->
-
 
     <div class="mobile-nav__wrapper">
         <div class="mobile-nav__overlay mobile-nav__toggler"></div>
@@ -415,9 +460,6 @@
                     <a href="#" class="fab fa-instagram"></a>
                 </div><!-- /.mobile-nav__social -->
             </div><!-- /.mobile-nav__top -->
-
-
-
         </div>
         <!-- /.mobile-nav__content -->
     </div>
@@ -440,7 +482,6 @@
     <!-- /.search-popup -->
 
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
-
 
     <script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>
     <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -468,11 +509,162 @@
     <script src="assets/vendors/circleType/jquery.lettering.min.js"></script>
     <script src="assets/vendors/polyglot-language-switcher/jquery.polyglot.language.switcher.js"></script>
 
-
-
-
     <!-- template js -->
     <script src="assets/js/conalz.js"></script>
-</body>
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
+    <script>
+        // Inicializar EmailJS con tus credenciales
+        (function() {
+            emailjs.init("e4nJmWb1NdIVKhiV9"); // Tu Public Key
+        })();
+        
+        // ========== SISTEMA DE SEGURIDAD ==========
+        
+        // 1. RATE LIMITING - Máximo 3 envíos por hora
+        const RATE_LIMIT_KEY = 'paxlo_contact_submissions';
+        const MAX_SUBMISSIONS_PER_HOUR = 3;
+        const HOUR_IN_MS = 60 * 60 * 1000;
+        
+        function checkRateLimit() {
+            const now = Date.now();
+            const submissions = JSON.parse(localStorage.getItem(RATE_LIMIT_KEY) || '[]');
+            
+            // Limpiar envíos antiguos (más de 1 hora)
+            const recentSubmissions = submissions.filter(time => now - time < HOUR_IN_MS);
+            
+            if (recentSubmissions.length >= MAX_SUBMISSIONS_PER_HOUR) {
+                return false; // Límite excedido
+            }
+            
+            return true; // Dentro del límite
+        }
+        
+        function recordSubmission() {
+            const now = Date.now();
+            const submissions = JSON.parse(localStorage.getItem(RATE_LIMIT_KEY) || '[]');
+            submissions.push(now);
+            localStorage.setItem(RATE_LIMIT_KEY, JSON.stringify(submissions));
+        }
+        
+        // 2. VALIDACIÓN DE EMAILS TEMPORALES/SOSPECHOSOS
+        function isValidEmail(email) {
+            // Validación básica de formato
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) return false;
+            
+            // Lista de dominios sospechosos o temporales
+            const suspiciousDomains = [
+                'tempmail.com', '10minutemail.com', 'guerrillamail.com',
+                'mailinator.com', 'yopmail.com', 'trashmail.com',
+                'fake.com', 'spam.com', 'test.com', 'example.com',
+                'throwaway.com', 'disposable.com', 'temp.com'
+            ];
+            
+            const domain = email.split('@')[1].toLowerCase();
+            return !suspiciousDomains.some(suspicious => domain.includes(suspicious));
+        }
+        
+        // 3. DETECCIÓN DE HONEYPOT (BOTS)
+        function isBotSubmission(formData) {
+            return formData.get('b_contact') !== '';
+        }
+        
+        // 4. TIMEOUT DE RE-ENVÍO
+        function enableResubmit() {
+            const submitBtn = document.getElementById('submit-btn');
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'ENVIAR MENSAJE';
+        }
+        
+        // ========== MANEJADOR DEL FORMULARIO ==========
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // 1. VERIFICAR HONEYPOT
+            if (isBotSubmission(new FormData(this))) {
+                console.log('🤖 Bot detectado - honeypot');
+                // Simular éxito para no alertar al bot
+                document.getElementById('success-message').style.display = 'block';
+                document.getElementById('contact-form').style.display = 'none';
+                return;
+            }
+            
+            const email = document.getElementById('user_email').value;
+            
+            // 2. VALIDAR EMAIL
+            if (!isValidEmail(email)) {
+                alert('❌ Por favor, usa una dirección de email válida y permanente.');
+                return;
+            }
+            
+            // 3. VERIFICAR RATE LIMITING
+            if (!checkRateLimit()) {
+                document.getElementById('rate-limit-message').style.display = 'block';
+                document.getElementById('success-message').style.display = 'none';
+                document.getElementById('error-message').style.display = 'none';
+                return;
+            }
+            
+            // 4. PREPARAR ENVÍO
+            const submitBtn = document.getElementById('submit-btn');
+            const originalText = submitBtn.textContent;
+            
+            // Deshabilitar botón temporalmente
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Enviando...';
+            
+            // Agregar fecha actual
+            const now = new Date();
+            const dateField = document.createElement('input');
+            dateField.type = 'hidden';
+            dateField.name = 'date';
+            dateField.value = now.toLocaleString('es-ES', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+            this.appendChild(dateField);
+            
+            // 5. ENVIAR EMAIL
+            emailjs.sendForm('service_b465fpk', 'template_p3wkg1u', this)
+                .then(function(response) {
+                    console.log('✅ Email enviado!', response);
+                    
+                    // Registrar envío para rate limiting
+                    recordSubmission();
+                    
+                    // Mostrar éxito
+                    document.getElementById('success-message').style.display = 'block';
+                    document.getElementById('error-message').style.display = 'none';
+                    document.getElementById('rate-limit-message').style.display = 'none';
+                    
+                    // Ocultar formulario
+                    document.getElementById('contact-form').style.display = 'none';
+                    
+                }, function(error) {
+                    console.log('❌ Error:', error);
+                    
+                    // Mostrar error
+                    document.getElementById('error-message').style.display = 'block';
+                    document.getElementById('success-message').style.display = 'none';
+                    document.getElementById('rate-limit-message').style.display = 'none';
+                    
+                    // Re-habilitar botón después de 5 segundos
+                    setTimeout(enableResubmit, 5000);
+                });
+        });
+        
+        // Limpiar localStorage periódicamente (cada hora)
+        setInterval(() => {
+            const submissions = JSON.parse(localStorage.getItem(RATE_LIMIT_KEY) || '[]');
+            const now = Date.now();
+            const recentSubmissions = submissions.filter(time => now - time < HOUR_IN_MS);
+            localStorage.setItem(RATE_LIMIT_KEY, JSON.stringify(recentSubmissions));
+        }, HOUR_IN_MS);
+    </script>
+</body>
 </html>
