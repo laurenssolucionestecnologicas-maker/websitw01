@@ -1,30 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PAXLO Finance || PAXLO</title>
+    <title>PAXLO Leadership | Programas de Liderazgo y Desarrollo Ejecutivo</title>
     <!-- favicons Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/logo1.jpeg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/logo1.jpeg" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/logo1.jpeg" />
-    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
-    <meta name="description" content="Conalz HTML 5 Template " />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="assets/images/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicons/favicon.svg">
+    <link rel="shortcut icon" href="assets/images/favicons/favicon.ico">
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest">
+
+    <!-- SOLUCIÓN PARA DROPDOWN QUE SE CIERRA -->
+    <style>
+    .main-menu__list li.dropdown:hover > ul,
+    .main-menu__list li.dropdown > ul:hover {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        transition-delay: 0s !important;
+    }
+    
+    .main-menu__list .dropdown ul {
+        pointer-events: auto !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .main-menu__list .dropdown > a::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        background: transparent;
+    }
+    </style>
+
+    <meta name="description" content="PAXLO Leadership: Programas de formación, certificaciones y desarrollo ejecutivo en liderazgo, power skills y gestión de equipos. Working Genius Certified®." />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
@@ -63,51 +86,43 @@
     </div>
     <!-- /.preloader -->
 
-    
-    
-
-    <div class="preloader">
-        <div class="preloader__image"></div>
-    </div>
-   
+    <div class="page-wrapper">
+        <header class="main-header">
             <nav class="main-menu clearfix">
                 <div class="main-menu__wrapper clearfix">
                     <div class="main-menu__wrapper-inner clearfix">
                         <div class="main-menu__left">
-                          <div class="main-menu__logo">
-    <a href="index.html">
-        <img src="assets/images/resources/logo111.jpeg" alt="PAXLO Group" style="max-height: 85px; width: auto;">
-    </a>
-</div>
+                            <div class="main-menu__logo">
+                                <a href="index.html">
+                                    <img src="assets/images/resources/logo111.jpeg" alt="PAXLO Group" style="max-height: 85px; width: auto;">
+                                </a>
+                            </div>
                             <div class="main-menu__main-menu-box">
                                 <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                                 <ul class="main-menu__list">
-    <li class="current">
-        <a href="index.html">Inicio</a>
-    </li>
-       <li>
-            <a href="about.html">Nosotros</a>
-        </li>
-    <li class="dropdown">
-    <a href="">Servicios</a>
-     <ul>
-        <li><a href="business-consulting.html">PAXLO Business</a></li>
-        <li><a href="Leadership-consulting.html">PAXLO Leadership</a></li>
-        <li><a href="Coaching-consulting.html">PAXLO Coaching</a></li>
-        <li><a href="finance-consulting.html">PAXLO Finance</a></li>
-    </ul>
-   
-</li>
-       
-
-         <li>
-            <a href="blog.html">Blog</a>
-        </li>
-        <li>
-            <a href="contact.html">Contacto</a>
-        </li>
-            </ul>
-                                </div>
+                                    <li>
+                                        <a href="index.html">Inicio</a>
+                                    </li>
+                                    <li>
+                                        <a href="about.html">Nosotros</a>
+                                    </li>
+                                    <li class="dropdown current">
+                                        <a href="#">Servicios</a>
+                                        <ul>
+                                            <li><a href="business-consulting.html">PAXLO Business</a></li>
+                                            <li><a href="Leadership-consulting.html">PAXLO Leadership</a></li>
+                                            <li><a href="Coaching-consulting.html">PAXLO Coaching</a></li>
+                                            <li><a href="finance-consulting.html">PAXLO Finance</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="blog.html">Blog</a>
+                                    </li>
+                                    <li>
+                                        <a href="contact.html">Contacto</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="main-menu__right">
                             <div class="main-menu__call-search">
@@ -120,15 +135,13 @@
                                         <p><a href="tel:+18293336865">+1 (829) 333-6865</a></p>
                                     </div>
                                 </div>
-                                <div class="main-menu__right">
-                            <div class="main-menu__call-search">
                                 <div class="main-menu__call">
                                     <div class="main-menu__call-icon">
                                         <span class="icon-email"></span>
                                     </div>
                                     <div class="main-menu__call-content">
                                         <span>Email</span>
-                                        <p><a href="telinfo@paxlogroup.com">info@paxlogroup.com</a></p>
+                                        <p><a href="mailto:info@paxlogroup.com">info@paxlogroup.com</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -139,104 +152,23 @@
         </header>
 
         <div class="stricky-header stricked-menu main-menu">
-            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-        </div><!-- /.stricky-header -->
-
-  
-
-           
-           
-          
-
-    <!--Main Slider Start-->
-       <!-- SLIDE: varias fotos que pasan sin JS (CSS only) -->
-<style>
-/* Puedes mover esto a tu CSS principal si prefieres */
-.image-slider { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
-.image-slider img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  opacity: 0;
-  animation: sliderFade 12s infinite;
-}
-/* tiempos para que se muestren una tras otra (3 fotos = 4s cada una visible) */
-.image-slider img:nth-child(1) { animation-delay: 0s; }
-.image-slider img:nth-child(2) { animation-delay: 4s; }
-.image-slider img:nth-child(3) { animation-delay: 8s; }
-
-/* keyframes: entrada, stay, salida */
-@keyframes sliderFade {
-  0%   { opacity: 0; transform: scale(1.03); }
-  6%   { opacity: 1; transform: scale(1); }
-  33%  { opacity: 1; transform: scale(1); }
-  41%  { opacity: 0; transform: scale(0.97); }
-  100% { opacity: 0; transform: scale(0.97); }
-}
-
-/* overlay para mantener legibilidad del texto */
-.image-slider-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-  z-index: 1;
-}
-
-/* asegura que el contenido (texto/logo) quede encima */
-.swiper-slide > .container { position: relative; z-index: 2; }
-</style>
-
-<div class="swiper-slide"><BR></BR><BR><BR>
-  <!-- slider de imágenes (reemplaza las rutas por las tuyas) -->
-  <div class="image-slider">
-    <img src="assets/images/resources/foto120.png" alt="foto 1">
-    <img src="assets/images/resources/foto120.png" alt="foto 1">
-    <img src="assets/images/resources/foto120.png" alt="foto 1">
-  
-      
-    
-  </div>
-  <div class="image-slider-overlay"></div>
-
-  <!-- contenido del slide (texto / botones / logo) -->
-  <div class="container">
-    <div class="row">
-      <div class="col-xl-8">
-        <div class="main-slider-three__content">
-          <h2 class="main-slider-three__title">Boost Your Consulting Group</h2>
-          <div class="main-slider-three__btn-box">
-            <a href="team.html" class="thm-btn main-slider-three__btn">Start Consulting with Our Team</a>
-          </div>  <!-- slider de imágenes (reemplaza las rutas por las tuyas) --
-          <div class="main-slider-three-shape-1 float-bob-y">
-            <img src="assets/images/shapes/main-slider-three-shape-1.png" alt="">
-          </div>
-          <div class="main-slider-three-shape-2 float-bob-y">
-            <img src="assets/images/shapes/main-slider-three-shape-2.png" alt="">
-          </div>
-          <div class="main-slider-three-shape-3 float-bob-x">
-            <img src="assets/images/shapes/main-slider-three-shape-3.png" alt="">
-          </div>  slider de imágenes (reemplaza las rutas por las tuyas) -->
+            <div class="sticky-header__content"></div>
         </div>
-      </div>
 
-      <div class="col-xl-4">
-        <div class="main-slider-three__right">
-          <div class="main-slider-two__curved-circle-box">
-            <div class="curved-circle">
-              <span class="curved-circle--item">We Are . Digital . Agency .</span>
+        <!-- Hero Section -->
+        <section class="page-header">
+            <div class="page-header__bg" style="background-image: url(assets/images/resources/foto104.png);"></div>
+            <div class="container">
+                <div class="page-header__inner">
+                    <h2>PAXLO Leadership</h2>
+                    <ul class="thm-breadcrumb list-unstyled">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li>PAXLO Leadership</li>
+                    </ul>
+                </div>
             </div>
-            <div class="main-slider-two__curved-circle-icon">
-              <img src="assets/images/resources/Paxlo_logo_footer-removebg-preview.png" alt="">
-            </div>   slider de imágenes (reemplaza las rutas por las tuyas) 
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div><!-- /.stricky-header -->
+        </section>
 
         <!--Service Details Start-->
         <section class="service-details">
@@ -248,24 +180,22 @@
                                 <h3 class="service-details__service-title">Nuestros Servicios</h3>
                                 <ul class="service-details__service-list list-unstyled">
                                     <li><a href="business-consulting.html">PAXLO Business <span class="icon-right-arrow1"></span></a></li>
-                                    <li><a href="Leadership-consulting.html">PAXLO Leadership <span class="icon-right-arrow1"></span></a></li>
-                                  
+                                    <li class="active"><a href="Leadership-consulting.html">PAXLO Leadership <span class="icon-right-arrow1"></span></a></li>
                                     <li><a href="Coaching-consulting.html">PAXLO Coaching <span class="icon-right-arrow1"></span></a></li>
-                                      <li class="active"><a href="finance-consulting.html">PAXLO Finance <span class="icon-right-arrow1"></span></a></li>
+                                    <li><a href="finance-consulting.html">PAXLO Finance <span class="icon-right-arrow1"></span></a></li>
                                 </ul>
                             </div>
                             <div class="service-details__sidebar-single sidebar__call-box">
-                                <div class="sidebar__call-bg"
-                                    style="background-image: url(assets/images/resources/Finance_side.jpg);"></div>
+                                <div class="sidebar__call-bg" style="background-image: url(assets/images/resources/Leadership_side.jpg);"></div>
                                 <div class="sideber__call-content">
-                                    <h3 class="sideber__call-title">Transforma la <br> salud financiera <br> de tu equipo</h3>
+                                    <h3 class="sideber__call-title">Desarrolla tu <br> potencial de <br> liderazgo</h3>
                                     <div class="sideber__call-number">
                                         <p>llámanos sin compromiso</p>
                                         <h3><a href="tel:+18293336865">+1 (829) 333-6865</a></h3>
                                     </div>
                                     <div class="sideber__call-button">
                                         <div class="sideber__call-button-shape"></div>
-                                        <a href="contact.html"><i class="icon-right-arrow1"></i>Solicita una Propuesta</a>
+                                        <a href="contact.html"><i class="icon-right-arrow1"></i>Descubre los Programas</a>
                                     </div>
                                 </div>
                             </div>
@@ -273,104 +203,92 @@
                     </div>
                     <div class="col-xl-8 col-lg-7">
                         <div class="service-details__right">
-                            <h3 class="service-details__title-two">PAXLO FINANCE</h3>
-                            <p class="service-details__text-1">Educación financiera, programas de bienestar financiero, coaching financiero y desarrollo de contenidos financieros institucionales.</p>
+                            <h3 class="service-details__title-two">PAXLO LEADERSHIP</h3>
+                            <p class="service-details__text-1">Programas, cursos y certificaciones en liderazgo, habilidades humanas y desempeño profesional.</p>
                             <br>
-                            <p class="service-details__text-1">PAXLO Finance desarrolla programas de Inteligencia Financiera para instituciones, colaboradores, líderes y clientes. Nuestro enfoque integra educación, estrategia y acompañamiento práctico para fortalecer la toma de decisiones, reducir el estrés financiero y promover una relación más saludable, consciente y efectiva con el dinero.</p>
-                              
+                            <p>Ofrecemos programas de formación orientados a desarrollar el liderazgo humano y estratégico que las organizaciones necesitan hoy. Entrenamos a líderes, profesionales y equipos en power skills, gestión del cambio, comunicación efectiva, agilidad humana, liderazgo adaptativo y capacidades esenciales para el desempeño moderno.</p>
+                            <br>
                             <div class="service-details__img">
-                                <img src="assets/images/resources/PAXLO-finance.jpg" alt="">
-
-                                <h3 class="service-details__title-two">¿Qué resuelve?</h3>
-
-                                 <ul class="list-unstyled why-choose-one__points">
-    <li><i class="fas fa-check-circle"></i> Bajo nivel de inteligencia financiera.</li>
-    <li><i class="fas fa-check-circle"></i> Programas internos débiles o inexistentes.</li>
-    <li><i class="fas fa-check-circle"></i> Equipos con baja estabilidad y planificación.</li>
-    <li><i class="fas fa-check-circle"></i> Estrés financiero en colaboradores y líderes.</li>
-    <li><i class="fas fa-check-circle"></i> Brechas de educación financiera en instituciones.</li>
-    
-</ul>     
-
-<h3 class="service-details__title-two">Beneficios</h3>
-
-                                 <ul class="list-unstyled why-choose-one__points">
-    <li><i class="fas fa-check-circle"></i> Clientes mejor educados y fidelizados.</li>
-    <li><i class="fas fa-check-circle"></i> Mayor bienestar personal y emocional.</li>
-    <li><i class="fas fa-check-circle"></i> Reducción del estrés financiero.</li>
-    <li><i class="fas fa-check-circle"></i> Colaboradores más enfocados y productivos.</li>
-    <li><i class="fas fa-check-circle"></i> Mejores decisiones financieras personales.</li>
-    <li><i class="fas fa-check-circle"></i> Mayor estabilidad y proyección a largo plazo.</li>
-    <li><i class="fas fa-check-circle"></i> Programas financieros con impacto real y medible.</li>
-    
-</ul>     
-                            </div>  <!--Service Details Start
+                                <img src="assets/images/resources/Leadership_servicePage.jpg" alt="Programas de Liderazgo PAXLO">
+                            </div> 
                             <div class="service-details__problem-solve">
-                                <h3 class="service-details__problem-solve-title">Desafíos financieros que impactan el desempeño organizacional</h3>
-                                <p class="service-details__problem-solve-text-1">Identificamos y solucionamos problemas críticos como: estrés financiero que afecta la productividad, falta de educación financiera básica, dificultades en la gestión del presupuesto personal, desconocimiento de herramientas de planificación y altos niveles de endeudamiento que generan distracción y ansiedad en el trabajo.</p>
-                                <p class="service-details__problem-solve-text-2">Nuestros programas transforman el estrés financiero en confianza, creando colaboradores más enfocados, comprometidos y productivos que pueden tomar decisiones financieras informadas y construir un futuro más seguro.</p>
+                                <h3 class="service-details__problem-solve-title">Ofrecemos soluciones a situaciones como:</h3>
+                                <ul class="list-unstyled why-choose-one__points">
+                                    <li><i class="fas fa-check-circle"></i>Equipos con poca autonomía o accountability</li>
+                                    <li><i class="fas fa-check-circle"></i>Falta de claridad en el rol del líder</li>
+                                    <li><i class="fas fa-check-circle"></i>Líderes sin herramientas humanas o conversacionales</li>
+                                    <li><i class="fas fa-check-circle"></i>Dificultades en gestión del cambio</li>
+                                    <li><i class="fas fa-check-circle"></i>Carencia de habilidades blandas claves</li>
+                                </ul>     
                             </div>
                             <div class="service-details__core-product">
-                                <h3 class="service-details__core-product-title">Nuestros Programas de Educación Financiera</h3>
-                                <p class="service-details__core-product-text">Ofrecemos soluciones integrales diseñadas para diferentes niveles y necesidades dentro de la organización:</p>
+                                <h3 class="service-details__core-product-title">¿Cómo beneficia esto a los líderes?</h3>
+                                <ul class="list-unstyled why-choose-one__points">
+                                    <li><i class="fas fa-check-circle"></i>Equipos más autónomos y efectivos</li>
+                                    <li><i class="fas fa-check-circle"></i>Líderes más claros, humanos y estratégicos</li>
+                                    <li><i class="fas fa-check-circle"></i>Competencias modernas que elevan el desempeño</li>
+                                    <li><i class="fas fa-check-circle"></i>Comunicación precisa, empática y orientada a resultados</li>
+                                </ul>
+                                
+                                <p class="service-details__core-product-text">Ofrecemos una gama completa de programas diseñados para desarrollar líderes en todos los niveles organizacionales:</p>
                                 <div class="service-details__core-product-points-box">
                                     <div class="row">
                                         <div class="col-xl-6">
                                             <div class="service-details__core-product-points-single">
                                                 <div class="service-details__core-product-icon-box">
                                                     <div class="service-details__core-product-icon">
-                                                        <span class="fas fa-university"></span>
+                                                        <span class="fas fa-graduation-cap"></span>
                                                     </div>
                                                     <div class="service-details__core-product-content">
-                                                        <h4>Programas Institucionales</h4>
+                                                        <h4>Programas de Certificación</h4>
                                                     </div>
                                                 </div>
-                                                <p class="service-details__core-product-text-2">Programas corporativos de bienestar financiero diseñados para mejorar el engagement y reducir el estrés financiero en toda la organización.</p>
+                                                <p class="service-details__core-product-text-2">Certificaciones internacionales en liderazgo, coaching y metodologías ágiles que validan competencias y potencian carreras profesionales.</p>
                                             </div>
                                         </div>
                                         <div class="col-xl-6">
                                             <div class="service-details__core-product-points-single">
                                                 <div class="service-details__core-product-icon-box">
                                                     <div class="service-details__core-product-icon">
-                                                        <span class="fas fa-hand-holding-usd"></span>
+                                                        <span class="fas fa-bolt"></span>
                                                     </div>
                                                     <div class="service-details__core-product-content">
-                                                        <h4>Talleres Prácticos</h4>
+                                                        <h4>Power Skills Development</h4>
                                                     </div>
                                                 </div>
-                                                <p class="service-details__core-product-text-2">Sesiones interactivas sobre presupuesto, ahorro, inversión, reducción de deudas y planificación financiera personalizada.</p>
+                                                <p class="service-details__core-product-text-2">Desarrollo de habilidades críticas como inteligencia emocional, pensamiento crítico, adaptabilidad y resolución de conflictos.</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="service-details__benefits">
-                                    <h3 class="service-details__benefits-title">Nuestra Metodología de Impacto</h3>
-                                    <p class="service-details__benefits-text-1">Combinamos educación financiera tradicional con enfoques conductuales para generar cambios reales y sostenibles:</p>
+                                    <h3 class="service-details__benefits-title">Nuestra Metodología de Aprendizaje</h3>
+                                    <p class="service-details__benefits-text-1">Combinamos lo mejor de la formación tradicional con enfoques innovadores para maximizar el impacto:</p>
                                     <div class="row">
                                         <div class="col-xl-6">
                                             <div class="service-details__benefits-single">
                                                 <div class="service-details__benefits-icon-box">
                                                     <div class="service-details__benefits-icon">
-                                                        <span class="fas fa-chart-line"></span>
+                                                        <span class="fas fa-hands-helping"></span>
                                                     </div>
                                                     <div class="service-details__benefits-content">
-                                                        <h3>Enfoque Conductual</h3>
+                                                        <h3>Aprendizaje Experiencial</h3>
                                                     </div>
                                                 </div>
-                                                <p class="service-details__benefits-text-2">Aplicamos principios de behavioral finance para entender y transformar los hábitos financieros desde la raíz, no solo el conocimiento.</p>
+                                                <p class="service-details__benefits-text-2">Metodologías prácticas basadas en casos reales, simulaciones y proyectos aplicados que garantizan la transferencia inmediata al contexto laboral.</p>
                                             </div>
                                         </div>
                                         <div class="col-xl-6">
                                             <div class="service-details__benefits-single">
                                                 <div class="service-details__benefits-icon-box">
                                                     <div class="service-details__benefits-icon">
-                                                        <span class="fas fa-user-shield"></span>
+                                                        <span class="fas fa-network-wired"></span>
                                                     </div>
                                                     <div class="service-details__benefits-content">
-                                                        <h3>Coaching Personalizado</h3>
+                                                        <h3>Comunidades de Aprendizaje</h3>
                                                     </div>
                                                 </div>
-                                                <p class="service-details__benefits-text-2">Sesiones individuales de coaching financiero para colaboradores y líderes que necesitan apoyo específico en su situación personal.</p>
+                                                <p class="service-details__benefits-text-2">Espacios de networking y colaboración entre participantes que enriquecen la experiencia y crean redes profesionales duraderas.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -379,32 +297,32 @@
                                     <div class="accrodion-grp" data-grp-name="faq-one-accrodion">
                                         <div class="accrodion active">
                                             <div class="accrodion-title">
-                                                <h4>¿Cómo impacta el bienestar financiero en el desempeño laboral?</h4>
+                                                <h4>¿Qué diferencia a PAXLO Leadership de otros programas?</h4>
                                             </div>
                                             <div class="accrodion-content">
                                                 <div class="inner">
-                                                    <p>Estudios demuestran que colaboradores con estrés financiero pierden hasta 15 horas mensuales de productividad preocupándose por sus finanzas. Nuestros programas reducen este estrés en más del 70%, mejorando el enfoque, engagement y retención del talento.</p>
+                                                    <p>Combinamos metodologías probadas con un enfoque humano único. Nuestros programas integran Working Genius, coaching ejecutivo y desarrollo de power skills con más de 12 años de experiencia transformando líderes en 7 países.</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="accrodion">
                                             <div class="accrodion-title">
-                                                <h4>¿Ofrecen programas para diferentes niveles de conocimiento financiero?</h4>
+                                                <h4>¿Ofrecen programas in-company personalizados?</h4>
                                             </div>
                                             <div class="accrodion-content">
                                                 <div class="inner">
-                                                    <p>Sí, diseñamos programas desde nivel básico hasta avanzado, adaptándonos al conocimiento y necesidades específicas de cada grupo. Incluimos desde fundamentos de presupuesto hasta estrategias de inversión y planificación patrimonial.</p>
+                                                    <p>Sí, diseñamos programas a la medida que se alinean con la cultura, valores y objetivos específicos de cada organización. Hemos implementado más de 100 programas formativos personalizados.</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="accrodion">
                                             <div class="accrodion-title">
-                                                <h4>¿Pueden medir el ROI de los programas de educación financiera?</h4>
+                                                <h4>¿Qué tipos de certificaciones ofrecen?</h4>
                                             </div>
                                             <div class="accrodion-content">
                                                 <div class="inner">
-                                                    <p>Absolutamente. Medimos métricas como reducción de estrés financiero, mejora en scores crediticios, aumento del ahorro, disminución de rotación y mejora en engagement. Nuestros clientes typically ven ROI entre 3x y 5x en el primer año.</p>
-                                                </div> /.inner -->
+                                                    <p>Ofrecemos certificaciones en liderazgo, coaching ejecutivo, gestión del cambio, Working Genius y power skills. Todas nuestras certificaciones tienen reconocimiento internacional y son impartidas por expertos certificados.</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -419,8 +337,7 @@
 
         <!--Site Footer Start-->
         <footer class="site-footer">
-            <div class="site-footer-bg" style="background-image: url(assets/images/resources/Back_ground_blue.jpg);">
-            </div>
+            <div class="site-footer-bg" style="background-image: url(assets/images/resources/Back_ground_blue.jpg);"></div>
             <div class="site-footer__top">
                 <div class="container">
                     <div class="row">
@@ -434,7 +351,7 @@
                                     </div>
                                 </div>
                                 <div class="footer-widget__about-content">
-                                     <p>Firma de capacitación, consultoría  <br>y coaching; especializada en liderazgo,  <br>cultura organizacional e inteligencia financiera. <br> en liderazgo, cultura organizacional y <br> bienestar financiero.</p>
+                                    <p>Firma de capacitación, consultoría y coaching; especializada en liderazgo, cultura organizacional e inteligencia financiera.</p>
                                 </div>
                             </div>
                         </div>
@@ -521,7 +438,7 @@
     </div><!-- /.page-wrapper -->
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/18293336865?text=Hola,%20me%20gustaría%20obtener%20más%20información%20sobre%20PAXLO" 
+    <a href="https://wa.me/18293336865?text=Hola,%20me%20gustaría%20obtener%20más%20información%20sobre%20PAXLO%20Leadership" 
        class="whatsapp-float" 
        target="_blank"
        aria-label="Contactar por WhatsApp">
@@ -530,17 +447,12 @@
 
     <div class="mobile-nav__wrapper">
         <div class="mobile-nav__overlay mobile-nav__toggler"></div>
-        <!-- /.mobile-nav__overlay -->
         <div class="mobile-nav__content">
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
-
             <div class="logo-box">
                 <a href="index.html" aria-label="logo image"><img src="assets/images/resources/logo1.jpeg" width="120" alt="PAXLO Group" /></a>
             </div>
-            <!-- /.logo-box -->
             <div class="mobile-nav__container"></div>
-            <!-- /.mobile-nav__container -->
-
             <ul class="mobile-nav__contact list-unstyled">
                 <li>
                     <i class="fa fa-envelope"></i>
@@ -550,34 +462,29 @@
                     <i class="fa fa-phone-alt"></i>
                     <a href="tel:+18293336865">+1 (829) 333-6865</a>
                 </li>
-            </ul><!-- /.mobile-nav__contact -->
+            </ul>
             <div class="mobile-nav__top">
                 <div class="mobile-nav__social">
                     <a href="https://www.linkedin.com/company/paxlo-group/" target="_blank" class="fab fa-linkedin-in"></a>
                     <a href="https://www.instagram.com/paxlogroup?igsh=ZW8zNDk4djljcDVz" target="_blank" class="fab fa-instagram"></a>
                     <a href="https://www.youtube.com/@paxlogroup4096" target="_blank" class="fab fa-youtube"></a>
-                </div><!-- /.mobile-nav__social -->
-            </div><!-- /.mobile-nav__top -->
+                </div>
+            </div>
         </div>
-        <!-- /.mobile-nav__content -->
     </div>
-    <!-- /.mobile-nav__wrapper -->
 
     <div class="search-popup">
         <div class="search-popup__overlay search-toggler"></div>
-        <!-- /.search-popup__overlay -->
         <div class="search-popup__content">
             <form action="#">
-                <label for="search" class="sr-only">search here</label><!-- /.sr-only -->
+                <label for="search" class="sr-only">search here</label>
                 <input type="text" id="search" placeholder="Search Here..." />
                 <button type="submit" aria-label="search submit" class="thm-btn">
                     <i class="icon-search"></i>
                 </button>
             </form>
         </div>
-        <!-- /.search-popup__content -->
     </div>
-    <!-- /.search-popup -->
 
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
 

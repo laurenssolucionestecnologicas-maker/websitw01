@@ -13,6 +13,34 @@
 <link rel="icon" type="image/svg+xml" href="assets/images/favicons/favicon.svg">
 <link rel="shortcut icon" href="assets/images/favicons/favicon.ico">
 <link rel="manifest" href="assets/images/favicons/site.webmanifest">
+
+    <!-- SOLUCIÓN PARA DROPDOWN QUE SE CIERRA -->
+    <style>
+    .main-menu__list li.dropdown:hover > ul,
+    .main-menu__list li.dropdown > ul:hover {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        transition-delay: 0s !important;
+    }
+    
+    .main-menu__list .dropdown ul {
+        pointer-events: auto !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .main-menu__list .dropdown > a::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        background: transparent;
+    }
+    </style>
+
     <meta name="description" content="PAXLO Group - Consultoría y Formación" />
 
     <!-- fonts -->
@@ -110,64 +138,14 @@
     <!-- /.preloader -->
 
     <div class="page-wrapper">
-        <header class="main-header clearfix">
-            <div class="main-header__top">
-                <div class="main-header__top-inner clearfix">
-                    <div class="main-header__top-left">
-                        <ul class="list-unstyled main-header__top-address-list">
-                            <li>
-                                <div class="icon">
-                                    <span class="icon-email-1"></span>
-                                </div>
-                                <div class="text">
-                                    <p><a href="mailto:info@paxlogroup.com">info@paxlogroup.com</a></p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="icon">
-                                    <span class="icon-clock"></span>
-                                </div>
-                                <div class="text">
-                                    <p>Lun - Vier 9:00 - 6:00</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="main-header__top-right">
-                        <div class="main-header__btn-box">
-                            <a href="contact.html" class="thm-btn main-header__btn">Conversación Estratégica</a>
-                        </div>
-                        <!--Redes Sociales-->
-                        <div class="main-header__top-social">
-                            <a href="https://www.linkedin.com/company/paxlo-group/" target="_blank" 
-                               style="color: #182657 !important;"
-                               onmouseover="this.style.color='#005cff'"
-                               onmouseout="this.style.color='#182657'">
-                                <i class="fab fa-linkedin-in" style="color: inherit !important;"></i>
-                            </a>
-                            <a href="https://www.instagram.com/paxlogroup?igsh=ZW8zNDk4djljcDVz" target="_blank"
-                               style="color: #182657 !important;"
-                               onmouseover="this.style.color='#005cff'"
-                               onmouseout="this.style.color='#182657'">
-                                <i class="fab fa-instagram" style="color: inherit !important;"></i>
-                            </a>
-                            <a href="https://www.youtube.com/@paxlogroup4096" target="_blank"
-                               style="color: #182657 !important;"
-                               onmouseover="this.style.color='#005cff'"
-                               onmouseout="this.style.color='#182657'">
-                                <i class="fab fa-youtube" style="color: inherit !important;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <header class="main-header">
             <nav class="main-menu clearfix">
                 <div class="main-menu__wrapper clearfix">
                     <div class="main-menu__wrapper-inner clearfix">
                         <div class="main-menu__left">
                             <div class="main-menu__logo">
                                 <a href="index.html">
-                                    <img src="assets/images/resources/logo1.jpeg" alt="PAXLO Group" style="max-height: 85px; width: auto;">
+                                    <img src="assets/images/resources/logo111.jpeg" alt="PAXLO Group" style="max-height: 85px; width: auto;">
                                 </a>
                             </div>
                             <div class="main-menu__main-menu-box">
@@ -188,7 +166,6 @@
                                     <li>
                                         <a href="about.html">Nosotros</a>
                                     </li>
-                                    
                                     <li>
                                         <a href="contact.html">Contacto</a>
                                     </li>
@@ -206,17 +183,21 @@
                                         <p><a href="tel:+18293336865">+1 (829) 333-6865</a></p>
                                     </div>
                                 </div>
+                                <div class="main-menu__call">
+                                    <div class="main-menu__call-icon">
+                                        <span class="icon-email"></span>
+                                    </div>
+                                    <div class="main-menu__call-content">
+                                        <span>Email</span>
+                                        <p><a href="mailto:info@paxlogroup.com">info@paxlogroup.com</a></p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </nav>
         </header>
-
-        <div class="stricky-header stricked-menu main-menu">
-            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-        </div><!-- /.stricky-header -->
-
         <!--Error Page Start-->
         <section class="error-page">
             <div class="error-page-bg" style="background-image: url(assets/images/resources/Background-404.png);"></div>
