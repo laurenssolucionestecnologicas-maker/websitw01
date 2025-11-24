@@ -1,33 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="language" content="ES">
+    <meta http-equiv="Content-Language" content="es">
+    <meta name="google" content="notranslate">
+    <meta name="robots" content="notranslate">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PAXLO Leadership || PAXLO Group</title>
+    <title>PAXLO Leadership | Desarrollo de Liderazgo y Habilidades Directivas</title>
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
-<link rel="icon" type="image/png" href="assets/images/favicons/favicon-96x96.png" sizes="96x96">
-<link rel="icon" type="image/svg+xml" href="assets/images/favicons/favicon.svg">
-<link rel="shortcut icon" href="assets/images/favicons/favicon.ico">
-<link rel="manifest" href="assets/images/favicons/site.webmanifest">
-    <meta name="description" content="PAXLO Leadership || PAXLO Group " />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="assets/images/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicons/favicon.svg">
+    <link rel="shortcut icon" href="assets/images/favicons/favicon.ico">
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest">
+
+    <!-- SOLUCIÓN PARA DROPDOWN QUE SE CIERRA -->
+    <style>
+    /* Forzar que el dropdown se mantenga abierto y sea fácil de usar */
+    .main-menu__list li.dropdown:hover > ul,
+    .main-menu__list li.dropdown > ul:hover {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        transition-delay: 0s !important;
+    }
+    
+    .main-menu__list .dropdown ul {
+        pointer-events: auto !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    /* Crear un área invisible entre el enlace y el dropdown para evitar que se cierre */
+    .main-menu__list .dropdown > a::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        background: transparent;
+    }
+
+    /* SLIDER CSS */
+    .image-slider { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
+    .image-slider img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0;
+      animation: sliderFade 12s infinite;
+    }
+    /* tiempos para que se muestren una tras otra (3 fotos = 4s cada una visible) */
+    .image-slider img:nth-child(1) { animation-delay: 0s; }
+    .image-slider img:nth-child(2) { animation-delay: 4s; }
+    .image-slider img:nth-child(3) { animation-delay: 8s; }
+
+    /* keyframes: entrada, stay, salida */
+    @keyframes sliderFade {
+      0%   { opacity: 0; transform: scale(1.03); }
+      6%   { opacity: 1; transform: scale(1); }
+      33%  { opacity: 1; transform: scale(1); }
+      41%  { opacity: 0; transform: scale(0.97); }
+      100% { opacity: 0; transform: scale(0.97); }
+    }
+
+    /* overlay para mantener legibilidad del texto */
+    .image-slider-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: 1;
+    }
+
+    /* asegura que el contenido (texto/logo) quede encima */
+    .swiper-slide > .container { position: relative; z-index: 2; }
+    </style>
+
+    <meta name="description" content="PAXLO Leadership: Programas de desarrollo de liderazgo, habilidades directivas y power skills para líderes y equipos de alto desempeño." />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
@@ -66,172 +129,114 @@
     </div>
     <!-- /.preloader -->
 
- 
-    <div class="preloader">
-        <div class="preloader__image"></div>
-    </div>
-   
-<nav class="main-menu clearfix">
-        <div class="main-menu__wrapper clearfix">
-            <div class="main-menu__wrapper-inner clearfix">
-                <div class="main-menu__left">
-                    <div class="main-menu__logo">
-                        <a href="index.html">
-                            <img src="assets/images/resources/logo111.jpeg" alt="PAXLO Group" style="max-height: 85px; width: auto;">
-                        </a>
-                    </div>
-                    <div class="main-menu__main-menu-box">
-                        <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
-                        <ul class="main-menu__list">
-                            <li>
-                                <a href="index.html">Inicio</a>
-                            </li>
-                            <li>
-                                <a href="about.html">Nosotros</a>
-                            </li>
-                            <li class="dropdown current">
-                                <a href="#">Servicios</a>
-                                <ul>
-                                    <li><a href="business-consulting.html">PAXLO Business</a></li>
-                                    <li><a href="Leadership-consulting.html">PAXLO Leadership</a></li>
-                                    <li><a href="Coaching-consulting.html">PAXLO Coaching</a></li>
-                                    <li><a href="finance-consulting.html">PAXLO Finance</a></li>
+    <div class="page-wrapper">
+        <header class="main-header">
+            <nav class="main-menu clearfix">
+                <div class="main-menu__wrapper clearfix">
+                    <div class="main-menu__wrapper-inner clearfix">
+                        <div class="main-menu__left">
+                            <div class="main-menu__logo">
+                                <a href="index.html">
+                                    <img src="assets/images/resources/logo111.jpeg" alt="PAXLO Group" style="max-height: 85px; width: auto;">
+                                </a>
+                            </div>
+                            <div class="main-menu__main-menu-box">
+                                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                <ul class="main-menu__list">
+                                    <li>
+                                        <a href="index.html">Inicio</a>
+                                    </li>
+                                    <li>
+                                        <a href="about.html">Nosotros</a>
+                                    </li>
+                                    <li class="dropdown current">
+                                        <a href="#">Servicios</a>
+                                        <ul>
+                                            <li><a href="business-consulting.html">PAXLO Business</a></li>
+                                            <li><a href="Leadership-consulting.html">PAXLO Leadership</a></li>
+                                            <li><a href="Coaching-consulting.html">PAXLO Coaching</a></li>
+                                            <li><a href="finance-consulting.html">PAXLO Finance</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="blog.html">Blog</a>
+                                    </li>
+                                    <li>
+                                        <a href="contact.html">Contacto</a>
+                                    </li>
                                 </ul>
-                            </li>
-                            <li>
-                                <a href="blog.html">Blog</a>
-                            </li>
-                            <li>
-                                <a href="contact.html">Contacto</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="main-menu__right">
-                    <div class="main-menu__call-search">
-                        <div class="main-menu__call">
-                            <div class="main-menu__call-icon">
-                                <span class="icon-phone"></span>
-                            </div>
-                            <div class="main-menu__call-content">
-                                <span>Telefono</span>
-                                <p><a href="tel:+18293336865">+1 (829) 333-6865</a></p>
                             </div>
                         </div>
-                        <div class="main-menu__call">
-                            <div class="main-menu__call-icon">
-                                <span class="icon-email"></span>
-                            </div>
-                            <div class="main-menu__call-content">
-                                <span>Email</span>
-                                <p><a href="mailto:info@paxlogroup.com">info@paxlogroup.com</a></p>
+                        <div class="main-menu__right">
+                            <div class="main-menu__call-search">
+                                <div class="main-menu__call">
+                                    <div class="main-menu__call-icon">
+                                        <span class="icon-phone"></span>
+                                    </div>
+                                    <div class="main-menu__call-content">
+                                        <span>Telefono</span>
+                                        <p><a href="tel:+18293336865">+1 (829) 333-6865</a></p>
+                                    </div>
+                                </div>
+                                <div class="main-menu__call">
+                                    <div class="main-menu__call-icon">
+                                        <span class="icon-email"></span>
+                                    </div>
+                                    <div class="main-menu__call-content">
+                                        <span>Email</span>
+                                        <p><a href="mailto:info@paxlogroup.com">info@paxlogroup.com</a></p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </nav>
+            </nav>
         </header>
 
         <div class="stricky-header stricked-menu main-menu">
             <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
         </div><!-- /.stricky-header -->
 
-  
-
-           
-           
-          
-
-    <!--Main Slider Start-->
-       <!-- SLIDE: varias fotos que pasan sin JS (CSS only) -->
-<style>
-/* Puedes mover esto a tu CSS principal si prefieres */
-.image-slider { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
-.image-slider img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  opacity: 0;
-  animation: sliderFade 12s infinite;
-}
-/* tiempos para que se muestren una tras otra (3 fotos = 4s cada una visible) */
-.image-slider img:nth-child(1) { animation-delay: 0s; }
-.image-slider img:nth-child(2) { animation-delay: 4s; }
-.image-slider img:nth-child(3) { animation-delay: 8s; }
-
-/* keyframes: entrada, stay, salida */
-@keyframes sliderFade {
-  0%   { opacity: 0; transform: scale(1.03); }
-  6%   { opacity: 1; transform: scale(1); }
-  33%  { opacity: 1; transform: scale(1); }
-  41%  { opacity: 0; transform: scale(0.97); }
-  100% { opacity: 0; transform: scale(0.97); }
-}
-
-/* overlay para mantener legibilidad del texto */
-.image-slider-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-  z-index: 1;
-}
-
-/* asegura que el contenido (texto/logo) quede encima */
-.swiper-slide > .container { position: relative; z-index: 2; }
-</style>
-
-<div class="swiper-slide"><BR></BR><BR><BR>
-  <!-- slider de imágenes (reemplaza las rutas por las tuyas) -->
-  <div class="image-slider">
-    <img src="assets/images/resources/foto104.png" alt="foto 1">
-      <img src="assets/images/resources/foto105.png" alt="foto 2">
-       <img src="assets/images/resources/foto105.png" alt="foto 3">
-      
-    
-  </div>
-  <div class="image-slider-overlay"></div>
-
-  <!-- contenido del slide (texto / botones / logo) -->
-  <div class="container">
-    <div class="row">
-      <div class="col-xl-8">
-        <div class="main-slider-three__content">
-          <h2 class="main-slider-three__title">Boost Your Consulting Group</h2>
-          <div class="main-slider-three__btn-box">
-            <a href="team.html" class="thm-btn main-slider-three__btn">Start Consulting with Our Team</a>
-          </div>  <!-- slider de imágenes (reemplaza las rutas por las tuyas) --
-          <div class="main-slider-three-shape-1 float-bob-y">
-            <img src="assets/images/shapes/main-slider-three-shape-1.png" alt="">
-          </div>
-          <div class="main-slider-three-shape-2 float-bob-y">
-            <img src="assets/images/shapes/main-slider-three-shape-2.png" alt="">
-          </div>
-          <div class="main-slider-three-shape-3 float-bob-x">
-            <img src="assets/images/shapes/main-slider-three-shape-3.png" alt="">
-          </div>  slider de imágenes (reemplaza las rutas por las tuyas) -->
-        </div>
-      </div>
-
-      <div class="col-xl-4">
-        <div class="main-slider-three__right">
-          <div class="main-slider-two__curved-circle-box">
-            <div class="curved-circle">
-              <span class="curved-circle--item">We Are . Digital . Agency .</span>
+        <!-- SLIDER PRINCIPAL -->
+        <div class="swiper-slide"><br><br><br><br>
+            <!-- slider de imágenes -->
+            <div class="image-slider">
+                <img src="assets/images/resources/foto104.png" alt="Desarrollo de liderazgo">
+                <img src="assets/images/resources/foto105.png" alt="Programas de liderazgo">
+                <img src="assets/images/resources/foto105.png" alt="Formación ejecutiva">
             </div>
-            <div class="main-slider-two__curved-circle-icon">
-              <img src="assets/images/resources/Paxlo_logo_footer-removebg-preview.png" alt="">
-            </div>   slider de imágenes (reemplaza las rutas por las tuyas) 
-          </div>
+            <div class="image-slider-overlay"></div>
+
+            <!-- contenido del slide -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-8">
+                        <div class="main-slider-three__content">
+                            <!-- TEXTO CORREGIDO AL ESPAÑOL -->
+                            <h2 class="main-slider-three__title">Desarrolla Tu Potencial de Liderazgo</h2>
+                            <div class="main-slider-three__btn-box">
+                                <a href="team.html" class="thm-btn main-slider-three__btn">Comienza con Nuestros Programas</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4">
+                        <div class="main-slider-three__right">
+                            <div class="main-slider-two__curved-circle-box">
+                                <div class="curved-circle">
+                                    <!-- TEXTO CORREGIDO AL ESPAÑOL -->
+                                    <span class="curved-circle--item">Somos . Liderazgo . Desarrollo .</span>
+                                </div>
+                                <div class="main-slider-two__curved-circle-icon">
+                                    <img src="assets/images/resources/Paxlo_logo_footer-removebg-preview.png" alt="PAXLO Group">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div><!-- /.stricky-header -->
 
         <!--Service Details Start-->
         <section class="service-details">
@@ -245,12 +250,11 @@
                                     <li><a href="business-consulting.html">PAXLO Business <span class="icon-right-arrow1"></span></a></li>
                                     <li class="active"><a href="Leadership-consulting.html">PAXLO Leadership <span class="icon-right-arrow1"></span></a></li>
                                     <li><a href="Coaching-consulting.html">PAXLO Coaching <span class="icon-right-arrow1"></span></a></li>
-                                      <li><a href="finance-consulting.html">PAXLO Finance <span class="icon-right-arrow1"></span></a></li>
+                                    <li><a href="finance-consulting.html">PAXLO Finance <span class="icon-right-arrow1"></span></a></li>
                                 </ul>
                             </div>
                             <div class="service-details__sidebar-single sidebar__call-box">
-                                <div class="sidebar__call-bg"
-                                    style="background-image: url(assets/images/resources/Leadership_side.jpg);"></div>
+                                <div class="sidebar__call-bg" style="background-image: url(assets/images/resources/Leadership_side.jpg);"></div>
                                 <div class="sideber__call-content">
                                     <h3 class="sideber__call-title">Desarrolla tu <br> potencial de <br> liderazgo</h3>
                                     <div class="sideber__call-number">
@@ -409,10 +413,9 @@
         </section>
         <!--Service Details End-->
 
-        <!--Site Footer Start-->
+        <!-- FOOTER -->
         <footer class="site-footer">
-            <div class="site-footer-bg" style="background-image: url(assets/images/resources/Back_ground_blue.jpg);">
-            </div>
+            <div class="site-footer-bg" style="background-image: url(assets/images/resources/Back_ground_blue.jpg);"></div>
             <div class="site-footer__top">
                 <div class="container">
                     <div class="row">
@@ -426,7 +429,7 @@
                                     </div>
                                 </div>
                                 <div class="footer-widget__about-content">
-                                   <p>Firma de capacitación, consultoría  <br>y coaching; especializada en liderazgo,  <br>cultura organizacional e inteligencia financiera. <br> en liderazgo, cultura organizacional y <br> bienestar financiero.</p>
+                                    <p>Firma de capacitación, consultoría y coaching; especializada en liderazgo, cultura organizacional e inteligencia financiera.</p>
                                 </div>
                             </div>
                         </div>
@@ -475,7 +478,7 @@
                                             <i class="icon-location"></i>
                                         </div>
                                         <div class="text">
-                                            <p>Spirit. Edificio La Isla. Ave. Tiradentes <br> esquina Presidente González. Ensanche Naco. <br> Santo Domingo, República Dominicana.</p>
+                                            <p>Spirit. Edificio La Isla. Ave. Tiradentes esquina Presidente González. Ensanche Naco. Santo Domingo, República Dominicana.</p>
                                         </div>
                                     </li>
                                 </ul>
@@ -510,6 +513,7 @@
             </div>
         </footer>
         <!--Site Footer End-->
+
     </div><!-- /.page-wrapper -->
 
     <!-- WhatsApp Floating Button -->
@@ -520,6 +524,7 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- Mobile Navigation -->
     <div class="mobile-nav__wrapper">
         <div class="mobile-nav__overlay mobile-nav__toggler"></div>
         <!-- /.mobile-nav__overlay -->
@@ -527,7 +532,9 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="assets/images/resources/logo1.jpeg" width="120" alt="PAXLO Group" /></a>
+                <a href="index.html" aria-label="logo image">
+                    <img src="assets/images/resources/logo1.jpeg" width="120" alt="PAXLO Group" />
+                </a>
             </div>
             <!-- /.logo-box -->
             <div class="mobile-nav__container"></div>

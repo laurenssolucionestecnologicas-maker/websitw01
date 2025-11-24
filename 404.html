@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ES">
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="language" content="ES">
+<meta http-equiv="Content-Language" content="es">
+<meta name="google" content="notranslate">
+<meta name="robots" content="notranslate">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Página No Encontrada || PAXLO</title>
+    <title>Página No Encontrada || PAXLO Group</title>
     <!-- favicons Icons -->
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
@@ -124,10 +128,43 @@
             color: #666;
             margin-bottom: 40px;
         }
+
+
+        /* AÑADIR EN EL STYLE EXISTENTE (después del dropdown) */
+.translate-notice {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #2c5aa0;
+    color: white;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 14px;
+    z-index: 10000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    max-width: 300px;
+    display: none;
+}
+.translate-notice button {
+    background: white;
+    color: #2c5aa0;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 4px;
+    margin-top: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
     </style>
 </head>
 
 <body class="custom-cursor">
+    <!-- AÑADIR INMEDIATAMENTE DESPUÉS DE <body class="custom-cursor"> -->
+<div class="translate-notice" id="translateNotice">
+    <strong>¿Necesitas ver esta página en otro idioma?</strong><br>
+    Usa la función de traducción automática de tu navegador.
+    <button onclick="hideTranslateNotice()">Entendido</button>
+</div>
 
     <div class="custom-cursor__cursor"></div>
     <div class="custom-cursor__cursor-two"></div>
@@ -156,12 +193,14 @@
                                     </li>
                                     <li class="dropdown">
                                         <a href="#">Servicios</a>
-                                        <ul>
-                                            <li><a href="business-consulting.html">PAXLO Business</a></li>
-                                            <li><a href="Leadership-consulting.html">PAXLO Leadership</a></li>
-                                            <li><a href="finance-consulting.html">PAXLO Finance</a></li>
-                                            <li><a href="Coaching-consulting.html">PAXLO Coaching</a></li>
-                                        </ul>
+                                        <!-- VERIFICAR QUE EL ORDEN SEA CONSISTENTE -->
+<ul>
+    <li><a href="business-consulting.html">PAXLO Business</a></li>
+    <li><a href="Leadership-consulting.html">PAXLO Leadership</a></li>
+    <li><a href="Coaching-consulting.html">PAXLO Coaching</a></li> <!-- MOVER ARRIBA -->
+    <li><a href="finance-consulting.html">PAXLO Finance</a></li>
+</ul>
+
                                     </li>
                                     <li>
                                         <a href="about.html">Nosotros</a>
@@ -179,7 +218,7 @@
                                         <span class="icon-phone"></span>
                                     </div>
                                     <div class="main-menu__call-content">
-                                        <span>Telefono</span>
+                                        <span>Teléfono</span>
                                         <p><a href="tel:+18293336865">+1 (829) 333-6865</a></p>
                                     </div>
                                 </div>
@@ -256,6 +295,7 @@
                                 <ul class="footer-widget__services-list list-unstyled">
                                     <li><a href="about.html">Nosotros</a></li>
                                     <li><a href="contact.html">Contacto</a></li>
+                                    <li><a href="blog.html">Blog</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -394,5 +434,31 @@
 
     <!-- template js -->
     <script src="assets/js/conalz.js"></script>
+    <!-- AÑADIR ANTES DEL ÚLTIMO </body> -->
+<script>
+function hideTranslateNotice() {
+    const notice = document.getElementById('translateNotice');
+    if (notice) {
+        notice.style.display = 'none';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const userLang = navigator.language || navigator.userLanguage;
+    
+    if (!userLang.startsWith('es')) {
+        setTimeout(function() {
+            const notice = document.getElementById('translateNotice');
+            if (notice) {
+                notice.style.display = 'block';
+                
+                setTimeout(function() {
+                    notice.style.display = 'none';
+                }, 15000);
+            }
+        }, 2000);
+    }
+});
+</script>
 </body>
 </html>

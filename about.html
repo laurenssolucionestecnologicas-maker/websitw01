@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ES">
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="language" content="ES">
+<meta http-equiv="Content-Language" content="es">
+<meta name="google" content="notranslate">
+<meta name="robots" content="notranslate">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> About || PAXLO Group</title>
+    <title> Nosotros || PAXLO Group</title>
     <!-- favicons Icons -->
       <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
@@ -16,6 +20,33 @@
 
     <!-- SOLUCIÓN PARA DROPDOWN QUE SE CIERRA -->
     <style>
+
+/* AÑADIR EN EL STYLE EXISTENTE */
+.translate-notice {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #2c5aa0;
+    color: white;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 14px;
+    z-index: 10000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    max-width: 300px;
+    display: none;
+}
+.translate-notice button {
+    background: white;
+    color: #2c5aa0;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 4px;
+    margin-top: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
     .main-menu__list li.dropdown:hover > ul,
     .main-menu__list li.dropdown > ul:hover {
         display: block !important;
@@ -85,6 +116,11 @@
 </head>
 
 <body class="custom-cursor">
+    <div class="translate-notice" id="translateNotice">
+    <strong>¿Necesitas ver esta página en otro idioma?</strong><br>
+    Usa la función de traducción automática de tu navegador.
+    <button onclick="hideTranslateNotice()">Entendido</button>
+</div>
 
     <div class="custom-cursor__cursor"></div>
     <div class="custom-cursor__cursor-two"></div>
@@ -139,7 +175,7 @@
                                         <span class="icon-phone"></span>
                                     </div>
                                     <div class="main-menu__call-content">
-                                        <span>Telefono</span>
+                                        <span>Teléfono</span>
                                         <p><a href="tel:+18293336865">+1 (829) 333-6865</a></p>
                                     </div>
                                 </div>
@@ -224,9 +260,9 @@
     <div class="row">
       <div class="col-xl-8">
         <div class="main-slider-three__content">
-          <h2 class="main-slider-three__title">Boost Your Consulting Group</h2>
+          <h2 class="main-slider-three__title">Impulsa Tu Grupo de Consultoría</h2>
           <div class="main-slider-three__btn-box">
-            <a href="team.html" class="thm-btn main-slider-three__btn">Start Consulting with Our Team</a>
+            <a href="team.html" class="thm-btn main-slider-three__btn">Comienza a Consultar con Nuestro Equipo</a>
           </div>  <!-- slider de imágenes (reemplaza las rutas por las tuyas) --
           <div class="main-slider-three-shape-1 float-bob-y">
             <img src="assets/images/shapes/main-slider-three-shape-1.png" alt="">
@@ -244,7 +280,7 @@
         <div class="main-slider-three__right">
           <div class="main-slider-two__curved-circle-box">
             <div class="curved-circle">
-              <span class="curved-circle--item">We Are . Digital . Agency .</span>
+              <span class="curved-circle--item">Somos . Consultoría . Especializada .</span>
             </div>
             <div class="main-slider-two__curved-circle-icon">
               <img src="assets/images/resources/Paxlo_logo_footer-removebg-preview.png" alt="">
@@ -1107,11 +1143,11 @@ Incluye herramientas como Working Genius, entrevistas y análisis cultural.
             <ul class="mobile-nav__contact list-unstyled">
                 <li>
                     <i class="fa fa-envelope"></i>
-                    <a href="mailto:needhelp@packageName__.com">needhelp@conalz.com</a>
+                    <a href="mailto:info@paxlogroup.com">info@paxlogroup.com</a>
                 </li>
                 <li>
                     <i class="fa fa-phone-alt"></i>
-                    <a href="tel:666-888-0000">666 888 0000</a>
+                   <a href="tel:+18293336865">+1 (829) 333-6865</a>
                 </li>
             </ul><!-- /.mobile-nav__contact -->
             <div class="mobile-nav__top">
@@ -1180,6 +1216,37 @@ Incluye herramientas como Working Genius, entrevistas y análisis cultural.
 
     <!-- template js -->
     <script src="assets/js/conalz.js"></script>
+    <script>
+function hideTranslateNotice() {
+    const notice = document.getElementById('translateNotice');
+    if (notice) {
+        notice.style.display = 'none';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const userLang = navigator.language || navigator.userLanguage;
+    
+    if (!userLang.startsWith('es')) {
+        setTimeout(function() {
+            const notice = document.getElementById('translateNotice');
+            if (notice) {
+                notice.style.display = 'block';
+                
+                setTimeout(function() {
+                    notice.style.display = 'none';
+                }, 15000);
+            }
+        }, 2000);
+    }
+});
+</script>
+<a href="https://wa.me/18293336865?text=Hola,%20me%20gustaría%20obtener%20más%20información%20sobre%20PAXLO" 
+   class="whatsapp-float" 
+   target="_blank"
+   aria-label="Contactar por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
 </body>
 
 </html>

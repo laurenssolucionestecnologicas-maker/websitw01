@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="language" content="ES">
+    <meta http-equiv="Content-Language" content="es">
+    <meta name="google" content="notranslate">
+    <meta name="robots" content="notranslate">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PAXLO Coaching || PAXLO Group</title>
+    <title>PAXLO Coaching | Coaching Ejecutivo y Desarrollo Profesional</title>
     <!-- favicons Icons -->
-   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
-<link rel="icon" type="image/png" href="assets/images/favicons/favicon-96x96.png" sizes="96x96">
-<link rel="icon" type="image/svg+xml" href="assets/images/favicons/favicon.svg">
-<link rel="shortcut icon" href="assets/images/favicons/favicon.ico">
-<link rel="manifest" href="assets/images/favicons/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="assets/images/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicons/favicon.svg">
+    <link rel="shortcut icon" href="assets/images/favicons/favicon.ico">
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest">
 
     <!-- SOLUCIÓN PARA DROPDOWN QUE SE CIERRA -->
     <style>
+    /* Forzar que el dropdown se mantenga abierto y sea fácil de usar */
     .main-menu__list li.dropdown:hover > ul,
     .main-menu__list li.dropdown > ul:hover {
         display: block !important;
@@ -30,6 +35,7 @@
         transition: all 0.3s ease !important;
     }
     
+    /* Crear un área invisible entre el enlace y el dropdown para evitar que se cierre */
     .main-menu__list .dropdown > a::after {
         content: '';
         position: absolute;
@@ -39,23 +45,52 @@
         height: 20px;
         background: transparent;
     }
+
+    /* SLIDER CSS */
+    .image-slider { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
+    .image-slider img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0;
+      animation: sliderFade 12s infinite;
+    }
+    /* tiempos para que se muestren una tras otra (3 fotos = 4s cada una visible) */
+    .image-slider img:nth-child(1) { animation-delay: 0s; }
+    .image-slider img:nth-child(2) { animation-delay: 4s; }
+    .image-slider img:nth-child(3) { animation-delay: 8s; }
+
+    /* keyframes: entrada, stay, salida */
+    @keyframes sliderFade {
+      0%   { opacity: 0; transform: scale(1.03); }
+      6%   { opacity: 1; transform: scale(1); }
+      33%  { opacity: 1; transform: scale(1); }
+      41%  { opacity: 0; transform: scale(0.97); }
+      100% { opacity: 0; transform: scale(0.97); }
+    }
+
+    /* overlay para mantener legibilidad del texto */
+    .image-slider-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: 1;
+    }
+
+    /* asegura que el contenido (texto/logo) quede encima */
+    .swiper-slide > .container { position: relative; z-index: 2; }
     </style>
 
-    <meta name="description" content="PAXLO Coaching || PAXLO " />
+    <meta name="description" content="PAXLO Coaching: Coaching ejecutivo, desarrollo de liderazgo y procesos de transformación personal y profesional para líderes y equipos." />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
@@ -119,8 +154,8 @@
                                         <ul>
                                             <li><a href="business-consulting.html">PAXLO Business</a></li>
                                             <li><a href="Leadership-consulting.html">PAXLO Leadership</a></li>
-                                            <li><a href="finance-consulting.html">PAXLO Finance</a></li>
                                             <li><a href="Coaching-consulting.html">PAXLO Coaching</a></li>
+                                            <li><a href="finance-consulting.html">PAXLO Finance</a></li>
                                         </ul>
                                     </li>
                                     <li>
@@ -163,100 +198,45 @@
             <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
         </div><!-- /.stricky-header -->
 
-  
-
-           
-           
-          
-
-    <!--Main Slider Start-->
-       <!-- SLIDE: varias fotos que pasan sin JS (CSS only) -->
-<style>
-/* Puedes mover esto a tu CSS principal si prefieres */
-.image-slider { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
-.image-slider img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  opacity: 0;
-  animation: sliderFade 12s infinite;
-}
-/* tiempos para que se muestren una tras otra (3 fotos = 4s cada una visible) */
-.image-slider img:nth-child(1) { animation-delay: 0s; }
-.image-slider img:nth-child(2) { animation-delay: 4s; }
-.image-slider img:nth-child(3) { animation-delay: 8s; }
-
-/* keyframes: entrada, stay, salida */
-@keyframes sliderFade {
-  0%   { opacity: 0; transform: scale(1.03); }
-  6%   { opacity: 1; transform: scale(1); }
-  33%  { opacity: 1; transform: scale(1); }
-  41%  { opacity: 0; transform: scale(0.97); }
-  100% { opacity: 0; transform: scale(0.97); }
-}
-
-/* overlay para mantener legibilidad del texto */
-.image-slider-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-  z-index: 1;
-}
-
-/* asegura que el contenido (texto/logo) quede encima */
-.swiper-slide > .container { position: relative; z-index: 2; }
-</style>
-
-<div class="swiper-slide"><BR></BR><BR><BR>
-  <!-- slider de imágenes (reemplaza las rutas por las tuyas) -->
-  <div class="image-slider">
-    <img src="assets/images/resources/foto110.png" alt="foto 1">
-      <img src="assets/images/resources/foto111.png" alt="foto 2">
-       <img src="assets/images/resources/foto110.png" alt="foto 2">
-      
-    
-  </div>
-
-
-  <!-- contenido del slide (texto / botones / logo) -->
-  <div class="container">
-    <div class="row">
-      <div class="col-xl-8">
-        <div class="main-slider-three__content">
-          <h2 class="main-slider-three__title">Boost Your Consulting Group</h2>
-          <div class="main-slider-three__btn-box">
-            <a href="team.html" class="thm-btn main-slider-three__btn">Start Consulting with Our Team</a>
-          </div>  <!-- slider de imágenes (reemplaza las rutas por las tuyas) --
-          <div class="main-slider-three-shape-1 float-bob-y">
-            <img src="assets/images/shapes/main-slider-three-shape-1.png" alt="">
-          </div>
-          <div class="main-slider-three-shape-2 float-bob-y">
-            <img src="assets/images/shapes/main-slider-three-shape-2.png" alt="">
-          </div>
-          <div class="main-slider-three-shape-3 float-bob-x">
-            <img src="assets/images/shapes/main-slider-three-shape-3.png" alt="">
-          </div>  slider de imágenes (reemplaza las rutas por las tuyas) -->
-        </div>
-      </div>
-
-      <div class="col-xl-4">
-        <div class="main-slider-three__right">
-          <div class="main-slider-two__curved-circle-box">
-            <div class="curved-circle">
-              <span class="curved-circle--item">We Are . Digital . Agency .</span>
+        <!-- SLIDER PRINCIPAL -->
+        <div class="swiper-slide"><br><br><br><br>
+            <!-- slider de imágenes -->
+            <div class="image-slider">
+                <img src="assets/images/resources/foto110.png" alt="Coaching ejecutivo">
+                <img src="assets/images/resources/foto111.png" alt="Desarrollo profesional">
+                <img src="assets/images/resources/foto110.png" alt="Transformación personal">
             </div>
-            <div class="main-slider-two__curved-circle-icon">
-              <img src="assets/images/resources/Paxlo_logo_footer-removebg-preview.png" alt="">
-            </div>   slider de imágenes (reemplaza las rutas por las tuyas) -->
-          </div>
+            <div class="image-slider-overlay"></div>
+
+            <!-- contenido del slide -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-8">
+                        <div class="main-slider-three__content">
+                            <!-- TEXTO CORREGIDO AL ESPAÑOL -->
+                            <h2 class="main-slider-three__title">Potencia Tu Desarrollo Profesional</h2>
+                            <div class="main-slider-three__btn-box">
+                                <a href="team.html" class="thm-btn main-slider-three__btn">Comienza Tu Proceso de Coaching</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4">
+                        <div class="main-slider-three__right">
+                            <div class="main-slider-two__curved-circle-box">
+                                <div class="curved-circle">
+                                    <!-- TEXTO CORREGIDO AL ESPAÑOL -->
+                                    <span class="curved-circle--item">Somos . Coaching . Transformación .</span>
+                                </div>
+                                <div class="main-slider-two__curved-circle-icon">
+                                    <img src="assets/images/resources/Paxlo_logo_footer-removebg-preview.png" alt="PAXLO Group">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div><!-- /.stricky-header -->
 
         <!--Service Details Start-->
         <section class="service-details">
@@ -274,8 +254,7 @@
                                 </ul>
                             </div>
                             <div class="service-details__sidebar-single sidebar__call-box">
-                                <div class="sidebar__call-bg"
-                                    style="background-image: url(assets/images/resources/Coaching_side.jpg);"></div>
+                                <div class="sidebar__call-bg" style="background-image: url(assets/images/resources/Coaching_side.jpg);"></div>
                                 <div class="sideber__call-content">
                                     <h3 class="sideber__call-title">Invierte en tu <br> crecimiento <br> profesional</h3>
                                     <div class="sideber__call-number">
@@ -329,111 +308,6 @@
 
                             <div class="service-details__img">
                                 <img src="assets/images/resources/PAXLO-coaching.jpg" alt="">
-                            </div>  <!--Service Details Start-
-                            <div class="service-details__problem-solve">
-                                <h3 class="service-details__problem-solve-title">Desafíos que abordamos con el coaching</h3>
-                                <p class="service-details__problem-solve-text-1">Identificamos y trabajamos situaciones críticas como: transiciones de liderazgo, dificultades en la toma de decisiones estratégicas, desafíos en la comunicación efectiva, gestión del estrés y burnout, desarrollo de equipos de alto desempeño, y navegación de cambios organizacionales complejos.</p>
-                                <p class="service-details__problem-solve-text-2">Nuestro enfoque de coaching transforma la incertidumbre en claridad, la complejidad en acción concreta y el potencial latente en resultados medibles. Acompañamos a líderes en su viaje de autodescubrimiento y crecimiento profesional.</p>
-                            </div>
-                            <div class="service-details__core-product">
-                                <h3 class="service-details__core-product-title">Nuestras Modalidades de Coaching</h3>
-                                <p class="service-details__core-product-text">Ofrecemos diferentes enfoques adaptados a las necesidades específicas de cada líder y organización:</p>
-                                <div class="service-details__core-product-points-box">
-                                    <div class="row">
-                                        <div class="col-xl-6">
-                                            <div class="service-details__core-product-points-single">
-                                                <div class="service-details__core-product-icon-box">
-                                                    <div class="service-details__core-product-icon">
-                                                        <span class="fas fa-user-tie"></span>
-                                                    </div>
-                                                    <div class="service-details__core-product-content">
-                                                        <h4>Coaching Ejecutivo 1:1</h4>
-                                                    </div>
-                                                </div>
-                                                <p class="service-details__core-product-text-2">Sesiones personalizadas para altos directivos y líderes en transición, enfocadas en desarrollo de liderazgo estratégico y toma de decisiones complejas.</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-6">
-                                            <div class="service-details__core-product-points-single">
-                                                <div class="service-details__core-product-icon-box">
-                                                    <div class="service-details__core-product-icon">
-                                                        <span class="fas fa-users"></span>
-                                                    </div>
-                                                    <div class="service-details__core-product-content">
-                                                        <h4>Coaching de Equipos</h4>
-                                                    </div>
-                                                </div>
-                                                <p class="service-details__core-product-text-2">Procesos grupales que fortalecen la colaboración, comunicación y alineación estratégica de equipos de trabajo hacia objetivos comunes.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="service-details__benefits">
-                                    <h3 class="service-details__benefits-title">Nuestra Metodología de Coaching</h3>
-                                    <p class="service-details__benefits-text-1">Basamos nuestro trabajo en metodologías probadas y un enfoque humano centrado en resultados:</p>
-                                    <div class="row">
-                                        <div class="col-xl-6">
-                                            <div class="service-details__benefits-single">
-                                                <div class="service-details__benefits-icon-box">
-                                                    <div class="service-details__benefits-icon">
-                                                        <span class="fas fa-bullseye"></span>
-                                                    </div>
-                                                    <div class="service-details__benefits-content">
-                                                        <h3>Enfoque por Resultados</h3>
-                                                    </div>
-                                                </div>
-                                                <p class="service-details__benefits-text-2">Cada proceso incluye objetivos claros, métricas de progreso y planes de acción concretos que garantizan retorno sobre la inversión.</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-6">
-                                            <div class="service-details__benefits-single">
-                                                <div class="service-details__benefits-icon-box">
-                                                    <div class="service-details__benefits-icon">
-                                                        <span class="fas fa-brain"></span>
-                                                    </div>
-                                                    <div class="service-details__benefits-content">
-                                                        <h3>Working Genius Integration</h3>
-                                                    </div>
-                                                </div>
-                                                <p class="service-details__benefits-text-2">Integramos la metodología Working Genius para potenciar las zonas de genialidad natural de cada líder y equipo.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="service-details__faq">
-                                    <div class="accrodion-grp" data-grp-name="faq-one-accrodion">
-                                        <div class="accrodion active">
-                                            <div class="accrodion-title">
-                                                <h4>¿Por qué decimos que "el coaching no es un gasto, es una inversión"?</h4>
-                                            </div>
-                                            <div class="accrodion-content">
-                                                <div class="inner">
-                                                    <p>Porque el coaching genera retornos tangibles: mejora en toma de decisiones (hasta 40% más efectivas), aumento de productividad (15-25%), mejor retención de talento y desarrollo de capacidades de liderazgo que impactan toda la organización. Cada dólar invertido en coaching de calidad típicamente retorna 5-7 veces en valor empresarial.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="accrodion">
-                                            <div class="accrodion-title">
-                                                <h4>¿Qué certificaciones tienen sus coaches?</h4>
-                                            </div>
-                                            <div class="accrodion-content">
-                                                <div class="inner">
-                                                    <p>Todos nuestros coaches están certificados por la International Coaching Federation (ICF) y cuentan con especializaciones en coaching ejecutivo, liderazgo y Working Genius. Además, tienen experiencia empresarial real que les permite entender los desafíos específicos del entorno corporativo.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="accrodion">
-                                            <div class="accrodion-title">
-                                                <h4>¿Cuál es la duración típica de un proceso de coaching?</h4>
-                                            </div>
-                                            <div class="accrodion-content">
-                                                <div class="inner">
-                                                    <p>Los procesos típicamente duran entre 3 y 9 meses, con sesiones quincenales o mensuales según las necesidades. Incluyen evaluación inicial, sesiones regulares, seguimiento y medición de resultados. También ofrecemos programas intensivos para situaciones específicas.</p>
-                                                </div> /.inner -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -442,10 +316,9 @@
         </section>
         <!--Service Details End-->
 
-        <!--Site Footer Start-->
+        <!-- FOOTER -->
         <footer class="site-footer">
-            <div class="site-footer-bg" style="background-image: url(assets/images/resources/Back_ground_blue.jpg);">
-            </div>
+            <div class="site-footer-bg" style="background-image: url(assets/images/resources/Back_ground_blue.jpg);"></div>
             <div class="site-footer__top">
                 <div class="container">
                     <div class="row">
@@ -459,7 +332,7 @@
                                     </div>
                                 </div>
                                 <div class="footer-widget__about-content">
-                                    <p>Firma de capacitación, consultoría  <br>y coaching; especializada en liderazgo,  <br>cultura organizacional e inteligencia financiera. <br> en liderazgo, cultura organizacional y <br> bienestar financiero.</p>
+                                    <p>Firma de capacitación, consultoría y coaching; especializada en liderazgo, cultura organizacional e inteligencia financiera.</p>
                                 </div>
                             </div>
                         </div>
@@ -469,9 +342,8 @@
                                 <ul class="footer-widget__services-list list-unstyled">
                                     <li><a href="business-consulting.html">PAXLO Business</a></li>
                                     <li><a href="Leadership-consulting.html">PAXLO Leadership</a></li>
-                                  
                                     <li><a href="Coaching-consulting.html">PAXLO Coaching</a></li>
-                                      <li><a href="finance-consulting.html">PAXLO Finance</a></li>
+                                    <li><a href="finance-consulting.html">PAXLO Finance</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -509,7 +381,7 @@
                                             <i class="icon-location"></i>
                                         </div>
                                         <div class="text">
-                                            <p>Spirit. Edificio La Isla. Ave. Tiradentes <br> esquina Presidente González. Ensanche Naco. <br> Santo Domingo, República Dominicana.</p>
+                                            <p>Spirit. Edificio La Isla. Ave. Tiradentes esquina Presidente González. Ensanche Naco. Santo Domingo, República Dominicana.</p>
                                         </div>
                                     </li>
                                 </ul>
@@ -554,6 +426,7 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- Mobile Navigation -->
     <div class="mobile-nav__wrapper">
         <div class="mobile-nav__overlay mobile-nav__toggler"></div>
         <!-- /.mobile-nav__overlay -->
@@ -561,7 +434,9 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="assets/images/resources/logo1.jpeg" width="120" alt="PAXLO Group" /></a>
+                <a href="index.html" aria-label="logo image">
+                    <img src="assets/images/resources/logo1.jpeg" width="120" alt="PAXLO Group" />
+                </a>
             </div>
             <!-- /.logo-box -->
             <div class="mobile-nav__container"></div>

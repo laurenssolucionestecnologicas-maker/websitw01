@@ -1,30 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="language" content="ES">
+    <meta http-equiv="Content-Language" content="es">
+    <meta name="google" content="notranslate">
+    <meta name="robots" content="notranslate">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Blog || conalz || conalz HTML 5 Template </title>
+    <title>PAXLO Group | Blog - Consultoría en Liderazgo y Cultura Organizacional</title>
     <!-- favicons Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
-    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
-    <meta name="description" content="conalz HTML 5 Template " />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="assets/images/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicons/favicon.svg">
+    <link rel="shortcut icon" href="assets/images/favicons/favicon.ico">
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest">
+
+    <!-- SOLUCIÓN PARA DROPDOWN QUE SE CIERRA -->
+    <style>
+    /* Forzar que el dropdown se mantenga abierto y sea fácil de usar */
+    .main-menu__list li.dropdown:hover > ul,
+    .main-menu__list li.dropdown > ul:hover {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        transition-delay: 0s !important;
+    }
+    
+    .main-menu__list .dropdown ul {
+        pointer-events: auto !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    /* Crear un área invisible entre el enlace y el dropdown para evitar que se cierre */
+    .main-menu__list .dropdown > a::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        background: transparent;
+    }
+
+    /* NOTIFICACIÓN DE TRADUCCIÓN */
+    .translate-notice {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #2c5aa0;
+        color: white;
+        border-radius: 8px;
+        padding: 12px 16px;
+        font-size: 14px;
+        z-index: 10000;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        max-width: 300px;
+        display: none;
+    }
+    .translate-notice button {
+        background: white;
+        color: #2c5aa0;
+        border: none;
+        padding: 4px 12px;
+        border-radius: 4px;
+        margin-top: 8px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    /* SLIDER ORIGINAL - RESTAURADO */
+    .image-slider { 
+        position: absolute; 
+        inset: 0; 
+        overflow: hidden; 
+        z-index: 0; 
+    }
+    .image-slider img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        opacity: 0;
+        animation: sliderFade 12s infinite;
+    }
+    /* tiempos para que se muestren una tras otra (3 fotos = 4s cada una visible) */
+    .image-slider img:nth-child(1) { animation-delay: 0s; }
+    .image-slider img:nth-child(2) { animation-delay: 4s; }
+    .image-slider img:nth-child(3) { animation-delay: 8s; }
+
+    /* keyframes: entrada, stay, salida */
+    @keyframes sliderFade {
+        0%   { opacity: 0; transform: scale(1.03); }
+        6%   { opacity: 1; transform: scale(1); }
+        33%  { opacity: 1; transform: scale(1); }
+        41%  { opacity: 0; transform: scale(0.97); }
+        100% { opacity: 0; transform: scale(0.97); }
+    }
+
+    /* overlay para mantener legibilidad del texto */
+    .image-slider-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.35);
+        z-index: 1;
+    }
+
+    /* asegura que el contenido (texto/logo) quede encima */
+    .swiper-slide > .container { 
+        position: relative; 
+        z-index: 2; 
+    }
+    </style>
+
+    <meta name="description" content="Blog de PAXLO Group - Artículos sobre liderazgo, cultura organizacional, desarrollo personal y estrategias empresariales." />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
@@ -55,625 +155,547 @@
 
 <body class="custom-cursor">
 
+    <!-- NOTIFICACIÓN DE TRADUCCIÓN -->
+    <div class="translate-notice" id="translateNotice">
+        <strong>¿Necesitas ver esta página en otro idioma?</strong><br>
+        Usa la función de traducción automática de tu navegador.
+        <button onclick="hideTranslateNotice()">Entendido</button>
+    </div>
+
     <div class="custom-cursor__cursor"></div>
     <div class="custom-cursor__cursor-two"></div>
 
-
-
-
-
-   <div class="preloader">
+    <div class="preloader">
         <div class="preloader__image"></div>
     </div>
    
-            <nav class="main-menu clearfix">
-                <div class="main-menu__wrapper clearfix">
-                    <div class="main-menu__wrapper-inner clearfix">
-                        <div class="main-menu__left">
-                          <div class="main-menu__logo">
-    <a href="index.html">
-        <img src="assets/images/resources/logo111.jpeg" alt="PAXLO Group" style="max-height: 85px; width: auto;">
-    </a>
-</div>
-                            <div class="main-menu__main-menu-box">
-                                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
-                                <ul class="main-menu__list">
-    <li class="current">
-        <a href="index.html">Inicio</a>
-    </li>
-     <li>
-            <a href="about.html">Nosotros</a>
-        </li>
-
-    <li class="dropdown">
-    <a href="">Servicios</a>
-     <ul>
-        <li><a href="business-consulting.html">PAXLO Business</a></li>
-        <li><a href="Leadership-consulting.html">PAXLO Leadership</a></li>
-        
-        <li><a href="Coaching-consulting.html">PAXLO Coaching</a></li>
-        <li><a href="finance-consulting.html">PAXLO Finance</a></li>
-    </ul>
-   
-</li>
-
-         <li>
-            <a href="blog.html">Blog</a>
-        </li>
-        <li>
-            <a href="contact.html">Contacto</a>
-        </li>
-            </ul>
-                                </div>
+    <!-- HEADER CORREGIDO -->
+    <header class="main-header">
+        <nav class="main-menu clearfix">
+            <div class="main-menu__wrapper clearfix">
+                <div class="main-menu__wrapper-inner clearfix">
+                    <div class="main-menu__left">
+                        <div class="main-menu__logo">
+                            <a href="index.html">
+                                <img src="assets/images/resources/logo111.jpeg" alt="PAXLO Group" style="max-height: 85px; width: auto;">
+                            </a>
                         </div>
-                        <div class="main-menu__right">
-                            <div class="main-menu__call-search">
-                                <div class="main-menu__call">
-                                    <div class="main-menu__call-icon">
-                                        <span class="icon-phone"></span>
-                                    </div>
-                                    <div class="main-menu__call-content">
-                                        <span>Telefono</span>
-                                        <p><a href="tel:+18293336865">+1 (829) 333-6865</a></p>
-                                    </div>
-                                </div>
-                                <div class="main-menu__right">
-                            <div class="main-menu__call-search">
-                                <div class="main-menu__call">
-                                    <div class="main-menu__call-icon">
-                                        <span class="icon-email"></span>
-                                    </div>
-                                    <div class="main-menu__call-content">
-                                        <span>Email</span>
-                                        <p><a href="telinfo@paxlogroup.com">info@paxlogroup.com</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
-
-        <div class="stricky-header stricked-menu main-menu">
-            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-        </div><!-- /.stricky-header -->
-
-  
-
-           
-           
-          
-
-    <!--Main Slider Start-->
-       <!-- SLIDE: varias fotos que pasan sin JS (CSS only) -->
-<style>
-/* Puedes mover esto a tu CSS principal si prefieres */
-.image-slider { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
-.image-slider img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  opacity: 0;
-  animation: sliderFade 12s infinite;
-}
-/* tiempos para que se muestren una tras otra (3 fotos = 4s cada una visible) */
-.image-slider img:nth-child(1) { animation-delay: 0s; }
-.image-slider img:nth-child(2) { animation-delay: 4s; }
-.image-slider img:nth-child(3) { animation-delay: 8s; }
-
-/* keyframes: entrada, stay, salida */
-@keyframes sliderFade {
-  0%   { opacity: 0; transform: scale(1.03); }
-  6%   { opacity: 1; transform: scale(1); }
-  33%  { opacity: 1; transform: scale(1); }
-  41%  { opacity: 0; transform: scale(0.97); }
-  100% { opacity: 0; transform: scale(0.97); }
-}
-
-/* overlay para mantener legibilidad del texto */
-.image-slider-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-  z-index: 1;
-}
-
-/* asegura que el contenido (texto/logo) quede encima */
-.swiper-slide > .container { position: relative; z-index: 2; }
-</style>
-
-<div class="swiper-slide"><BR></BR><BR><BR>
-  <!-- slider de imágenes (reemplaza las rutas por las tuyas) -->
-  <div class="image-slider">
-    <img src="assets/images/resources/foto117.png" alt="foto 1">
-      <img src="assets/images/resources/foto115.png" alt="foto 1">
-       <img src="assets/images/resources/foto116.png" alt="foto 1">
-      
-    
-  </div>
-  <div class="image-slider-overlay"></div>
-
-  <!-- contenido del slide (texto / botones / logo) -->
-  <div class="container">
-    <div class="row">
-      <div class="col-xl-8">
-        <div class="main-slider-three__content">
-          <h2 class="main-slider-three__title">Boost Your Consulting Group</h2>
-          <div class="main-slider-three__btn-box">
-            <a href="team.html" class="thm-btn main-slider-three__btn">Start Consulting with Our Team</a>
-          </div>  <!-- slider de imágenes (reemplaza las rutas por las tuyas) --
-          <div class="main-slider-three-shape-1 float-bob-y">
-            <img src="assets/images/shapes/main-slider-three-shape-1.png" alt="">
-          </div>
-          <div class="main-slider-three-shape-2 float-bob-y">
-            <img src="assets/images/shapes/main-slider-three-shape-2.png" alt="">
-          </div>
-          <div class="main-slider-three-shape-3 float-bob-x">
-            <img src="assets/images/shapes/main-slider-three-shape-3.png" alt="">
-          </div>  slider de imágenes (reemplaza las rutas por las tuyas) -->
-        </div>
-      </div>
-
-      <div class="col-xl-4">
-        <div class="main-slider-three__right">
-          <div class="main-slider-two__curved-circle-box">
-            <div class="curved-circle">
-              <span class="curved-circle--item">We Are . Digital . Agency .</span>
-            </div>
-            <div class="main-slider-two__curved-circle-icon">
-              <img src="assets/images/resources/Paxlo_logo_footer-removebg-preview.png" alt="">
-            </div>   slider de imágenes (reemplaza las rutas por las tuyas) 
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--Hero Section Moderna End-->
-    
-          
-        <!--Page Header End-->
-        <!--Blog Page Start 1 -->
-        <div class="blog-page">
-            <div class="container">
-                <div class="row">
-                    <!--Blog Three Single Start 1 -->
-                    <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="100ms">
-                        <div class="blog-three__single">
-                            <div class="blog-three__img">
-                                <img src="assets/images/resources/FOTO32.png" alt="">
-                            </div>
-                            <div class="blog-three__content">
-                                <div class="blog-three__date">
-                                    <span>15</span>
-                                    <p>Abril 2025</p>
-                                </div>
-                                <div class="blog-three__title-box">
-                                    <div class="blog-three__tag">
-                                        <p>De la pecera al océano:</p>
-                                    </div>
-                                    <h4 class="blog-three__title"><a href="https://www.linkedin.com/pulse/de-la-pecera-al-oc%C3%A9ano-qu%C3%A9-te-est%C3%A1-reteniendo-daniel-franco-1vuwe/">De la pecera al océano
-                                        <br>
-                                           ¿Qué te está reteniendo? </a></h4>
-                                </div>
-                                <div class="blog-three__content-box">
-                                    <ul class="blog-three__meta list-unstyled">
-                                        <li>
-                                            <a href="blog-details.html"><i class="icon-user"></i>Por Daniel Franco</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-details.html"><i class="icon-comment"></i>5 Comment</a>
-                                        </li>
+                        <div class="main-menu__main-menu-box">
+                            <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                            <ul class="main-menu__list">
+                                <li>
+                                    <a href="index.html">Inicio</a>
+                                </li>
+                                <li>
+                                    <a href="about.html">Nosotros</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#">Servicios</a>
+                                    <ul>
+                                        <li><a href="business-consulting.html">PAXLO Business</a></li>
+                                        <li><a href="Leadership-consulting.html">PAXLO Leadership</a></li>
+                                        <li><a href="Coaching-consulting.html">PAXLO Coaching</a></li>
+                                        <li><a href="finance-consulting.html">PAXLO Finance</a></li>
                                     </ul>
-                                    <div class="blog-three__btn-box">
-                                        <a href="https://www.linkedin.com/pulse/de-la-pecera-al-oc%C3%A9ano-qu%C3%A9-te-est%C3%A1-reteniendo-daniel-franco-1vuwe/">Details<i
-                                                class="icon-fast-forward-thin-double-arrows"></i></a>
-                                    </div>
-                                </div>
-                            </div>
+                                </li>
+                                <li class="current">
+                                    <a href="blog.html">Blog</a>
+                                </li>
+                                <li>
+                                    <a href="contact.html">Contacto</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <!--Blog Three Single end-->
-                    <!--Blog Three Single Start 2 -->
-                    <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="200ms">
-                        <div class="blog-three__single">
-                            <div class="blog-three__img">
-                                <img src="assets/images/resources/foto33.png" alt="">
-                            </div>
-                            <div class="blog-three__content">
-                                <div class="blog-three__date">
-                                    <span>7</span>
-                                    <p>Enero 2025</p>
+                    <div class="main-menu__right">
+                        <div class="main-menu__call-search">
+                            <div class="main-menu__call">
+                                <div class="main-menu__call-icon">
+                                    <span class="icon-phone"></span>
                                 </div>
-                                <div class="blog-three__title-box">
-                                    <div class="blog-three__tag">
-                                        <p>Business</p>
-                                    </div>
-                                    <h4 class="blog-three__title"><a href="https://www.linkedin.com/pulse/volver-al-ruedo-estrategias-para-arrancar-el-a%C3%B1o-con-intenci%C3%B3n-l2i6e/">Estrategias para arrancar 
-                            el año con intención y claridad</a></h4>
-                                </div>
-                                <div class="blog-three__content-box">
-                                    <ul class="blog-three__meta list-unstyled">
-                                        <li>
-                                            <a href="blog-details.html"><i class="icon-user"></i>Por Daniel Franco</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-details.html"><i class="icon-comment"></i>10 Comment</a>
-                                        </li>
-                                    </ul>
-                                    <div class="blog-three__btn-box">
-                                        <a href="https://www.linkedin.com/pulse/volver-al-ruedo-estrategias-para-arrancar-el-a%C3%B1o-con-intenci%C3%B3n-l2i6e/">Details<i
-                                                class="icon-fast-forward-thin-double-arrows"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Blog Three Single end-->
-                    <!--Blog Three Single Start3 -->
-                    <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="300ms">
-                        <div class="blog-three__single">
-                            <div class="blog-three__img">
-                                <img src="assets/images/resources/foto31.png" alt="">
-                            </div>
-                            <div class="blog-three__content">
-                                <div class="blog-three__date">
-                                    <span>29</span>
-                                    <p>Mayo 2025</p>
-                                </div>
-                                <div class="blog-three__title-box">
-                                    <div class="blog-three__tag">
-                                        <p>Business</p>
-                                    </div>
-                                    <h4 class="blog-three__title"><a href="blog-details.html">La decisión que he estado postergando
-                                            (y lo que estoy aprendiendo).</a></h4>
-                                </div>
-                                <div class="blog-three__content-box">
-                                    <ul class="blog-three__meta list-unstyled">
-                                        <li>
-                                            <a href=" https://www.linkedin.com/pulse/paralizado-por-el-miedo-la-decisi%C3%B3n-que-he-estado-y-lo-daniel-franco-yl2ge/?trackingId=nmwR6yFW9z89jiontS%2FxtA%3D%3D"><i class="icon-user"></i>By Admin</a>
-                                        </li>
-                                        <li>
-                                            <a href=" https://www.linkedin.com/pulse/paralizado-por-el-miedo-la-decisi%C3%B3n-que-he-estado-y-lo-daniel-franco-yl2ge/?trackingId=nmwR6yFW9z89jiontS%2FxtA%3D%3D"><i class="icon-comment"></i>10 Comment</a>
-                                        </li>
-                                    </ul>
-                                    <div class="blog-three__btn-box">
-                                        <a href="blog-details.html">Details<i
-                                                class="icon-fast-forward-thin-double-arrows"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Blog Three Single end-->
-                     <!--Blog Page Start-->
-        <div class="blog-page">
-            <div class="container">
-                <div class="row">
-                    <!--Blog Three Single Start 4 -->
-                    <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="100ms">
-                        <div class="blog-three__single">
-                            <div class="blog-three__img">
-                                <img src="assets/images/resources/foto34.png" alt="">
-                            </div>
-                            <div class="blog-three__content">
-                                <div class="blog-three__date">
-                                    <span>28</span>
-                                    <p>Enero 2025</p>
-                                </div>
-                                <div class="blog-three__title-box">
-                                    <div class="blog-three__tag">
-                                        <p>De la pecera al océano:</p>
-                                    </div>
-                                    <h4 class="blog-three__title"><a href="https://www.linkedin.com/pulse/por-qu%25C3%25A9-gastamos-como-una-nueva-mirada-tu-relaci%25C3%25B3n-con-daniel-franco-ffv1f/?trackingId=%2BFP7CyntQvOrZ895kmoggg%3D%3D">¿Por Qué Gastamos Como Gastamos? Una Nueva Mirada a Tu Relación con el Dinero.
-                                        <br>
- </a></h4>
-                                </div>
-                                <div class="blog-three__content-box">
-                                    <ul class="blog-three__meta list-unstyled">
-                                        <li>
-                                            <a href="blog-details.html"><i class="icon-user"></i>Por Daniel Franco</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-details.html"><i class="icon-comment"></i>5 Comment</a>
-                                        </li>
-                                    </ul>
-                                    <div class="blog-three__btn-box">
-                                        <a href="https://www.linkedin.com/pulse/por-qu%25C3%25A9-gastamos-como-una-nueva-mirada-tu-relaci%25C3%25B3n-con-daniel-franco-ffv1f/?trackingId=%2BFP7CyntQvOrZ895kmoggg%3D%3D">Details<i
-                                                class="icon-fast-forward-thin-double-arrows"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Blog Three Single end-->
-                    <!--Blog Three Single Start 5 -->
-                    <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="200ms">
-                        <div class="blog-three__single">
-                            <div class="blog-three__img">
-                                <img src="assets/images/resources/foto35.png" alt="">
-                            </div>
-                            <div class="blog-three__content">
-                                <div class="blog-three__date">
-                                    <span>20</span>
-                                    <p>Febrero 2024</p>
-                                </div>
-                                <div class="blog-three__title-box">
-                                    <div class="blog-three__tag">
-                                        <p>Business</p>
-                                    </div>
-                                    <h4 class="blog-three__title"><a href="https://www.linkedin.com/pulse/qu%25C3%25A9-necesitan-las-organizaciones-del-futuro-daniel-franco-jhvuf/?trackingId=%2BFP7CyntQvOrZ895kmoggg%3D%3D">¿Qué necesitan las organizaciones del futuro?
-                            </a></h4>
-                                </div>
-                                <div class="blog-three__content-box">
-                                    <ul class="blog-three__meta list-unstyled">
-                                        <li>
-                                            <a href="blog-details.html"><i class="icon-user"></i>Por Daniel Franco</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-details.html"><i class="icon-comment"></i>10 Comment</a>
-                                        </li>
-                                    </ul>
-                                    <div class="blog-three__btn-box">
-                                        <a href="https://www.linkedin.com/pulse/qu%25C3%25A9-necesitan-las-organizaciones-del-futuro-daniel-franco-jhvuf/?trackingId=%2BFP7CyntQvOrZ895kmoggg%3D%3D">Details<i
-                                                class="icon-fast-forward-thin-double-arrows"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Blog Three Single end-->
-                    <!--Blog Three Single Start 6 -->
-                    <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="100ms">
-                        <div class="blog-three__single">
-                            <div class="blog-three__img">
-                                <img src="assets/images/resources/foto36.png" alt="">
-                            </div>
-                            <div class="blog-three__content">
-                                <div class="blog-three__date">
-                                    <span>19</span>
-                                    <p>Enero 2024</p>
-                                </div>
-                                <div class="blog-three__title-box">
-                                    <div class="blog-three__tag">
-                                        <p>De la pecera al océano:</p>
-                                    </div>
-                                    <h4 class="blog-three__title"><a href="https://www.linkedin.com/pulse/por-qu%25C3%25A9-gastamos-como-una-nueva-mirada-tu-relaci%25C3%25B3n-con-daniel-franco-ffv1f/?trackingId=%2BFP7CyntQvOrZ895kmoggg%3D%3D"> "Help First" - Reflexiones sobre el Arte de Acompañar
-                                        <br>
- </a></h4>
-                                </div>
-                                <div class="blog-three__content-box">
-                                    <ul class="blog-three__meta list-unstyled">
-                                        <li>
-                                            <a href="blog-details.html"><i class="icon-user"></i>Daniel Franco</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-details.html"><i class="icon-comment"></i>3 Comment</a>
-                                        </li>
-                                    </ul>
-                                    <div class="blog-three__btn-box">
-                                        <a href="https://www.linkedin.com/pulse/por-qu%25C3%25A9-gastamos-como-una-nueva-mirada-tu-relaci%25C3%25B3n-con-daniel-franco-ffv1f/?trackingId=%2BFP7CyntQvOrZ895kmoggg%3D%3D">Details<i
-                                                class="icon-fast-forward-thin-double-arrows"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                   
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-        <!--Blog Page End-->
-
-
-
-         <!--Newsletter Two start-->
-        <section class="newsletter-one">
-            <div class="container">
-                <div class="newsletter-one__inner">
-                    <div class="newsletter-one__left">
-                        <div class="newsletter-one__title">
-                            <h4>SUSCRÍBETE</h4>
-                            <p>PARA DESCUBRIR TU GENIALIDAD.</p>
-                        </div>
-                        <div class="newsletter-one__email-box">
-                            <form class="newsletter-one__form">
-                                <div class="newsletter-one__form-input-box1">
-                                    <input type="email" placeholder="CORREO ELECTRÓNICO " name="email">
-                                    <button type="submit" class="newsletter-one__newsletter-btn"><i
-                                            class="icon-send"></i></button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="newsletter-one__right">
-                        <a href="services-v-2.html" class="thm-btn newsletter-one__button">Sí, quiero descubrir mi GENIALIDAD</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--Newsletter Two end-->
-        
-           <!--Site Footer Start-->
-<footer class="site-footer">
-    <div class="site-footer-bg" style="background-image: url(assets/images/resources/Back_ground_blue.jpg);">
-    </div>
-    <div class="site-footer__top">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
-                    <div class="footer-widget__column footer-widget__about">
-                        <div class="footer-widget__about-logo-box">
-                            <div class="footer-widget__about-logo">
-    <a href="index.html">
-        <img src="assets/images/resources/PAXLO-LOGO1.png" alt="PAXLO Group" style="max-height: 200px; width: auto; margin-top: 0%;">
-    </a>
-</div>
-                        </div>
-                        <div class="footer-widget__about-content">
-                            <p>Firma de capacitación, consultoría  <br>y coaching; especializada en liderazgo,  <br>cultura organizacional e inteligencia financiera. <br> en liderazgo, cultura organizacional y <br> bienestar financiero.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
-                    <div class="footer-widget__areas">
-                        <h4 class="footer-widget__tag">Áreas de Negocio</h4>
-                        <ul class="footer-widget__services-list list-unstyled">
-    <li><a href="business-consulting.html">PAXLO Business</a></li>
-    <li><a href="Leadership-consulting.html">PAXLO Leadership</a></li>
-    <li><a href="Coaching-consulting.html">PAXLO Coaching</a></li>
-  
-
-</ul>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
-                    <div class="footer-widget__services">
-                        <h4 class="footer-widget__tag">Enlaces</h4>
-                        <ul class="footer-widget__services-list list-unstyled">
-                            <li><a href="about.html">Nosotros</a></li>
-                            <li><a href="contact.html">Contacto</a></li>
-                            
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
-                    <div class="footer-widget__contact">
-                        <h4 class="footer-widget__tag">Contacto</h4>
-                        <ul class="footer-widget__contact-box list-unstyled">
-                            <li>
-                                <div class="icon">
-                                    <i class="icon-email-1"></i>
-                                </div>
-                                <div class="text">
-                                    <p><a href="mailto:info@paxlogroup.com">info@paxlogroup.com</a></p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="icon">
-                                    <i class="icon-phone"></i>
-                                </div>
-                                <div class="text">
+                                <div class="main-menu__call-content">
+                                    <span>Telefono</span>
                                     <p><a href="tel:+18293336865">+1 (829) 333-6865</a></p>
                                 </div>
-                            </li>
-                            <li>
-                                <div class="icon">
-                                    <i class="icon-location"></i>
+                            </div>
+                            <div class="main-menu__call">
+                                <div class="main-menu__call-icon">
+                                    <span class="icon-email"></span>
                                 </div>
-                                <div class="text">
-                                    <p>Spirit. Edificio La Isla. Ave. Tiradentes <br> esquina Presidente González. Ensanche Naco. <br> Santo Domingo, República Dominicana.</p>
+                                <div class="main-menu__call-content">
+                                    <span>Email</span>
+                                    <p><a href="mailto:info@paxlogroup.com">info@paxlogroup.com</a></p>
                                 </div>
-                            </li>
-                        </ul>
-                        <!-- Reemplaza esta sección en el footer -->
-<ul class="footer-widget__social-box list-unstyled">
-    <li>
-        <a href="https://www.linkedin.com/company/paxlo-group/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-    </li>
-    <li>
-        <a href="https://www.instagram.com/paxlogroup?igsh=ZW8zNDk4djljcDVz" target="_blank"><i class="fab fa-instagram"></i></a>
-    </li>
-    <li>
-        <a href="https://www.youtube.com/@paxlogroup4096" target="_blank"><i class="fab fa-youtube"></i></a>
-    </li>
-</ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </nav>
+    </header>
+
+    <div class="stricky-header stricked-menu main-menu">
+        <div class="sticky-header__content"></div>
     </div>
-    <div class="site-footer__bottom">
+
+    <!-- SLIDER ORIGINAL RESTAURADO - SIN BREADCRUMB -->
+    <div class="swiper-slide" style="height: 80vh; position: relative;">
+        <div class="image-slider">
+            <img src="assets/images/resources/foto117.png" alt="Blog PAXLO">
+            <img src="assets/images/resources/foto115.png" alt="Artículos de liderazgo">
+            <img src="assets/images/resources/foto116.png" alt="Consultoría organizacional">
+        </div>
+        <div class="image-slider-overlay"></div>
+
+        <!-- CONTENIDO DEL SLIDER ORIGINAL -->
         <div class="container">
             <div class="row">
-                <div class="col-xl-12">
-                    <div class="site-footer__bottom-inner">
-                        <div class="site-footer__bottom-text">
-                            <p>Copyright © 2025 PAXLO Group. Todos los derechos reservados.</p>
+                <div class="col-xl-8">
+                    <div class="main-slider-three__content">
+                        <!-- TEXTO EN ESPAÑOL PARA TRADUCCIÓN -->
+                        <h2 class="main-slider-three__title">Impulsa Tu Grupo de Consultoría</h2>
+                        <div class="main-slider-three__btn-box">
+                            <a href="team.html" class="thm-btn main-slider-three__btn">Comienza a Consultar con Nuestro Equipo</a>
                         </div>
-                     
+                    </div>
+                </div>
+
+                <div class="col-xl-4">
+                    <div class="main-slider-three__right">
+                        <div class="main-slider-two__curved-circle-box">
+                            <div class="curved-circle">
+                                <!-- TEXTO EN ESPAÑOL PARA TRADUCCIÓN -->
+                                <span class="curved-circle--item">Somos . Consultoría . Especializada .</span>
+                            </div>
+                            <div class="main-slider-two__curved-circle-icon">
+                                <img src="assets/images/resources/Paxlo_logo_footer-removebg-preview.png" alt="PAXLO Group">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</footer>
-<!--Site Footer End-->
 
+    <!-- CONTENIDO DEL BLOG (MANTENIDO IGUAL) -->
+    <section class="blog-page">
+        <div class="container">
+            <div class="row">
+                <!-- Artículo 1 -->
+                <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                    <div class="blog-three__single">
+                        <div class="blog-three__img">
+                            <img src="assets/images/resources/FOTO32.png" alt="De la pecera al océano">
+                        </div>
+                        <div class="blog-three__content">
+                            <div class="blog-three__date">
+                                <span>15</span>
+                                <p>Abril 2025</p>
+                            </div>
+                            <div class="blog-three__title-box">
+                                <div class="blog-three__tag">
+                                    <p>Desarrollo Personal</p>
+                                </div>
+                                <h4 class="blog-three__title">
+                                    <a href="https://www.linkedin.com/pulse/de-la-pecera-al-oc%C3%A9ano-qu%C3%A9-te-est%C3%A1-reteniendo-daniel-franco-1vuwe/">
+                                        De la pecera al océano: ¿Qué te está reteniendo?
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="blog-three__content-box">
+                                <ul class="blog-three__meta list-unstyled">
+                                    <li>
+                                        <a href="#"><i class="icon-user"></i>Por Daniel Franco</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="icon-comment"></i>5 Comentarios</a>
+                                    </li>
+                                </ul>
+                                <div class="blog-three__btn-box">
+                                    <a href="https://www.linkedin.com/pulse/de-la-pecera-al-oc%C3%A9ano-qu%C3%A9-te-est%C3%A1-reteniendo-daniel-franco-1vuwe/">
+                                        Leer más<i class="icon-fast-forward-thin-double-arrows"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    </div><!-- /.page-wrapper -->
+                <!-- Artículo 2 -->
+                <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                    <div class="blog-three__single">
+                        <div class="blog-three__img">
+                            <img src="assets/images/resources/foto33.png" alt="Estrategias para arrancar el año">
+                        </div>
+                        <div class="blog-three__content">
+                            <div class="blog-three__date">
+                                <span>7</span>
+                                <p>Enero 2025</p>
+                            </div>
+                            <div class="blog-three__title-box">
+                                <div class="blog-three__tag">
+                                    <p>Estrategia</p>
+                                </div>
+                                <h4 class="blog-three__title">
+                                    <a href="https://www.linkedin.com/pulse/volver-al-ruedo-estrategias-para-arrancar-el-a%C3%B1o-con-intenci%C3%B3n-l2i6e/">
+                                        Estrategias para arrancar el año con intención y claridad
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="blog-three__content-box">
+                                <ul class="blog-three__meta list-unstyled">
+                                    <li>
+                                        <a href="#"><i class="icon-user"></i>Por Daniel Franco</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="icon-comment"></i>10 Comentarios</a>
+                                    </li>
+                                </ul>
+                                <div class="blog-three__btn-box">
+                                    <a href="https://www.linkedin.com/pulse/volver-al-ruedo-estrategias-para-arrancar-el-a%C3%B1o-con-intenci%C3%B3n-l2i6e/">
+                                        Leer más<i class="icon-fast-forward-thin-double-arrows"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Artículo 3 -->
+                <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                    <div class="blog-three__single">
+                        <div class="blog-three__img">
+                            <img src="assets/images/resources/foto31.png" alt="La decisión postergada">
+                        </div>
+                        <div class="blog-three__content">
+                            <div class="blog-three__date">
+                                <span>29</span>
+                                <p>Mayo 2025</p>
+                            </div>
+                            <div class="blog-three__title-box">
+                                <div class="blog-three__tag">
+                                    <p>Liderazgo</p>
+                                </div>
+                                <h4 class="blog-three__title">
+                                    <a href="https://www.linkedin.com/pulse/paralizado-por-el-miedo-la-decisi%C3%B3n-que-he-estado-y-lo-daniel-franco-yl2ge/">
+                                        La decisión que he estado postergando (y lo que estoy aprendiendo)
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="blog-three__content-box">
+                                <ul class="blog-three__meta list-unstyled">
+                                    <li>
+                                        <a href="#"><i class="icon-user"></i>Por Daniel Franco</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="icon-comment"></i>10 Comentarios</a>
+                                    </li>
+                                </ul>
+                                <div class="blog-three__btn-box">
+                                    <a href="https://www.linkedin.com/pulse/paralizado-por-el-miedo-la-decisi%C3%B3n-que-he-estado-y-lo-daniel-franco-yl2ge/">
+                                        Leer más<i class="icon-fast-forward-thin-double-arrows"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Artículo 4 -->
+                <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                    <div class="blog-three__single">
+                        <div class="blog-three__img">
+                            <img src="assets/images/resources/foto34.png" alt="Relación con el dinero">
+                        </div>
+                        <div class="blog-three__content">
+                            <div class="blog-three__date">
+                                <span>28</span>
+                                <p>Enero 2025</p>
+                            </div>
+                            <div class="blog-three__title-box">
+                                <div class="blog-three__tag">
+                                    <p>Finanzas</p>
+                                </div>
+                                <h4 class="blog-three__title">
+                                    <a href="https://www.linkedin.com/pulse/por-qu%C3%A9-gastamos-como-una-nueva-mirada-tu-relaci%C3%B3n-con-daniel-franco-ffv1f/">
+                                        ¿Por Qué Gastamos Como Gastamos? Una Nueva Mirada a Tu Relación con el Dinero
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="blog-three__content-box">
+                                <ul class="blog-three__meta list-unstyled">
+                                    <li>
+                                        <a href="#"><i class="icon-user"></i>Por Daniel Franco</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="icon-comment"></i>5 Comentarios</a>
+                                    </li>
+                                </ul>
+                                <div class="blog-three__btn-box">
+                                    <a href="https://www.linkedin.com/pulse/por-qu%C3%A9-gastamos-como-una-nueva-mirada-tu-relaci%C3%B3n-con-daniel-franco-ffv1f/">
+                                        Leer más<i class="icon-fast-forward-thin-double-arrows"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artículo 5 -->
+                <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                    <div class="blog-three__single">
+                        <div class="blog-three__img">
+                            <img src="assets/images/resources/foto35.png" alt="Organizaciones del futuro">
+                        </div>
+                        <div class="blog-three__content">
+                            <div class="blog-three__date">
+                                <span>20</span>
+                                <p>Febrero 2024</p>
+                            </div>
+                            <div class="blog-three__title-box">
+                                <div class="blog-three__tag">
+                                    <p>Innovación</p>
+                                </div>
+                                <h4 class="blog-three__title">
+                                    <a href="https://www.linkedin.com/pulse/qu%C3%A9-necesitan-las-organizaciones-del-futuro-daniel-franco-jhvuf/">
+                                        ¿Qué necesitan las organizaciones del futuro?
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="blog-three__content-box">
+                                <ul class="blog-three__meta list-unstyled">
+                                    <li>
+                                        <a href="#"><i class="icon-user"></i>Por Daniel Franco</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="icon-comment"></i>10 Comentarios</a>
+                                    </li>
+                                </ul>
+                                <div class="blog-three__btn-box">
+                                    <a href="https://www.linkedin.com/pulse/qu%C3%A9-necesitan-las-organizaciones-del-futuro-daniel-franco-jhvuf/">
+                                        Leer más<i class="icon-fast-forward-thin-double-arrows"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artículo 6 -->
+                <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                    <div class="blog-three__single">
+                        <div class="blog-three__img">
+                            <img src="assets/images/resources/foto36.png" alt="Help First">
+                        </div>
+                        <div class="blog-three__content">
+                            <div class="blog-three__date">
+                                <span>19</span>
+                                <p>Enero 2024</p>
+                            </div>
+                            <div class="blog-three__title-box">
+                                <div class="blog-three__tag">
+                                    <p>Coaching</p>
+                                </div>
+                                <h4 class="blog-three__title">
+                                    <a href="https://www.linkedin.com/pulse/help-first-reflexiones-sobre-el-arte-acompa%C3%B1ar-daniel-franco/">
+                                        "Help First" - Reflexiones sobre el Arte de Acompañar
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="blog-three__content-box">
+                                <ul class="blog-three__meta list-unstyled">
+                                    <li>
+                                        <a href="#"><i class="icon-user"></i>Por Daniel Franco</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="icon-comment"></i>3 Comentarios</a>
+                                    </li>
+                                </ul>
+                                <div class="blog-three__btn-box">
+                                    <a href="https://www.linkedin.com/pulse/help-first-reflexiones-sobre-el-arte-acompa%C3%B1ar-daniel-franco/">
+                                        Leer más<i class="icon-fast-forward-thin-double-arrows"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter-one">
+        <div class="container">
+            <div class="newsletter-one__inner">
+                <div class="newsletter-one__left">
+                    <div class="newsletter-one__title">
+                        <h4>SUSCRÍBETE</h4>
+                        <p>PARA DESCUBRIR TU GENIALIDAD.</p>
+                    </div>
+                    <div class="newsletter-one__email-box">
+                        <form class="newsletter-one__form">
+                            <div class="newsletter-one__form-input-box1">
+                                <input type="email" placeholder="CORREO ELECTRÓNICO" name="email">
+                                <button type="submit" class="newsletter-one__newsletter-btn">
+                                    <i class="icon-send"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="newsletter-one__right">
+                    <a href="about.html" class="thm-btn newsletter-one__button">Sí, quiero descubrir mi GENIALIDAD</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER IDÉNTICO AL INDEX -->
+    <footer class="site-footer">
+        <div class="site-footer-bg" style="background-image: url(assets/images/resources/Back_ground_blue.jpg);"></div>
+        <div class="site-footer__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="footer-widget__column footer-widget__about">
+                            <div class="footer-widget__about-logo-box">
+                                <div class="footer-widget__about-logo">
+                                    <a href="index.html">
+                                        <img src="assets/images/resources/PAXLO-LOGO1.png" alt="PAXLO Group" style="max-height: 200px; width: auto; margin-top: 0%;">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="footer-widget__about-content">
+                                <p>Firma de capacitación, consultoría y coaching; especializada en liderazgo, cultura organizacional e inteligencia financiera.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                        <div class="footer-widget__areas">
+                            <h4 class="footer-widget__tag">Áreas de Negocio</h4>
+                            <ul class="footer-widget__services-list list-unstyled">
+                                <li><a href="business-consulting.html">PAXLO Business</a></li>
+                                <li><a href="Leadership-consulting.html">PAXLO Leadership</a></li>
+                                <li><a href="Coaching-consulting.html">PAXLO Coaching</a></li>
+                                <li><a href="finance-consulting.html">PAXLO Finance</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                        <div class="footer-widget__services">
+                            <h4 class="footer-widget__tag">Enlaces</h4>
+                            <ul class="footer-widget__services-list list-unstyled">
+                                <li><a href="about.html">Nosotros</a></li>
+                                <li><a href="contact.html">Contacto</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                        <div class="footer-widget__contact">
+                            <h4 class="footer-widget__tag">Contacto</h4>
+                            <ul class="footer-widget__contact-box list-unstyled">
+                                <li>
+                                    <div class="icon">
+                                        <i class="icon-email-1"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p><a href="mailto:info@paxlogroup.com">info@paxlogroup.com</a></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="icon-phone"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p><a href="tel:+18293336865">+1 (829) 333-6865</a></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="icon-location"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>Spirit. Edificio La Isla. Ave. Tiradentes esquina Presidente González. Ensanche Naco. Santo Domingo, República Dominicana.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="footer-widget__social-box list-unstyled">
+                                <li>
+                                    <a href="https://www.linkedin.com/company/paxlo-group/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/paxlogroup?igsh=ZW8zNDk4djljcDVz" target="_blank"><i class="fab fa-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/@paxlogroup4096" target="_blank"><i class="fab fa-youtube"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="site-footer__bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="site-footer__bottom-inner">
+                            <div class="site-footer__bottom-text">
+                                <p>Copyright © 2025 PAXLO Group. Todos los derechos reservados.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MOBILE NAV CORREGIDO -->
     <div class="mobile-nav__wrapper">
         <div class="mobile-nav__overlay mobile-nav__toggler"></div>
-        <!-- /.mobile-nav__overlay -->
         <div class="mobile-nav__content">
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="assets/images/resources/footer-logo-1.png"
-                        width="143" alt="" /></a>
+                <a href="index.html" aria-label="logo image">
+                    <img src="assets/images/resources/logo1.jpeg" width="120" alt="PAXLO Group" />
+                </a>
             </div>
-            <!-- /.logo-box -->
+            
             <div class="mobile-nav__container"></div>
-            <!-- /.mobile-nav__container -->
 
             <ul class="mobile-nav__contact list-unstyled">
                 <li>
                     <i class="fa fa-envelope"></i>
-                    <a href="mailto:needhelp@packageName__.com">needhelp@conalz.com</a>
+                    <a href="mailto:info@paxlogroup.com">info@paxlogroup.com</a>
                 </li>
                 <li>
                     <i class="fa fa-phone-alt"></i>
-                    <a href="tel:666-888-0000">666 888 0000</a>
+                    <a href="tel:+18293336865">+1 (829) 333-6865</a>
                 </li>
-            </ul><!-- /.mobile-nav__contact -->
+            </ul>
+            
             <div class="mobile-nav__top">
                 <div class="mobile-nav__social">
-                    <a href="#" class="fab fa-twitter"></a>
-                    <a href="#" class="fab fa-facebook-square"></a>
-                    <a href="#" class="fab fa-pinterest-p"></a>
-                    <a href="#" class="fab fa-instagram"></a>
-                </div><!-- /.mobile-nav__social -->
-            </div><!-- /.mobile-nav__top -->
-
-
-
+                    <a href="https://www.linkedin.com/company/paxlo-group/" target="_blank" class="fab fa-linkedin-in"></a>
+                    <a href="https://www.instagram.com/paxlogroup?igsh=ZW8zNDk4djljcDVz" target="_blank" class="fab fa-instagram"></a>
+                    <a href="https://www.youtube.com/@paxlogroup4096" target="_blank" class="fab fa-youtube"></a>
+                </div>
+            </div>
         </div>
-        <!-- /.mobile-nav__content -->
     </div>
-    <!-- /.mobile-nav__wrapper -->
 
-    <div class="search-popup">
-        <div class="search-popup__overlay search-toggler"></div>
-        <!-- /.search-popup__overlay -->
-        <div class="search-popup__content">
-            <form action="#">
-                <label for="search" class="sr-only">search here</label><!-- /.sr-only -->
-                <input type="text" id="search" placeholder="Search Here..." />
-                <button type="submit" aria-label="search submit" class="thm-btn">
-                    <i class="icon-search"></i>
-                </button>
-            </form>
-        </div>
-        <!-- /.search-popup__content -->
-    </div>
-    <!-- /.search-popup -->
+    <!-- BOTÓN WHATSAPP -->
+    <a href="https://wa.me/18293336865?text=Hola,%20me%20gustaría%20obtener%20más%20información%20sobre%20PAXLO" 
+       class="whatsapp-float" 
+       target="_blank"
+       aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
-
-
+    <!-- SCRIPTS -->
     <script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>
     <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendors/jarallax/jarallax.min.js"></script>
@@ -700,11 +722,33 @@
     <script src="assets/vendors/circleType/jquery.lettering.min.js"></script>
     <script src="assets/vendors/polyglot-language-switcher/jquery.polyglot.language.switcher.js"></script>
 
-
-
-
-    <!-- template js -->
     <script src="assets/js/conalz.js"></script>
-</body>
 
+    <!-- SCRIPT DE TRADUCCIÓN -->
+    <script>
+    function hideTranslateNotice() {
+        const notice = document.getElementById('translateNotice');
+        if (notice) {
+            notice.style.display = 'none';
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const userLang = navigator.language || navigator.userLanguage;
+        
+        if (!userLang.startsWith('es')) {
+            setTimeout(function() {
+                const notice = document.getElementById('translateNotice');
+                if (notice) {
+                    notice.style.display = 'block';
+                    
+                    setTimeout(function() {
+                        notice.style.display = 'none';
+                    }, 15000);
+                }
+            }, 2000);
+        }
+    });
+    </script>
+</body>
 </html>

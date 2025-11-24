@@ -1,33 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="language" content="ES">
+    <meta http-equiv="Content-Language" content="es">
+    <meta name="google" content="notranslate">
+    <meta name="robots" content="notranslate">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact || PAXLO Group</title>
+    <title>Contacto || PAXLO Group</title>
     <!-- favicons Icons -->
-   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
-<link rel="icon" type="image/png" href="assets/images/favicons/favicon-96x96.png" sizes="96x96">
-<link rel="icon" type="image/svg+xml" href="assets/images/favicons/favicon.svg">
-<link rel="shortcut icon" href="assets/images/favicons/favicon.ico">
-<link rel="manifest" href="assets/images/favicons/site.webmanifest">
-    <meta name="description" content="Contact || PAXLO Group" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="assets/images/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicons/favicon.svg">
+    <link rel="shortcut icon" href="assets/images/favicons/favicon.ico">
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest">
+    
+    <meta name="description" content="Contacta a PAXLO Group - Consultoría en Liderazgo y Cultura Organizacional" />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
@@ -56,11 +53,62 @@
     <link rel="stylesheet" href="assets/css/conalz-responsive.css" />
     
     <style>
+        /* NOTIFICACIÓN DE TRADUCCIÓN */
+        .translate-notice {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #2c5aa0;
+            color: white;
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 14px;
+            z-index: 10000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            max-width: 300px;
+            display: none;
+        }
+        .translate-notice button {
+            background: white;
+            color: #2c5aa0;
+            border: none;
+            padding: 4px 12px;
+            border-radius: 4px;
+            margin-top: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        /* MEJORAS AL FORMULARIO */
+        .contact-form__input-box input,
+        .contact-form__input-box textarea {
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .contact-form__input-box input:focus,
+        .contact-form__input-box textarea:focus {
+            border-color: #2c5aa0;
+            box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.1);
+            outline: none;
+        }
+        
+        .contact-form__input-box p {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
         .alert {
             padding: 15px;
             margin-bottom: 20px;
             border: 1px solid transparent;
-            border-radius: 4px;
+            border-radius: 8px;
+            font-weight: 500;
         }
         .alert-success {
             color: #155724;
@@ -77,10 +125,31 @@
             background-color: #fff3cd;
             border-color: #ffeaa7;
         }
+        
+        /* MEJORA BOTÓN */
+        .contact-form__btn {
+            background: linear-gradient(135deg, #2c5aa0, #1e3a8a);
+            border: none;
+            padding: 15px 40px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form__btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(44, 90, 160, 0.3);
+        }
     </style>
 </head>
 
 <body class="custom-cursor">
+
+    <!-- NOTIFICACIÓN DE TRADUCCIÓN -->
+    <div class="translate-notice" id="translateNotice">
+        <strong>¿Necesitas ver esta página en otro idioma?</strong><br>
+        Usa la función de traducción automática de tu navegador.
+        <button onclick="hideTranslateNotice()">Entendido</button>
+    </div>
 
     <div class="custom-cursor__cursor"></div>
     <div class="custom-cursor__cursor-two"></div>
@@ -88,84 +157,82 @@
     <div class="preloader">
         <div class="preloader__image"></div>
     </div>
-    <!-- /.preloader -->
-
-    <nav class="main-menu clearfix">
-        <div class="main-menu__wrapper clearfix">
-            <div class="main-menu__wrapper-inner clearfix">
-                <div class="main-menu__left">
-                    <div class="main-menu__logo">
-                        <a href="index.html">
-                            <img src="assets/images/resources/logo111.jpeg" alt="PAXLO Group"
-                                style="max-height: 85px; width: auto;">
-                        </a>
-                    </div>
-                    <div class="main-menu__main-menu-box">
-                        <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
-                        <ul class="main-menu__list">
-                            <li class="current">
-                                <a href="index.html">Inicio</a>
-                            </li>
-                            <li>
-                                <a href="about.html">Nosotros</a>
-                            </li>
-
-                            <li class="dropdown">
-                                <a href="#">Servicios</a>
-                                <ul>
-                                    <li><a href="business-consulting.html">PAXLO Business</a></li>
-                                    <li><a href="Leadership-consulting.html">PAXLO Leadership</a></li>
-                                    <li><a href="Coaching-consulting.html">PAXLO Coaching</a></li>
-                                    <li><a href="finance-consulting.html">PAXLO Finance</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="contact.html">Contacto</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="main-menu__right">
-                    <div class="main-menu__call-search">
-                        <div class="main-menu__call">
-                            <div class="main-menu__call-icon">
-                                <span class="icon-phone"></span>
-                            </div>
-                            <div class="main-menu__call-content">
-                                <span>Telefono</span>
-                                <p><a href="tel:+18293336865">+1 (829) 333-6865</a></p>
-                            </div>
+   
+    <!-- HEADER CORREGIDO -->
+    <header class="main-header">
+        <nav class="main-menu clearfix">
+            <div class="main-menu__wrapper clearfix">
+                <div class="main-menu__wrapper-inner clearfix">
+                    <div class="main-menu__left">
+                        <div class="main-menu__logo">
+                            <a href="index.html">
+                                <img src="assets/images/resources/logo111.jpeg" alt="PAXLO Group" style="max-height: 85px; width: auto;">
+                            </a>
                         </div>
-                        <div class="main-menu__right">
-                            <div class="main-menu__call-search">
-                                <div class="main-menu__call">
-                                    <div class="main-menu__call-icon">
-                                        <span class="icon-email"></span>
-                                    </div>
-                                    <div class="main-menu__call-content">
-                                        <span>Email</span>
-                                        <p><a href="telinfo@paxlogroup.com">info@paxlogroup.com</a></p>
-                                    </div>
+                        <div class="main-menu__main-menu-box">
+                            <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                            <ul class="main-menu__list">
+                                <li>
+                                    <a href="index.html">Inicio</a>
+                                </li>
+                                <li>
+                                    <a href="about.html">Nosotros</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#">Servicios</a>
+                                    <ul>
+                                        <li><a href="business-consulting.html">PAXLO Business</a></li>
+                                        <li><a href="Leadership-consulting.html">PAXLO Leadership</a></li>
+                                        <li><a href="Coaching-consulting.html">PAXLO Coaching</a></li>
+                                        <li><a href="finance-consulting.html">PAXLO Finance</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="blog.html">Blog</a>
+                                </li>
+                                <li class="current">
+                                    <a href="contact.html">Contacto</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="main-menu__right">
+                        <div class="main-menu__call-search">
+                            <div class="main-menu__call">
+                                <div class="main-menu__call-icon">
+                                    <span class="icon-phone"></span>
+                                </div>
+                                <div class="main-menu__call-content">
+                                    <span>Teléfono</span>
+                                    <p><a href="tel:+18293336865">+1 (829) 333-6865</a></p>
+                                </div>
+                            </div>
+                            <div class="main-menu__call">
+                                <div class="main-menu__call-icon">
+                                    <span class="icon-email"></span>
+                                </div>
+                                <div class="main-menu__call-content">
+                                    <span>Email</span>
+                                    <p><a href="mailto:info@paxlogroup.com">info@paxlogroup.com</a></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
     </header>
 
     <div class="stricky-header stricked-menu main-menu">
-        <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-    </div><!-- /.stricky-header -->
+        <div class="sticky-header__content"></div>
+    </div>
 
     <!--Contact Form Start-->
     <section class="contact-form-box">
         <div class="container">
             <div class="contact-form__title-box">
-                <span>Contactactanos Ahora!</span>
-                <h3>Estamos Emocionados de saber de ti! <br> </h3>
+                <span>¡Contáctanos Ahora!</span>
+                <h3>Estamos Emocionados de Saber de Ti! <br> </h3>
             </div>
             
             <!-- Mensajes de estado -->
@@ -179,32 +246,37 @@
                 Has enviado muchos mensajes recientemente. Por favor, espera unos minutos antes de intentar de nuevo.
             </div>
             
-            <!-- FORMULARIO CON SEGURIDAD MEJORADA -->
+            <!-- FORMULARIO MEJORADO -->
             <form id="contact-form" class="contact-form">
                 <div class="row">
-                    <div class="col-xl-12">
+                    <div class="col-xl-6">
                         <div class="contact-form__input-box">
-                            <p>Nombre</p>
+                            <p>Nombre Completo</p>
                             <input type="text" placeholder="Tu nombre completo" name="user_name" id="user_name" required>
                         </div>
                     </div>
-                    <div class="col-xl-12">
+                    <div class="col-xl-6">
                         <div class="contact-form__input-box">
                             <p>Email</p>
                             <input type="email" placeholder="tu@email.com" name="user_email" id="user_email" required>
                         </div>
                     </div>
-                    <div class="col-xl-12">
+                    <div class="col-xl-6">
                         <div class="contact-form__input-box">
                             <p>Teléfono</p>
                             <input type="tel" placeholder="+1 (829) 333-6865" name="user_phone" id="user_phone">
                         </div>
                     </div>
+                    <div class="col-xl-6">
+                        <div class="contact-form__input-box">
+                            <p>Asunto</p>
+                            <input type="text" placeholder="¿Cómo podemos ayudarte?" name="user_subject" id="user_subject">
+                        </div>
+                    </div>
                     <div class="col-xl-12">
                         <div class="contact-form__input-box text-message-box">
                             <p>Mensaje</p>
-                            <br>
-                            <textarea name="message" id="message" placeholder="¿En qué podemos ayudarte?" required></textarea>
+                            <textarea name="message" id="message" placeholder="Cuéntanos más sobre tu consulta..." rows="6" required></textarea>
                         </div>
                         
                         <!-- CAMPO HONEYPOT (OCULTO PARA BOTS) -->
@@ -213,7 +285,10 @@
                         </div>
                         
                         <div class="contact-form__btn-box">
-                            <button type="submit" class="thm-btn contact-form__btn" id="submit-btn">ENVIAR MENSAJE</button>
+                            <button type="submit" class="thm-btn contact-form__btn" id="submit-btn">
+                                <i class="icon-send" style="margin-right: 8px;"></i>
+                                ENVIAR MENSAJE
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -233,10 +308,9 @@
                             <span class="icon-location"></span>
                         </div>
                         <div class="address__content">
-                            <h4 class="address__title">Address</h4>
+                            <h4 class="address__title">Dirección</h4>
                             <div class="address__phone-email">
-                                <p>Spirit.Edificio La Isla. Ave. Tiradentes <br> Ensanche Naco. Santo Domingo,
-                                    República Dominicana.</p>
+                                <p>Spirit. Edificio La Isla. Ave. Tiradentes<br>Esquina Presidente González<br>Ensanche Naco. Santo Domingo,<br>República Dominicana.</p>
                             </div>
                         </div>
                     </div>
@@ -249,11 +323,9 @@
                             <span class="icon-phone-income"></span>
                         </div>
                         <div class="address__content">
-                            <h4 class="address__title">Phone</h4>
+                            <h4 class="address__title">Teléfono</h4>
                             <div class="address__phone-email">
-                                <p><br>
-                                    <a href="tel:8801682648101">+18293336865</a><br>
-                                </p>
+                                <p><a href="tel:+18293336865">+1 (829) 333-6865</a></p>
                             </div>
                         </div>
                     </div>
@@ -266,11 +338,9 @@
                             <span class="icon-email"></span>
                         </div>
                         <div class="address__content">
-                            <h4 class="address__title">Email Address</h4>
+                            <h4 class="address__title">Email</h4>
                             <div class="address__phone-email">
-                                <p><br>
-                                    <a href="mailto:Info24@gmail.com">info@paxlogroup.comm</a><br>
-                                </p>
+                                <p><a href="mailto:info@paxlogroup.com">info@paxlogroup.com</a></p>
                             </div>
                         </div>
                     </div>
@@ -285,7 +355,7 @@
     <section class="google-map">
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7568.230728705782!2d-69.93763270642091!3d18.478432899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf89dc982698a9%3A0xf83a4c807e6cd2b!2sSPIRIT%20COWORKING!5e0!3m2!1ses!2sdo!4v1763267761254!5m2!1ses!2sdo"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade" class="google-map__one" allowfullscreen></iframe>
     </section>
     <!--Google Map End-->
@@ -302,26 +372,25 @@
                     <div class="newsletter-one__email-box">
                         <form class="newsletter-one__form">
                             <div class="newsletter-one__form-input-box1">
-                                <input type="email" placeholder="CORREO ELECTRÓNICO " name="email">
-                                <button type="submit" class="newsletter-one__newsletter-btn"><i
-                                        class="icon-send"></i></button>
+                                <input type="email" placeholder="CORREO ELECTRÓNICO" name="email">
+                                <button type="submit" class="newsletter-one__newsletter-btn">
+                                    <i class="icon-send"></i>
+                                </button>
                             </div>
                         </form>
                     </div>
                 </div>
                 <div class="newsletter-one__right">
-                    <a href="services-v-2.html" class="thm-btn newsletter-one__button">Sí, quiero descubrir mi
-                        GENIALIDAD</a>
+                    <a href="about.html" class="thm-btn newsletter-one__button">Sí, quiero descubrir mi GENIALIDAD</a>
                 </div>
             </div>
         </div>
     </section>
     <!--Newsletter Two end-->
 
-    <!--Site Footer Start-->
+    <!-- FOOTER IDÉNTICO -->
     <footer class="site-footer">
-        <div class="site-footer-bg" style="background-image: url(assets/images/resources/Back_ground_blue.jpg);">
-        </div>
+        <div class="site-footer-bg" style="background-image: url(assets/images/resources/Back_ground_blue.jpg);"></div>
         <div class="site-footer__top">
             <div class="container">
                 <div class="row">
@@ -330,16 +399,12 @@
                             <div class="footer-widget__about-logo-box">
                                 <div class="footer-widget__about-logo">
                                     <a href="index.html">
-                                        <img src="assets/images/resources/PAXLO-LOGO1.png" alt="PAXLO Group"
-                                            style="max-height: 200px; width: auto; margin-top: 0%;">
+                                        <img src="assets/images/resources/PAXLO-LOGO1.png" alt="PAXLO Group" style="max-height: 200px; width: auto; margin-top: 0%;">
                                     </a>
                                 </div>
                             </div>
                             <div class="footer-widget__about-content">
-                                <p>Firma de capacitación, consultoría <br>y coaching; especializada en liderazgo,
-                                    <br>cultura organizacional e inteligencia financiera. <br> en liderazgo, cultura
-                                    organizacional y <br> bienestar financiero.
-                                </p>
+                                <p>Firma de capacitación, consultoría y coaching; especializada en liderazgo, cultura organizacional e inteligencia financiera.</p>
                             </div>
                         </div>
                     </div>
@@ -360,6 +425,7 @@
                             <ul class="footer-widget__services-list list-unstyled">
                                 <li><a href="about.html">Nosotros</a></li>
                                 <li><a href="contact.html">Contacto</a></li>
+                                <li><a href="blog.html">Blog</a></li>
                             </ul>
                         </div>
                     </div>
@@ -388,24 +454,19 @@
                                         <i class="icon-location"></i>
                                     </div>
                                     <div class="text">
-                                        <p>Spirit. Edificio La Isla. Ave. Tiradentes <br> esquina Presidente González.
-                                            Ensanche Naco. <br> Santo Domingo, República Dominicana.</p>
+                                        <p>Spirit. Edificio La Isla. Ave. Tiradentes esquina Presidente González. Ensanche Naco. Santo Domingo, República Dominicana.</p>
                                     </div>
                                 </li>
                             </ul>
-                            <!-- Reemplaza esta sección en el footer -->
                             <ul class="footer-widget__social-box list-unstyled">
                                 <li>
-                                    <a href="https://www.linkedin.com/company/paxlo-group/" target="_blank"><i
-                                            class="fab fa-linkedin-in"></i></a>
+                                    <a href="https://www.linkedin.com/company/paxlo-group/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                                 </li>
                                 <li>
-                                    <a href="https://www.instagram.com/paxlogroup?igsh=ZW8zNDk4djljcDVz"
-                                        target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://www.instagram.com/paxlogroup?igsh=ZW8zNDk4djljcDVz" target="_blank"><i class="fab fa-instagram"></i></a>
                                 </li>
                                 <li>
-                                    <a href="https://www.youtube.com/@paxlogroup4096" target="_blank"><i
-                                            class="fab fa-youtube"></i></a>
+                                    <a href="https://www.youtube.com/@paxlogroup4096" target="_blank"><i class="fab fa-youtube"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -427,65 +488,51 @@
             </div>
         </div>
     </footer>
-    <!--Site Footer End-->
 
-    </div><!-- /.page-wrapper -->
-
+    <!-- MOBILE NAV CORREGIDO -->
     <div class="mobile-nav__wrapper">
         <div class="mobile-nav__overlay mobile-nav__toggler"></div>
-        <!-- /.mobile-nav__overlay -->
         <div class="mobile-nav__content">
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="assets/images/resources/footer-logo-1.png"
-                        width="143" alt="" /></a>
+                <a href="index.html" aria-label="logo image">
+                    <img src="assets/images/resources/logo1.jpeg" width="120" alt="PAXLO Group" />
+                </a>
             </div>
-            <!-- /.logo-box -->
+            
             <div class="mobile-nav__container"></div>
-            <!-- /.mobile-nav__container -->
 
             <ul class="mobile-nav__contact list-unstyled">
                 <li>
                     <i class="fa fa-envelope"></i>
-                    <a href="mailto:needhelp@packageName__.com">needhelp@conalz.com</a>
+                    <a href="mailto:info@paxlogroup.com">info@paxlogroup.com</a>
                 </li>
                 <li>
                     <i class="fa fa-phone-alt"></i>
-                    <a href="tel:666-888-0000">666 888 0000</a>
+                    <a href="tel:+18293336865">+1 (829) 333-6865</a>
                 </li>
-            </ul><!-- /.mobile-nav__contact -->
+            </ul>
+            
             <div class="mobile-nav__top">
                 <div class="mobile-nav__social">
-                    <a href="#" class="fab fa-twitter"></a>
-                    <a href="#" class="fab fa-facebook-square"></a>
-                    <a href="#" class="fab fa-pinterest-p"></a>
-                    <a href="#" class="fab fa-instagram"></a>
-                </div><!-- /.mobile-nav__social -->
-            </div><!-- /.mobile-nav__top -->
+                    <a href="https://www.linkedin.com/company/paxlo-group/" target="_blank" class="fab fa-linkedin-in"></a>
+                    <a href="https://www.instagram.com/paxlogroup?igsh=ZW8zNDk4djljcDVz" target="_blank" class="fab fa-instagram"></a>
+                    <a href="https://www.youtube.com/@paxlogroup4096" target="_blank" class="fab fa-youtube"></a>
+                </div>
+            </div>
         </div>
-        <!-- /.mobile-nav__content -->
     </div>
-    <!-- /.mobile-nav__wrapper -->
 
-    <div class="search-popup">
-        <div class="search-popup__overlay search-toggler"></div>
-        <!-- /.search-popup__overlay -->
-        <div class="search-popup__content">
-            <form action="#">
-                <label for="search" class="sr-only">search here</label><!-- /.sr-only -->
-                <input type="text" id="search" placeholder="Search Here..." />
-                <button type="submit" aria-label="search submit" class="thm-btn">
-                    <i class="icon-search"></i>
-                </button>
-            </form>
-        </div>
-        <!-- /.search-popup__content -->
-    </div>
-    <!-- /.search-popup -->
+    <!-- BOTÓN WHATSAPP -->
+    <a href="https://wa.me/18293336865?text=Hola,%20me%20gustaría%20obtener%20más%20información%20sobre%20PAXLO" 
+       class="whatsapp-float" 
+       target="_blank"
+       aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
-
+    <!-- SCRIPTS -->
     <script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>
     <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendors/jarallax/jarallax.min.js"></script>
@@ -512,11 +559,38 @@
     <script src="assets/vendors/circleType/jquery.lettering.min.js"></script>
     <script src="assets/vendors/polyglot-language-switcher/jquery.polyglot.language.switcher.js"></script>
 
-    <!-- template js -->
     <script src="assets/js/conalz.js"></script>
     <!-- EmailJS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
+    <!-- SCRIPT DE TRADUCCIÓN -->
+    <script>
+    function hideTranslateNotice() {
+        const notice = document.getElementById('translateNotice');
+        if (notice) {
+            notice.style.display = 'none';
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const userLang = navigator.language || navigator.userLanguage;
+        
+        if (!userLang.startsWith('es')) {
+            setTimeout(function() {
+                const notice = document.getElementById('translateNotice');
+                if (notice) {
+                    notice.style.display = 'block';
+                    
+                    setTimeout(function() {
+                        notice.style.display = 'none';
+                    }, 15000);
+                }
+            }, 2000);
+        }
+    });
+    </script>
+
+    <!-- SCRIPT DEL FORMULARIO (MANTENIDO) -->
     <script>
         // Inicializar EmailJS con tus credenciales
         (function() {
@@ -578,7 +652,7 @@
         function enableResubmit() {
             const submitBtn = document.getElementById('submit-btn');
             submitBtn.disabled = false;
-            submitBtn.textContent = 'ENVIAR MENSAJE';
+            submitBtn.innerHTML = '<i class="icon-send" style="margin-right: 8px;"></i>ENVIAR MENSAJE';
         }
         
         // ========== MANEJADOR DEL FORMULARIO ==========
@@ -612,11 +686,11 @@
             
             // 4. PREPARAR ENVÍO
             const submitBtn = document.getElementById('submit-btn');
-            const originalText = submitBtn.textContent;
+            const originalText = submitBtn.innerHTML;
             
             // Deshabilitar botón temporalmente
             submitBtn.disabled = true;
-            submitBtn.textContent = 'Enviando...';
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i>Enviando...';
             
             // Agregar fecha actual
             const now = new Date();
