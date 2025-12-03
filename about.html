@@ -1,52 +1,49 @@
 <!DOCTYPE html>
-<html lang="ES">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="language" content="ES">
-<meta http-equiv="Content-Language" content="es">
-<meta name="google" content="notranslate">
-<meta name="robots" content="notranslate">
+    <meta http-equiv="Content-Language" content="es">
+    <meta name="google" content="notranslate">
+    <meta name="robots" content="notranslate">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Nosotros || PAXLO Group</title>
+    <title>Nosotros | PAXLO Group</title>
+    
     <!-- favicons Icons -->
-      <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
-<link rel="icon" type="image/png" href="assets/images/favicons/favicon-96x96.png" sizes="96x96">
-<link rel="icon" type="image/svg+xml" href="assets/images/favicons/favicon.svg">
-<link rel="shortcut icon" href="assets/images/favicons/favicon.ico">
-<link rel="manifest" href="assets/images/favicons/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="assets/images/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicons/favicon.svg">
+    <link rel="shortcut icon" href="assets/images/favicons/favicon.ico">
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest">
 
-    <!-- SOLUCIÓN PARA DROPDOWN QUE SE CIERRA -->
+    <!-- ESTILOS PARA NAVBAR RESPONSIVE Y DROPDOWN -->
     <style>
+    /* ========================================
+       NAVBAR RESPONSIVE - SOLUCIÓN COMPLETA
+       ======================================== */
 
-/* AÑADIR EN EL STYLE EXISTENTE */
-.translate-notice {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #2c5aa0;
-    color: white;
-    border-radius: 8px;
-    padding: 12px 16px;
-    font-size: 14px;
-    z-index: 10000;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    max-width: 300px;
-    display: none;
-}
-.translate-notice button {
-    background: white;
-    color: #2c5aa0;
-    border: none;
-    padding: 4px 12px;
-    border-radius: 4px;
-    margin-top: 8px;
-    cursor: pointer;
-    font-weight: bold;
-}
+    /* Asegurar que el navbar se ajuste correctamente */
+    .main-menu__wrapper-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
 
+    .main-menu__left {
+        display: flex;
+        align-items: center;
+        flex: 1;
+    }
+
+    .main-menu__right {
+        flex-shrink: 0;
+    }
+
+    /* SOLUCIÓN PARA DROPDOWN QUE SE CIERRA */
     .main-menu__list li.dropdown:hover > ul,
     .main-menu__list li.dropdown > ul:hover {
         display: block !important;
@@ -55,12 +52,13 @@
         transform: translateY(0) !important;
         transition-delay: 0s !important;
     }
-    
+
     .main-menu__list .dropdown ul {
         pointer-events: auto !important;
         transition: all 0.3s ease !important;
     }
-    
+
+    /* Crear un área invisible entre el enlace y el dropdown para evitar que se cierre */
     .main-menu__list .dropdown > a::after {
         content: '';
         position: absolute;
@@ -70,24 +68,92 @@
         height: 20px;
         background: transparent;
     }
+
+    /* ========================================
+       MEDIA QUERIES - RESPONSIVE
+       ======================================== */
+
+    /* Pantallas grandes (≥1200px) - Mostrar todo */
+    @media (min-width: 1200px) {
+        .main-menu__right {
+            display: flex !important;
+        }
+    }
+
+    /* Pantallas medianas y pequeñas (<1200px) - Ocultar teléfono y email */
+    @media (max-width: 1199px) {
+        .main-menu__right {
+            display: none !important;
+        }
+        
+        .main-menu__wrapper-inner {
+            justify-content: space-between;
+        }
+    }
+
+    /* Tablets (≤991px) */
+    @media (max-width: 991px) {
+        .main-menu__logo img {
+            max-height: 70px !important;
+        }
+        
+        .mobile-nav__toggler {
+            display: block !important;
+        }
+        
+        .main-menu__main-menu-box .main-menu__list {
+            display: none;
+        }
+    }
+
+    /* Móviles (≤767px) */
+    @media (max-width: 767px) {
+        .main-menu__logo img {
+            max-height: 60px !important;
+        }
+        
+        .main-menu__wrapper {
+            padding: 10px 0;
+        }
+    }
+
+    /* NOTIFICACIÓN DE TRADUCCIÓN */
+    .translate-notice {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #2c5aa0;
+        color: white;
+        border-radius: 8px;
+        padding: 12px 16px;
+        font-size: 14px;
+        z-index: 10000;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        max-width: 300px;
+        display: none;
+    }
+
+    .translate-notice button {
+        background: white;
+        color: #2c5aa0;
+        border: none;
+        padding: 4px 12px;
+        border-radius: 4px;
+        margin-top: 8px;
+        cursor: pointer;
+        font-weight: bold;
+    }
     </style>
 
-    <meta name="description" content="About || PAXLO Group" />
+    <meta name="description" content="Conoce a PAXLO Group, firma boutique de liderazgo, cultura organizacional e inteligencia financiera con más de 12 años de experiencia internacional." />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
-        rel="stylesheet">
-
-
+    <!-- vendors -->
     <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
     <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
@@ -116,11 +182,13 @@
 </head>
 
 <body class="custom-cursor">
+    
+    <!-- NOTIFICACIÓN DE TRADUCCIÓN -->
     <div class="translate-notice" id="translateNotice">
-    <strong>¿Necesitas ver esta página en otro idioma?</strong><br>
-    Usa la función de traducción automática de tu navegador.
-    <button onclick="hideTranslateNotice()">Entendido</button>
-</div>
+        <strong>¿Necesitas ver esta página en otro idioma?</strong><br>
+        Usa la función de traducción automática de tu navegador.
+        <button onclick="hideTranslateNotice()">Entendido</button>
+    </div>
 
     <div class="custom-cursor__cursor"></div>
     <div class="custom-cursor__cursor-two"></div>
@@ -128,13 +196,15 @@
     <div class="preloader">
         <div class="preloader__image"></div>
     </div>
-    <!-- /.preloader -->
 
     <div class="page-wrapper">
+        
+        <!-- HEADER PRINCIPAL -->
         <header class="main-header">
             <nav class="main-menu clearfix">
                 <div class="main-menu__wrapper clearfix">
                     <div class="main-menu__wrapper-inner clearfix">
+                        <!-- LADO IZQUIERDO: Logo + Menú -->
                         <div class="main-menu__left">
                             <div class="main-menu__logo">
                                 <a href="index.html">
@@ -168,7 +238,9 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="main-menu__right">
+                        
+                        <!-- LADO DERECHO: Teléfono + Email (Solo visible en pantallas ≥1200px) -->
+                        <div class="main-menu__right d-none d-xl-flex">
                             <div class="main-menu__call-search">
                                 <div class="main-menu__call">
                                     <div class="main-menu__call-icon">
@@ -195,9 +267,10 @@
             </nav>
         </header>
 
+        <!-- STICKY HEADER -->
         <div class="stricky-header stricked-menu main-menu">
-            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-        </div><!-- /.stricky-header -->
+            <div class="sticky-header__content"></div>
+        </div>
 
   
 
@@ -1019,7 +1092,7 @@ Incluye herramientas como Working Genius, entrevistas y análisis cultural.
         </section>
         <!--Newsletter Two end-->
 
-           <!--Site Footer Start-->
+              <!--Site Footer Start-->
 <footer class="site-footer">
     <div class="site-footer-bg" style="background-image: url(assets/images/resources/Back_ground_blue.jpg);">
     </div>
@@ -1036,7 +1109,7 @@ Incluye herramientas como Working Genius, entrevistas y análisis cultural.
 </div>
                         </div>
                         <div class="footer-widget__about-content">
-                            <p>Firma de capacitación, consultoría  <br>y coaching; especializada en liderazgo,  <br>cultura organizacional e inteligencia financiera. <br> en liderazgo, cultura organizacional y <br> bienestar financiero.</p>
+                            <p>En PAXLO creemos que los mejores <br>resultados ocurren cuando las personas trabajan <br>desde la claridad, enfoque y su zona de genialidad. <br> <br></p>
                         </div>
                     </div>
                 </div>
@@ -1046,9 +1119,8 @@ Incluye herramientas como Working Genius, entrevistas y análisis cultural.
                         <ul class="footer-widget__services-list list-unstyled">
     <li><a href="business-consulting.html">PAXLO Business</a></li>
     <li><a href="Leadership-consulting.html">PAXLO Leadership</a></li>
-   
+    <li><a href="finance-consulting.html">PAXLO Finance</a></li>
     <li><a href="Coaching-consulting.html">PAXLO Coaching</a></li>
-     <li><a href="finance-consulting.html">PAXLO Finance</a></li>
 </ul>
                     </div>
                 </div>

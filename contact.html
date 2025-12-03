@@ -3,12 +3,13 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="language" content="ES">
+    <meta name="language" content="es">
     <meta http-equiv="Content-Language" content="es">
     <meta name="google" content="notranslate">
     <meta name="robots" content="notranslate">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contacto || PAXLO Group</title>
+    <title>PAXLO | Contacto - Educación Financiera y Bienestar Económico</title>
+    
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
@@ -17,8 +18,128 @@
     <link rel="icon" type="image/svg+xml" href="assets/images/favicons/favicon.svg">
     <link rel="shortcut icon" href="assets/images/favicons/favicon.ico">
     <link rel="manifest" href="assets/images/favicons/site.webmanifest">
-    
-    <meta name="description" content="Contacta a PAXLO Group - Consultoría en Liderazgo y Cultura Organizacional" />
+
+    <!-- ESTILOS PARA NAVBAR RESPONSIVE Y DROPDOWN -->
+    <style>
+    /* ========================================
+       NAVBAR RESPONSIVE - SOLUCIÓN COMPLETA
+       ======================================== */
+
+    /* Asegurar que el navbar se ajuste correctamente */
+    .main-menu__wrapper-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .main-menu__left {
+        display: flex;
+        align-items: center;
+        flex: 1;
+    }
+
+    .main-menu__right {
+        flex-shrink: 0;
+    }
+
+    /* SOLUCIÓN PARA DROPDOWN QUE SE CIERRA */
+    .main-menu__list li.dropdown:hover > ul,
+    .main-menu__list li.dropdown > ul:hover {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        transition-delay: 0s !important;
+    }
+
+    .main-menu__list .dropdown ul {
+        pointer-events: auto !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .main-menu__list .dropdown > a::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        background: transparent;
+    }
+
+    /* ========================================
+       MEDIA QUERIES - RESPONSIVE
+       ======================================== */
+
+    @media (min-width: 1200px) {
+        .main-menu__right {
+            display: flex !important;
+        }
+    }
+
+    @media (max-width: 1199px) {
+        .main-menu__right {
+            display: none !important;
+        }
+        
+        .main-menu__wrapper-inner {
+            justify-content: space-between;
+        }
+    }
+
+    @media (max-width: 991px) {
+        .main-menu__logo img {
+            max-height: 70px !important;
+        }
+        
+        .mobile-nav__toggler {
+            display: block !important;
+        }
+        
+        .main-menu__main-menu-box .main-menu__list {
+            display: none;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .main-menu__logo img {
+            max-height: 60px !important;
+        }
+        
+        .main-menu__wrapper {
+            padding: 10px 0;
+        }
+    }
+
+    /* NOTIFICACIÓN DE TRADUCCIÓN */
+    .translate-notice {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #2c5aa0;
+        color: white;
+        border-radius: 8px;
+        padding: 12px 16px;
+        font-size: 14px;
+        z-index: 10000;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        max-width: 300px;
+        display: none;
+    }
+    .translate-notice button {
+        background: white;
+        color: #2c5aa0;
+        border: none;
+        padding: 4px 12px;
+        border-radius: 4px;
+        margin-top: 8px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    </style>
+
+    <meta name="description" content="Contacta a PAXLO Finance - Consultoría en educación financiera, bienestar económico y coaching financiero para empresas y colaboradores." />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,6 +147,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
 
+    <!-- vendors -->
     <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
     <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
@@ -36,7 +158,7 @@
     <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.pips.css" />
     <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
     <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
-    <link rel="stylesheet" href="assets/vendors/conalz-icons/style.css">
+    <link rel="stylesheet" href="assets/vendors/conalz-icons/style.css" />
     <link rel="stylesheet" href="assets/vendors/tiny-slider/tiny-slider.min.css" />
     <link rel="stylesheet" href="assets/vendors/reey-font/stylesheet.css" />
     <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
@@ -51,95 +173,6 @@
     <!-- template styles -->
     <link rel="stylesheet" href="assets/css/conalz.css" />
     <link rel="stylesheet" href="assets/css/conalz-responsive.css" />
-    
-    <style>
-        /* NOTIFICACIÓN DE TRADUCCIÓN */
-        .translate-notice {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #2c5aa0;
-            color: white;
-            border-radius: 8px;
-            padding: 12px 16px;
-            font-size: 14px;
-            z-index: 10000;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            max-width: 300px;
-            display: none;
-        }
-        .translate-notice button {
-            background: white;
-            color: #2c5aa0;
-            border: none;
-            padding: 4px 12px;
-            border-radius: 4px;
-            margin-top: 8px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        
-        /* MEJORAS AL FORMULARIO */
-        .contact-form__input-box input,
-        .contact-form__input-box textarea {
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 15px;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            width: 100%;
-        }
-        
-        .contact-form__input-box input:focus,
-        .contact-form__input-box textarea:focus {
-            border-color: #2c5aa0;
-            box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.1);
-            outline: none;
-        }
-        
-        .contact-form__input-box p {
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #333;
-        }
-        
-        .alert {
-            padding: 15px;
-            margin-bottom: 20px;
-            border: 1px solid transparent;
-            border-radius: 8px;
-            font-weight: 500;
-        }
-        .alert-success {
-            color: #155724;
-            background-color: #d4edda;
-            border-color: #c3e6cb;
-        }
-        .alert-danger {
-            color: #721c24;
-            background-color: #f8d7da;
-            border-color: #f5c6cb;
-        }
-        .alert-warning {
-            color: #856404;
-            background-color: #fff3cd;
-            border-color: #ffeaa7;
-        }
-        
-        /* MEJORA BOTÓN */
-        .contact-form__btn {
-            background: linear-gradient(135deg, #2c5aa0, #1e3a8a);
-            border: none;
-            padding: 15px 40px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .contact-form__btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(44, 90, 160, 0.3);
-        }
-    </style>
 </head>
 
 <body class="custom-cursor">
@@ -157,75 +190,81 @@
     <div class="preloader">
         <div class="preloader__image"></div>
     </div>
-   
-    <!-- HEADER CORREGIDO -->
-    <header class="main-header">
-        <nav class="main-menu clearfix">
-            <div class="main-menu__wrapper clearfix">
-                <div class="main-menu__wrapper-inner clearfix">
-                    <div class="main-menu__left">
-                        <div class="main-menu__logo">
-                            <a href="index.html">
-                                <img src="assets/images/resources/logo111.jpeg" alt="PAXLO Group" style="max-height: 85px; width: auto;">
-                            </a>
-                        </div>
-                        <div class="main-menu__main-menu-box">
-                            <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
-                            <ul class="main-menu__list">
-                                <li>
-                                    <a href="index.html">Inicio</a>
-                                </li>
-                                <li>
-                                    <a href="about.html">Nosotros</a>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#">Servicios</a>
-                                    <ul>
-                                        <li><a href="business-consulting.html">PAXLO Business</a></li>
-                                        <li><a href="Leadership-consulting.html">PAXLO Leadership</a></li>
-                                        <li><a href="Coaching-consulting.html">PAXLO Coaching</a></li>
-                                        <li><a href="finance-consulting.html">PAXLO Finance</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="blog.html">Blog</a>
-                                </li>
-                                <li class="current">
-                                    <a href="contact.html">Contacto</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="main-menu__right">
-                        <div class="main-menu__call-search">
-                            <div class="main-menu__call">
-                                <div class="main-menu__call-icon">
-                                    <span class="icon-phone"></span>
-                                </div>
-                                <div class="main-menu__call-content">
-                                    <span>Teléfono</span>
-                                    <p><a href="tel:+18293336865">+1 (829) 333-6865</a></p>
-                                </div>
+
+    <div class="page-wrapper">
+        
+        <!-- HEADER PRINCIPAL -->
+        <header class="main-header">
+            <nav class="main-menu clearfix">
+                <div class="main-menu__wrapper clearfix">
+                    <div class="main-menu__wrapper-inner clearfix">
+                        <!-- LADO IZQUIERDO: Logo + Menú -->
+                        <div class="main-menu__left">
+                            <div class="main-menu__logo">
+                                <a href="index.html">
+                                    <img src="assets/images/resources/logo111.jpeg" alt="PAXLO Group" style="max-height: 85px; width: auto;">
+                                </a>
                             </div>
-                            <div class="main-menu__call">
-                                <div class="main-menu__call-icon">
-                                    <span class="icon-email"></span>
+                            <div class="main-menu__main-menu-box">
+                                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                <ul class="main-menu__list">
+                                    <li>
+                                        <a href="index.html">Inicio</a>
+                                    </li>
+                                    <li>
+                                        <a href="about.html">Nosotros</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#">Servicios</a>
+                                        <ul>
+                                            <li><a href="business-consulting.html">PAXLO Business</a></li>
+                                            <li><a href="Leadership-consulting.html">PAXLO Leadership</a></li>
+                                            <li><a href="Coaching-consulting.html">PAXLO Coaching</a></li>
+                                            <li><a href="finance-consulting.html">PAXLO Finance</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="blog.html">Blog</a>
+                                    </li>
+                                    <li class="current">
+                                        <a href="contact.html">Contacto</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- LADO DERECHO: Teléfono + Email (Solo visible en pantallas ≥1200px) -->
+                        <div class="main-menu__right d-none d-xl-flex">
+                            <div class="main-menu__call-search">
+                                <div class="main-menu__call">
+                                    <div class="main-menu__call-icon">
+                                        <span class="icon-phone"></span>
+                                    </div>
+                                    <div class="main-menu__call-content">
+                                        <span>Telefono</span>
+                                        <p><a href="tel:+18293336865">+1 (829) 333-6865</a></p>
+                                    </div>
                                 </div>
-                                <div class="main-menu__call-content">
-                                    <span>Email</span>
-                                    <p><a href="mailto:info@paxlogroup.com">info@paxlogroup.com</a></p>
+                                <div class="main-menu__call">
+                                    <div class="main-menu__call-icon">
+                                        <span class="icon-email"></span>
+                                    </div>
+                                    <div class="main-menu__call-content">
+                                        <span>Email</span>
+                                        <p><a href="mailto:info@paxlogroup.com">info@paxlogroup.com</a></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </nav>
-    </header>
+            </nav>
+        </header>
 
-    <div class="stricky-header stricked-menu main-menu">
-        <div class="sticky-header__content"></div>
-    </div>
+        <!-- STICKY HEADER -->
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div>
+        </div>
 
     <!--Contact Form Start-->
     <section class="contact-form-box">
@@ -388,106 +427,110 @@
     </section>
     <!--Newsletter Two end-->
 
-    <!-- FOOTER IDÉNTICO -->
-    <footer class="site-footer">
-        <div class="site-footer-bg" style="background-image: url(assets/images/resources/Back_ground_blue.jpg);"></div>
-        <div class="site-footer__top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
-                        <div class="footer-widget__column footer-widget__about">
-                            <div class="footer-widget__about-logo-box">
-                                <div class="footer-widget__about-logo">
-                                    <a href="index.html">
-                                        <img src="assets/images/resources/PAXLO-LOGO1.png" alt="PAXLO Group" style="max-height: 200px; width: auto; margin-top: 0%;">
-                                    </a>
+        <!--Site Footer Start-->
+<footer class="site-footer">
+    <div class="site-footer-bg" style="background-image: url(assets/images/resources/Back_ground_blue.jpg);">
+    </div>
+    <div class="site-footer__top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                    <div class="footer-widget__column footer-widget__about">
+                        <div class="footer-widget__about-logo-box">
+                            <div class="footer-widget__about-logo">
+    <a href="index.html">
+        <img src="assets/images/resources/PAXLO-LOGO1.png" alt="PAXLO Group" style="max-height: 200px; width: auto; margin-top: 0%;">
+    </a>
+</div>
+                        </div>
+                        <div class="footer-widget__about-content">
+                            <p>En PAXLO creemos que los mejores <br>resultados ocurren cuando las personas trabajan <br>desde la claridad, enfoque y su zona de genialidad. <br> <br></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                    <div class="footer-widget__areas">
+                        <h4 class="footer-widget__tag">Áreas de Negocio</h4>
+                        <ul class="footer-widget__services-list list-unstyled">
+    <li><a href="business-consulting.html">PAXLO Business</a></li>
+    <li><a href="Leadership-consulting.html">PAXLO Leadership</a></li>
+    <li><a href="finance-consulting.html">PAXLO Finance</a></li>
+    <li><a href="Coaching-consulting.html">PAXLO Coaching</a></li>
+</ul>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                    <div class="footer-widget__services">
+                        <h4 class="footer-widget__tag">Enlaces</h4>
+                        <ul class="footer-widget__services-list list-unstyled">
+                            <li><a href="about.html">Nosotros</a></li>
+                            <li><a href="contact.html">Contacto</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                    <div class="footer-widget__contact">
+                        <h4 class="footer-widget__tag">Contacto</h4>
+                        <ul class="footer-widget__contact-box list-unstyled">
+                            <li>
+                                <div class="icon">
+                                    <i class="icon-email-1"></i>
                                 </div>
-                            </div>
-                            <div class="footer-widget__about-content">
-                                <p>Firma de capacitación, consultoría y coaching; especializada en liderazgo, cultura organizacional e inteligencia financiera.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
-                        <div class="footer-widget__areas">
-                            <h4 class="footer-widget__tag">Áreas de Negocio</h4>
-                            <ul class="footer-widget__services-list list-unstyled">
-                                <li><a href="business-consulting.html">PAXLO Business</a></li>
-                                <li><a href="Leadership-consulting.html">PAXLO Leadership</a></li>
-                                <li><a href="Coaching-consulting.html">PAXLO Coaching</a></li>
-                                <li><a href="finance-consulting.html">PAXLO Finance</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
-                        <div class="footer-widget__services">
-                            <h4 class="footer-widget__tag">Enlaces</h4>
-                            <ul class="footer-widget__services-list list-unstyled">
-                                <li><a href="about.html">Nosotros</a></li>
-                                <li><a href="contact.html">Contacto</a></li>
-                                <li><a href="blog.html">Blog</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
-                        <div class="footer-widget__contact">
-                            <h4 class="footer-widget__tag">Contacto</h4>
-                            <ul class="footer-widget__contact-box list-unstyled">
-                                <li>
-                                    <div class="icon">
-                                        <i class="icon-email-1"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p><a href="mailto:info@paxlogroup.com">info@paxlogroup.com</a></p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="icon-phone"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p><a href="tel:+18293336865">+1 (829) 333-6865</a></p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="icon-location"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Spirit. Edificio La Isla. Ave. Tiradentes esquina Presidente González. Ensanche Naco. Santo Domingo, República Dominicana.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                            <ul class="footer-widget__social-box list-unstyled">
-                                <li>
-                                    <a href="https://www.linkedin.com/company/paxlo-group/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.instagram.com/paxlogroup?igsh=ZW8zNDk4djljcDVz" target="_blank"><i class="fab fa-instagram"></i></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.youtube.com/@paxlogroup4096" target="_blank"><i class="fab fa-youtube"></i></a>
-                                </li>
-                            </ul>
-                        </div>
+                                <div class="text">
+                                    <p><a href="mailto:info@paxlogroup.com">info@paxlogroup.com</a></p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="icon-phone"></i>
+                                </div>
+                                <div class="text">
+                                    <p><a href="tel:+18293336865">+1 (829) 333-6865</a></p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="icon-location"></i>
+                                </div>
+                                <div class="text">
+                                    <p>Spirit. Edificio La Isla. Ave. Tiradentes <br> esquina Presidente González. Ensanche Naco. <br> Santo Domingo, República Dominicana.</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- Reemplaza esta sección en el footer -->
+<ul class="footer-widget__social-box list-unstyled">
+    <li>
+        <a href="https://www.linkedin.com/company/paxlo-group/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </li>
+    <li>
+        <a href="https://www.instagram.com/paxlogroup?igsh=ZW8zNDk4djljcDVz" target="_blank"><i class="fab fa-instagram"></i></a>
+    </li>
+    <li>
+        <a href="https://www.youtube.com/@paxlogroup4096" target="_blank"><i class="fab fa-youtube"></i></a>
+    </li>
+</ul>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="site-footer__bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="site-footer__bottom-inner">
-                            <div class="site-footer__bottom-text">
-                                <p>Copyright © 2025 PAXLO Group. Todos los derechos reservados.</p>
-                            </div>
+    </div>
+    <div class="site-footer__bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="site-footer__bottom-inner">
+                        <div class="site-footer__bottom-text">
+                            <p>Copyright © 2025 PAXLO Group. Todos los derechos reservados.</p>
                         </div>
+                     
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
+<!--Site Footer End-->
 
     <!-- MOBILE NAV CORREGIDO -->
     <div class="mobile-nav__wrapper">
