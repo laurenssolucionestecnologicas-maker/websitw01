@@ -464,7 +464,7 @@ ul {
 .section-title {
   position: relative;
   display: block;
-  margin-top: -12px;
+  margin-top: 15px;
   margin-bottom: 59px;
 }
 
@@ -9281,6 +9281,7 @@ ul {
   position: relative;
   display: block;
   padding: 0 0 120px;
+  padding-top: 15px;
 }
 
 .contact-form__title-box {
@@ -9343,7 +9344,7 @@ ul {
   opacity: .70;
   font-size: 15px;
   outline: none;
-  margin-top: -8px;
+  margin-top: 1px;
 }
 
 .contact-form__input-box.text-message-box {
