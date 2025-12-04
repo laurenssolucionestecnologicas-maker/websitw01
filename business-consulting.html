@@ -333,45 +333,104 @@
     <div class="sticky-header__content"></div>
 </div>
 
-        <!-- SLIDER PRINCIPAL -->
-        <div class="swiper-slide">
-            <!-- slider de imágenes -->
-            <div class="image-slider">
-                <img src="assets/images/resources/foto106.png" alt="Consultoría empresarial">
-                <img src="assets/images/resources/foto107.png" alt="Estrategia organizacional">
-                <img src="assets/images/resources/foto107.png" alt="Transformación empresarial">
-            </div>
-            <div class="image-slider-overlay"></div>
+       <!-- SLIDER PRINCIPAL -->
+<div class="swiper-slide"><BR></BR><BR><BR>  <!-- ESPACIOS PARA EL TAMAÑO -->
+    
+    <!-- SLIDER CSS-ONLY (igual que index.html) -->
+    <style>
+    .image-slider { 
+        position: absolute; 
+        inset: 0; 
+        overflow: hidden; 
+        z-index: 0; 
+        height: 100vh; /* Altura completa */
+        min-height: 800px; /* Altura mínima */
+    }
+    .image-slider img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        opacity: 0;
+        animation: sliderFade 12s infinite;
+    }
+    /* tiempos para que se muestren una tras otra (3 fotos = 4s cada una visible) */
+    .image-slider img:nth-child(1) { animation-delay: 0s; }
+    .image-slider img:nth-child(2) { animation-delay: 4s; }
+    .image-slider img:nth-child(3) { animation-delay: 8s; }
 
-            <!-- contenido del slide -->
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-8">
-                        <div class="main-slider-three__content">
-                            <!-- TEXTO CORREGIDO AL ESPAÑOL -->
-                            <h2 class="main-slider-three__title">Impulsa Tu Grupo de Consultoría</h2>
-                            <div class="main-slider-three__btn-box">
-                                <a href="team.html" class="thm-btn main-slider-three__btn">Comienza a Consultar con Nuestro Equipo</a>
-                            </div>
-                        </div>
+    /* keyframes: entrada, stay, salida */
+    @keyframes sliderFade {
+        0%   { opacity: 0; transform: scale(1.03); }
+        6%   { opacity: 1; transform: scale(1); }
+        33%  { opacity: 1; transform: scale(1); }
+        41%  { opacity: 0; transform: scale(0.97); }
+        100% { opacity: 0; transform: scale(0.97); }
+    }
+
+    /* overlay para mantener legibilidad del texto */
+    .image-slider-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.35);
+        z-index: 1;
+        height: 100vh; /* Misma altura que el slider */
+        min-height: 800px; /* Misma altura mínima */
+    }
+
+    /* asegura que el contenido (texto/logo) quede encima */
+    .swiper-slide > .container { 
+        position: relative; 
+        z-index: 2; 
+        height: 100vh; /* Contenido también alto */
+        min-height: 800px; /* Contenido también alto */
+        display: flex;
+        align-items: center;
+    }
+    
+    /* Clase específica para el contenedor del contenido */
+    .main-slider-three__content {
+        padding-top: 60px; /* Espacio superior como en index */
+    }
+    </style>
+
+    <!-- slider de imágenes -->
+    <div class="image-slider">
+        <img src="assets/images/resources/foto106.png" alt="Consultoría empresarial">
+        <img src="assets/images/resources/foto107.png" alt="Estrategia organizacional">
+        <img src="assets/images/resources/foto107.png" alt="Transformación empresarial">
+    </div>
+    <div class="image-slider-overlay"></div>
+
+    <!-- contenido del slide -->
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8">
+                <div class="main-slider-three__content">
+                    <h2 class="main-slider-three__title">Impulsa Tu Grupo de Consultoría</h2>
+                    <div class="main-slider-three__btn-box">
+                        <a href="team.html" class="thm-btn main-slider-three__btn">Comienza a Consultar con Nuestro Equipo</a>
                     </div>
+                </div>
+            </div>
 
-                    <div class="col-xl-4">
-                        <div class="main-slider-three__right">
-                            <div class="main-slider-two__curved-circle-box">
-                                <div class="curved-circle">
-                                    <!-- TEXTO CORREGIDO AL ESPAÑOL -->
-                                    <span class="curved-circle--item">Somos . Consultoría . Especializada .</span>
-                                </div>
-                                <div class="main-slider-two__curved-circle-icon">
-                                    <img src="assets/images/resources/Paxlo_logo_footer-removebg-preview.png" alt="PAXLO Group">
-                                </div>
-                            </div>
+            <div class="col-xl-4">
+                <div class="main-slider-three__right">
+                    <div class="main-slider-two__curved-circle-box">
+                        <div class="curved-circle">
+                            <span class="curved-circle--item">Somos . Consultoría . Especializada .</span>
+                        </div>
+                        <div class="main-slider-two__curved-circle-icon">
+                            <img src="assets/images/resources/Paxlo_logo_footer-removebg-preview.png" alt="PAXLO Group">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
         <!--Service Details Start-->
         <section class="service-details">
@@ -409,8 +468,17 @@
                     <div class="col-xl-8 col-lg-7">
                         <div class="service-details__right">
                             <h3 class="service-details__title-two">PAXLO Business</h3>
+
+                
                           
                             <p class="service-details__text-1">PAXLO Business acompaña a organizaciones a desarrollar claridad estratégica, fortalecer sus equipos, transformar su cultura y ejecutar procesos de cambio de manera humana, efectiva y sostenible. Integra consultoría, diagnósticos, diseño organizacional, facilitación de procesos, coaching ejecutivo y herramientas como Working Genius y modelos de salud organizacional.</p>
+
+                                        <div class="mb-4" style="margin: 25px 0 35px;">
+    <a href="contact.html" class="thm-btn" style="background: linear-gradient(135deg, #182657, #2c5aa0); padding: 16px 40px; font-weight: 600; border-radius: 8px; color: white; text-transform: uppercase; display: inline-block; transition: all 0.3s ease; font-size: 16px;">
+        <i class="fas fa-handshake" style="margin-right: 10px;"></i>
+        Solicita una reunión estratégica
+    </a>
+</div>
 
                             <div class="service-details__img">
                                 <img src="assets/images/resources/PAXLO-business.jpg" alt="">
@@ -418,7 +486,7 @@
                             
                             <div class="service-details__problem-solve">
                                 <h3 class="service-details__problem-solve-title">PAXLO Business está diseñado para resolver los retos más comunes del liderazgo y la dinámica organizacional. Algunos de estos son:</h3>
-                                <br><br>
+                                
                                 <ul class="list-unstyled why-choose-one__points">
                                     <li><i class="fas fa-check-circle"></i> Falta de claridad estratégica</li>
                                     <li><i class="fas fa-check-circle"></i> Cultura fragmentada o poco saludable</li>
@@ -426,6 +494,17 @@
                                     <li><i class="fas fa-check-circle"></i> Equipos de liderazgo sin cohesión</li>
                                     <li><i class="fas fa-check-circle"></i> Falta de enfoque y ejecución</li>
                                 </ul>     
+
+                                <div class="text-center" style="margin: 40px 0 50px; padding: 30px; background: linear-gradient(to right, rgba(51, 151, 189, 0.1), rgba(24, 38, 87, 0.05)); border-radius: 10px; border-left: 4px solid #004763;">
+    <h4 style="color: #182657; margin-bottom: 20px; font-size: 20px;">¿Identificas alguno de estos desafíos en tu organización?</h4>
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <a href="contact.html" class="thm-btn" style="background: #182657; padding: 16px 40px; font-weight: 600; border-radius: 8px; color: white; border: none; min-width: 250px;">
+            <i class="fas fa-headset" style="margin-right: 10px;"></i>
+            Quiero hablar con un consultor
+        </a>
+       
+    </div>
+</div>
                                 <br>            
                                 <h3 class="service-details__core-product-title">Como beneficios, la empresa logra:</h3><br>
                                 <p class="service-details__text-1">Equipos más colaborativos, enfocados y productivos. Líderes con mayor capacidad de toma de decisiones. Procesos más ágiles y eficientes. Reducción de fricciones, reprocesos y desgaste interno.</p>

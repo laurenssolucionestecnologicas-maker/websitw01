@@ -333,45 +333,104 @@
     <div class="sticky-header__content"></div>
 </div>
 
-        <!-- SLIDER PRINCIPAL -->
-        <div class="swiper-slide">
-            <!-- slider de imágenes -->
-            <div class="image-slider">
-                <img src="assets/images/resources/foto108.png" alt="Educación financiera">
-                <img src="assets/images/resources/foto109.png" alt="Bienestar económico">
-                <img src="assets/images/resources/foto108.png" alt="Coaching financiero">
-            </div>
-            <div class="image-slider-overlay"></div>
+      <!-- SLIDER PRINCIPAL -->
+<div class="swiper-slide"><BR></BR><BR><BR>  <!-- ESTOS SON LOS ESPACIOS QUE FALTAN -->
+    
+    <!-- SLIDER CSS-ONLY (igual que index.html) -->
+    <style>
+    .image-slider { 
+        position: absolute; 
+        inset: 0; 
+        overflow: hidden; 
+        z-index: 0; 
+        height: 100vh; /* AÑADIDO: altura completa */
+        min-height: 800px; /* AÑADIDO: altura mínima */
+    }
+    .image-slider img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        opacity: 0;
+        animation: sliderFade 12s infinite;
+    }
+    /* tiempos para que se muestren una tras otra (3 fotos = 4s cada una visible) */
+    .image-slider img:nth-child(1) { animation-delay: 0s; }
+    .image-slider img:nth-child(2) { animation-delay: 4s; }
+    .image-slider img:nth-child(3) { animation-delay: 8s; }
 
-            <!-- contenido del slide -->
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-8">
-                        <div class="main-slider-three__content">
-                            <!-- TEXTO CORREGIDO AL ESPAÑOL -->
-                            <h2 class="main-slider-three__title">Transforma Tu Salud Financiera</h2>
-                            <div class="main-slider-three__btn-box">
-                                <a href="team.html" class="thm-btn main-slider-three__btn">Comienza Tu Educación Financiera</a>
-                            </div>
-                        </div>
+    /* keyframes: entrada, stay, salida */
+    @keyframes sliderFade {
+        0%   { opacity: 0; transform: scale(1.03); }
+        6%   { opacity: 1; transform: scale(1); }
+        33%  { opacity: 1; transform: scale(1); }
+        41%  { opacity: 0; transform: scale(0.97); }
+        100% { opacity: 0; transform: scale(0.97); }
+    }
+
+    /* overlay para mantener legibilidad del texto */
+    .image-slider-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.35);
+        z-index: 1;
+        height: 100vh; /* AÑADIDO: misma altura que el slider */
+        min-height: 800px; /* AÑADIDO: misma altura mínima */
+    }
+
+    /* asegura que el contenido (texto/logo) quede encima */
+    .swiper-slide > .container { 
+        position: relative; 
+        z-index: 2; 
+        height: 100vh; /* AÑADIDO: contenido también alto */
+        min-height: 800px; /* AÑADIDO: contenido también alto */
+        display: flex;
+        align-items: center;
+    }
+    
+    /* Clase específica para el contenedor del contenido */
+    .main-slider-three__content {
+        padding-top: 60px; /* AÑADIDO: espacio superior como en index */
+    }
+    </style>
+
+    <!-- slider de imágenes -->
+    <div class="image-slider">
+        <img src="assets/images/resources/foto108.png" alt="Educación financiera">
+        <img src="assets/images/resources/foto109.png" alt="Bienestar económico">
+        <img src="assets/images/resources/foto108.png" alt="Coaching financiero">
+    </div>
+    <div class="image-slider-overlay"></div>
+
+    <!-- contenido del slide -->
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8">
+                <div class="main-slider-three__content">
+                    <h2 class="main-slider-three__title">Transforma Tu Salud Financiera</h2>
+                    <div class="main-slider-three__btn-box">
+                        <a href="team.html" class="thm-btn main-slider-three__btn">Comienza Tu Educación Financiera</a>
                     </div>
+                </div>
+            </div>
 
-                    <div class="col-xl-4">
-                        <div class="main-slider-three__right">
-                            <div class="main-slider-two__curved-circle-box">
-                                <div class="curved-circle">
-                                    <!-- TEXTO CORREGIDO AL ESPAÑOL -->
-                                    <span class="curved-circle--item">Somos . Finanzas . Bienestar .</span>
-                                </div>
-                                <div class="main-slider-two__curved-circle-icon">
-                                    <img src="assets/images/resources/Paxlo_logo_footer-removebg-preview.png" alt="PAXLO Group">
-                                </div>
-                            </div>
+            <div class="col-xl-4">
+                <div class="main-slider-three__right">
+                    <div class="main-slider-two__curved-circle-box">
+                        <div class="curved-circle">
+                            <span class="curved-circle--item">Somos . Finanzas . Bienestar .</span>
+                        </div>
+                        <div class="main-slider-two__curved-circle-icon">
+                            <img src="assets/images/resources/Paxlo_logo_footer-removebg-preview.png" alt="PAXLO Group">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
         <!--Service Details Start-->
         <section class="service-details">
@@ -407,6 +466,14 @@
                     <div class="col-xl-8 col-lg-7">
                         <div class="service-details__right">
                             <h3 class="service-details__title-two">PAXLO FINANCE</h3>
+
+                            <div class="mb-4" style="margin: 25px 0 35px;">
+    <a href="contact.html" class="thm-btn" style="background: linear-gradient(135deg, #182657, #2c5aa0); padding: 16px 40px; font-weight: 600; border-radius: 8px; color: white; text-transform: uppercase; display: inline-block; transition: all 0.3s ease; font-size: 16px;">
+        <i class="fas fa-file-contract" style="margin-right: 10px;"></i>
+        Solicita una propuesta para tu institución
+    </a>
+</div>
+
                             <p class="service-details__text-1">PAXLO Finance se enfoca en la educación financiera institucional, el bienestar financiero de los colaboradores y el coaching financiero personalizado. Ayudamos a las organizaciones a construir una cultura de salud financiera que impacta positivamente en el engagement, la productividad y la retención del talento.</p>
                             <br>
                             <p>Nuestros programas están diseñados para empoderar a los colaboradores con conocimientos financieros prácticos, herramientas de planificación y estrategias para alcanzar sus metas económicas, reduciendo el estrés financiero y mejorando su calidad de vida.</p>
@@ -433,13 +500,23 @@
                                     <li><i class="fas fa-check-circle"></i>Colaboradores empoderados financieramente</li>
                                 </ul>
                                 
+                                <div class="text-center" style="margin: 40px 0 50px; padding: 30px; background: linear-gradient(to right, rgba(51, 151, 189, 0.1), rgba(24, 38, 87, 0.05)); border-radius: 10px; border-left: 4px solid #004763;">
+    <h4 style="color: #182657; margin-bottom: 20px; font-size: 20px;">¿Listo para mejorar la educación financiera en tu organización?</h4>
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <a href="contact.html" class="thm-btn" style="background: #182657; padding: 16px 40px; font-weight: 600; border-radius: 8px; color: white; border: none; min-width: 250px;">
+            <i class="fas fa-chalkboard-teacher" style="margin-right: 10px;"></i>
+            Agenda una charla o taller
+        </a>
+    </div>
+</div>
+
                                 <p class="service-details__core-product-text">Nuestros programas de educación financiera incluyen:</p>
                                 <div class="service-details__core-product-points-box">
                                     <div class="row">
                                         <div class="col-xl-6">
                                             <div class="service-details__core-product-points-single">
                                                 <div class="service-details__core-product-icon-box">
-                                                    <div class="service-details__core-product-icon">
+                                                    <div class="service-details__benefits-icon">
                                                         <span class="fas fa-chart-line"></span>
                                                     </div>
                                                     <div class="service-details__core-product-content">
@@ -452,7 +529,7 @@
                                         <div class="col-xl-6">
                                             <div class="service-details__core-product-points-single">
                                                 <div class="service-details__core-product-icon-box">
-                                                    <div class="service-details__core-product-icon">
+                                                    <div class="service-details__benefits-icon">
                                                         <span class="fas fa-user-shield"></span>
                                                     </div>
                                                     <div class="service-details__core-product-content">
