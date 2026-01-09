@@ -337,64 +337,203 @@
 <div class="swiper-slide"><BR></BR><BR><BR>  <!-- ESPACIOS PARA EL TAMAÑO -->
     
     <!-- SLIDER CSS-ONLY (igual que index.html) -->
-    <style>
-    .image-slider { 
-        position: absolute; 
-        inset: 0; 
-        overflow: hidden; 
-        z-index: 0; 
-        height: 100vh; /* Altura completa */
-        min-height: 800px; /* Altura mínima */
-    }
-    .image-slider img {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-        opacity: 0;
-        animation: sliderFade 12s infinite;
-    }
-    /* tiempos para que se muestren una tras otra (3 fotos = 4s cada una visible) */
-    .image-slider img:nth-child(1) { animation-delay: 0s; }
-    .image-slider img:nth-child(2) { animation-delay: 4s; }
-    .image-slider img:nth-child(3) { animation-delay: 8s; }
+   <style>
+/* ========================================
+   FIX CAROUSEL RESPONSIVE - SERVICIOS
+   ======================================== */
 
-    /* keyframes: entrada, stay, salida */
-    @keyframes sliderFade {
-        0%   { opacity: 0; transform: scale(1.03); }
-        6%   { opacity: 1; transform: scale(1); }
-        33%  { opacity: 1; transform: scale(1); }
-        41%  { opacity: 0; transform: scale(0.97); }
-        100% { opacity: 0; transform: scale(0.97); }
-    }
+/* Prevenir scroll horizontal en toda la página */
+body {
+    overflow-x: hidden !important;
+    max-width: 100vw;
+}
 
-    /* overlay para mantener legibilidad del texto */
-    .image-slider-overlay {
-        position: absolute;
-        inset: 0;
-        background: rgba(0,0,0,0.35);
-        z-index: 1;
-        height: 100vh; /* Misma altura que el slider */
-        min-height: 800px; /* Misma altura mínima */
-    }
+html {
+    overflow-x: hidden !important;
+}
 
-    /* asegura que el contenido (texto/logo) quede encima */
-    .swiper-slide > .container { 
-        position: relative; 
-        z-index: 2; 
-        height: 100vh; /* Contenido también alto */
-        min-height: 800px; /* Contenido también alto */
-        display: flex;
-        align-items: center;
+/* Estilos del carrusel con restricciones de ancho */
+.image-slider { 
+    position: absolute; 
+    inset: 0; 
+    overflow: hidden; 
+    z-index: 0; 
+    height: 100vh;
+    min-height: 800px;
+    width: 100%;
+    max-width: 100vw;
+}
+
+.image-slider img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0;
+    animation: sliderFade 12s infinite;
+}
+
+/* Tiempos para que se muestren una tras otra (3 fotos = 4s cada una visible) */
+.image-slider img:nth-child(1) { animation-delay: 0s; }
+.image-slider img:nth-child(2) { animation-delay: 4s; }
+.image-slider img:nth-child(3) { animation-delay: 8s; }
+
+/* Keyframes: entrada, stay, salida */
+@keyframes sliderFade {
+    0%   { opacity: 0; transform: scale(1.03); }
+    6%   { opacity: 1; transform: scale(1); }
+    33%  { opacity: 1; transform: scale(1); }
+    41%  { opacity: 0; transform: scale(0.97); }
+    100% { opacity: 0; transform: scale(0.97); }
+}
+
+/* Overlay para mantener legibilidad del texto */
+.image-slider-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 1;
+    height: 100vh;
+    min-height: 800px;
+}
+
+/* Asegura que el contenido (texto/logo) quede encima */
+.swiper-slide > .container { 
+    position: relative; 
+    z-index: 2; 
+    height: 100vh;
+    min-height: 800px;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Clase específica para el contenedor del contenido */
+.main-slider-three__content {
+    padding-top: 60px;
+    max-width: 100%;
+    padding-right: 15px;
+}
+
+.main-slider-three__title {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Fix para el slide completo */
+.swiper-slide {
+    width: 100vw;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.swiper-slide .row {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+}
+
+.swiper-slide .col-xl-8,
+.swiper-slide .col-xl-4 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+/* Tablets y menores (≤991px) */
+@media (max-width: 991px) {
+    .image-slider,
+    .image-slider-overlay,
+    .swiper-slide > .container {
+        height: 70vh;
+        min-height: 600px;
     }
     
-    /* Clase específica para el contenedor del contenido */
-    .main-slider-three__content {
-        padding-top: 60px; /* Espacio superior como en index */
+    .main-slider-three__title {
+        font-size: 2rem;
     }
-    </style>
+    
+    .main-slider-three__right {
+        display: none;
+    }
+    
+    .swiper-slide .col-xl-8 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* Móviles (≤767px) */
+@media (max-width: 767px) {
+    .image-slider,
+    .image-slider-overlay,
+    .swiper-slide > .container {
+        height: 60vh;
+        min-height: 500px;
+    }
+    
+    .main-slider-three__title {
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+    
+    .main-slider-three__btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+    
+    .swiper-slide .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/* Móviles pequeños (≤575px) */
+@media (max-width: 575px) {
+    .image-slider,
+    .image-slider-overlay,
+    .swiper-slide > .container {
+        height: 55vh;
+        min-height: 450px;
+    }
+    
+    .main-slider-three__title {
+        font-size: 1.25rem;
+    }
+    
+    .main-slider-three__content {
+        padding-top: 20px;
+    }
+}
+
+/* ========================================
+   FIX ADICIONAL PARA SECCIONES
+   ======================================== */
+
+/* Asegurar que ninguna sección cause overflow */
+section {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 100%;
+}
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+</style>
 
     <!-- slider de imágenes -->
     <div class="image-slider">

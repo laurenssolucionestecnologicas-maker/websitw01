@@ -332,42 +332,193 @@
     <!--Main Slider Start-->
        <!-- SLIDE: varias fotos que pasan sin JS (CSS only) -->
 <style>
-/* Puedes mover esto a tu CSS principal si prefieres */
-.image-slider { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
-.image-slider img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  opacity: 0;
-  animation: sliderFade 12s infinite;
+/* ========================================
+   FIX CAROUSEL RESPONSIVE - SERVICIOS (tu versión optimizada + pequeños ajustes)
+   ======================================== */
+
+/* Prevenir scroll horizontal en toda la página */
+body {
+    overflow-x: hidden !important;
+    max-width: 100vw;
 }
-/* tiempos para que se muestren una tras otra (3 fotos = 4s cada una visible) */
+
+html {
+    overflow-x: hidden !important;
+}
+
+/* Estilos del carrusel con restricciones de ancho */
+.image-slider { 
+    position: absolute; 
+    inset: 0; 
+    overflow: hidden; 
+    z-index: 0; 
+    height: 100vh;
+    min-height: 800px;
+    width: 100%;
+    max-width: 100vw;
+}
+
+.image-slider img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0;
+    animation: sliderFade 12s infinite;
+}
+
+/* Tiempos para que se muestren una tras otra */
 .image-slider img:nth-child(1) { animation-delay: 0s; }
 .image-slider img:nth-child(2) { animation-delay: 4s; }
 .image-slider img:nth-child(3) { animation-delay: 8s; }
 
-/* keyframes: entrada, stay, salida */
+/* Keyframes */
 @keyframes sliderFade {
-  0%   { opacity: 0; transform: scale(1.03); }
-  6%   { opacity: 1; transform: scale(1); }
-  33%  { opacity: 1; transform: scale(1); }
-  41%  { opacity: 0; transform: scale(0.97); }
-  100% { opacity: 0; transform: scale(0.97); }
+    0%   { opacity: 0; transform: scale(1.03); }
+    6%   { opacity: 1; transform: scale(1); }
+    33%  { opacity: 1; transform: scale(1); }
+    41%  { opacity: 0; transform: scale(0.97); }
+    100% { opacity: 0; transform: scale(0.97); }
 }
 
-/* overlay para mantener legibilidad del texto */
+/* Overlay */
 .image-slider-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-  z-index: 1;
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 1;
+    height: 100vh;
+    min-height: 800px;
 }
 
-/* asegura que el contenido (texto/logo) quede encima */
-.swiper-slide > .container { position: relative; z-index: 2; }
+/* Container principal del slide con flex */
+.swiper-slide > .container { 
+    position: relative; 
+    z-index: 2; 
+    height: 100vh;
+    min-height: 800px;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Contenido del slider */
+.main-slider-three__content {
+    padding-top: 60px;
+    max-width: 100%;
+    padding-right: 15px;
+}
+
+.main-slider-three__title {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Fix general del slide */
+.swiper-slide {
+    width: 100vw;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.swiper-slide .row {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+}
+
+.swiper-slide .col-xl-8,
+.swiper-slide .col-xl-4 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 991px) {
+    .image-slider,
+    .image-slider-overlay,
+    .swiper-slide > .container {
+        height: 70vh;
+        min-height: 600px;
+    }
+    
+    .main-slider-three__title {
+        font-size: 2.2rem;
+    }
+    
+    .main-slider-three__right {
+        display: none;
+    }
+    
+    .swiper-slide .col-xl-8 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .image-slider,
+    .image-slider-overlay,
+    .swiper-slide > .container {
+        height: 60vh;
+        min-height: 500px;
+    }
+    
+    .main-slider-three__title {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+    
+    .main-slider-three__btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+    
+    .swiper-slide .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    .image-slider,
+    .image-slider-overlay,
+    .swiper-slide > .container {
+        height: 55vh;
+        min-height: 450px;
+    }
+    
+    .main-slider-three__title {
+        font-size: 1.4rem;
+    }
+    
+    .main-slider-three__content {
+        padding-top: 20px;
+    }
+}
+
+/* FIX GENERAL PARA EVITAR OVERFLOW EN OTRAS SECCIONES */
+section {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+section .container {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+section .row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
 </style>
 
 <div class="swiper-slide"><BR></BR><BR><BR>
@@ -424,53 +575,75 @@
 
 
 
-        <!--Why Choose One-->
-        <section class="why-choose-one">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-6">
-                        <div class="">
-                            <div class="why-choose-one__img-box">
-                                <div class="">
-                                    <img src="assets/images/resources/4700.jpeg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6">
-                        <div class="">
-                            <div class="section-title">
-                                <span class="section-title__tagline">POR QUÉ ELEGIR PAXLO</span>
-                                <h2 class="section-title__title"><span><br>Porque unimos estrategia, humanidad y resultados</span> 
-                                </h2>
-                            </div>
-                              <p class="why-choose-one-text">Creemos en el  liderazgo, la cultura empresarial, el desarrollo humano y la inteligencia financiera, como las bases de los negocios exitosos.</p>
-                            <ul class="list-unstyled why-choose-one__points">
-    <li><i class="fas fa-check-circle"></i> organizaciones con claridad, propósito desde sus zona de genialidad</li>
-    <li><i class="fas fa-check-circle"></i> Expertos en cultura, liderazgo e inteligencia financiero</li>
-    <li><i class="fas fa-check-circle"></i> Diseño de procesos efectivos, implementados por etapas.</li>
-    <li><i class="fas fa-check-circle"></i> Resultados claros y medibles</li>
-    <li><i class="fas fa-check-circle"></i> 12+ años de experiencia internacional</li>
-        <li><i class="fas fa-check-circle"></i> Combinación de metodologías globales como Working Genius, gestión del cambio y modelos de cultura organizacional.</li>
-</ul>
-
-<!-- BOTÓN AGREGADO -->
-<div class="why-choose-cta" style="margin-top: 40px;">
-    <a href="contact.html" class="thm-btn" style="background: linear-gradient(135deg, #182657, #2c5aa0); padding: 15px 40px; font-weight: 600; border-radius: 8px; color: white; border: none; display: inline-flex; align-items: center; box-shadow: 0 4px 15px rgba(24, 38, 87, 0.15);">
-        <i class="fas fa-handshake" style="margin-right: 10px;"></i>
-        Solicita tu diagnóstico gratuito
-    </a>
-    <p style="margin-top: 15px; color: #666; font-size: 14px; font-style: italic;">
-        <i class="fas fa-clock" style="margin-right: 5px; color: #2c5aa0;"></i>
-        30 minutos sin compromiso
-    </p>
-</div>
+        <!--Why Choose One - Versión FINAL corregida y mejorada-->
+<section class="why-choose-one">
+    <div class="container">
+        <div class="row">
+            <!-- Imagen izquierda -->
+            <div class="col-xl-6">
+                <div class="why-choose-one__left">
+                    <div class="why-choose-one__img-box wow fadeInLeft" data-wow-delay="100ms" data-wow-duration="1500ms">
+                        <div class="why-choose-one__img">
+                            <img src="assets/images/resources/4700.jpeg" alt="Equipo PAXLO Group">
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!--Why Choose End-->
+
+            <!-- Texto derecha -->
+            <div class="col-xl-6">
+                <div class="why-choose-one__right wow fadeInRight" data-wow-delay="300ms" data-wow-duration="1500ms">
+                    <div class="section-title">
+                        <span class="section-title__tagline">POR QUÉ ELEGIR PAXLO</span>
+                        <h2 class="section-title__title">
+                            Porque unimos<br>
+                            <span>estrategia, humanidad y resultados</span>
+                        </h2>
+                    </div>
+
+                    <p class="why-choose-one-text">
+                        Creemos en el liderazgo, la cultura empresarial, el desarrollo humano y la inteligencia financiera 
+                        como las bases fundamentales de los negocios exitosos y sostenibles en el tiempo.
+                    </p>
+
+                    <ul class="list-unstyled why-choose-one__points">
+                        <li><i class="fas fa-check-circle"></i> Ayudamos a las organizaciones a trabajar con claridad y propósito desde su zona de genialidad</li>
+                        <li><i class="fas fa-check-circle"></i> Expertos en cultura organizacional, liderazgo e inteligencia financiera</li>
+                        <li><i class="fas fa-check-circle"></i> Diseño de procesos efectivos implementados por etapas claras y realistas</li>
+                        <li><i class="fas fa-check-circle"></i> Resultados medibles, concretos y sostenibles en el tiempo</li>
+                        <li><i class="fas fa-check-circle"></i> Más de 12 años de experiencia internacional en 7 países</li>
+                        <li><i class="fas fa-check-circle"></i> Combinamos metodologías globales: Working Genius, gestión del cambio y modelos de cultura probados</li>
+                    </ul>
+
+                    <!-- CTA mejorado -->
+                    <div class="why-choose-cta mt-5">
+                        <a href="contact.html" class="thm-btn" 
+                           style="background: linear-gradient(135deg, #182657 0%, #2c5aa0 100%);
+                                  padding: 18px 48px;
+                                  font-size: 1.1rem;
+                                  font-weight: 600;
+                                  border-radius: 50px;
+                                  color: white;
+                                  border: none;
+                                  display: inline-flex;
+                                  align-items: center;
+                                  box-shadow: 0 8px 25px rgba(24, 38, 87, 0.25);
+                                  transition: all 0.35s ease;">
+                            <i class="fas fa-handshake me-3" style="font-size: 1.4rem;"></i>
+                            Solicita tu diagnóstico gratuito
+                        </a>
+
+                        <p class="mt-4 text-muted" style="font-size: 0.98rem; font-style: italic;">
+                            <i class="far fa-clock me-2" style="color: #2c5aa0;"></i>
+                            Sesión de 30 minutos sin compromiso • 100% personalizada
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Why Choose End-->
 
         <!--Cta One start-->
         <div class="cta-one">

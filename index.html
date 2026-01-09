@@ -21,59 +21,457 @@
 <link rel="manifest" href="assets/images/favicons/site.webmanifest">
 
     <!-- SOLUCIÓN PARA DROPDOWN QUE SE CIERRA -->
-    <style>
-    /* Forzar que el dropdown se mantenga abierto y sea fácil de usar */
-    .main-menu__list li.dropdown:hover > ul,
-    .main-menu__list li.dropdown > ul:hover {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        transform: translateY(0) !important;
-        transition-delay: 0s !important;
-    }
-    
-    .main-menu__list .dropdown ul {
-        pointer-events: auto !important;
-        transition: all 0.3s ease !important;
-    }
-    
-    /* Crear un área invisible entre el enlace y el dropdown para evitar que se cierre */
-    .main-menu__list .dropdown > a::after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        left: 0;
-        width: 100%;
-        height: 20px;
-        background: transparent;
-    }
+   <style>
+/* ========================================
+   ESTILOS CONSOLIDADOS PARA INDEX.HTML
+   Reemplaza AMBOS bloques <style> en tu HTML con este único bloque
+   ======================================== */
 
-    /* NOTIFICACIÓN DE TRADUCCIÓN - NUEVO */
-    .translate-notice {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: #2c5aa0;
-        color: white;
-        border-radius: 8px;
-        padding: 12px 16px;
-        font-size: 14px;
-        z-index: 10000;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        max-width: 300px;
+/* ========================================
+   1. NAVBAR RESPONSIVE - SOLUCIÓN COMPLETA
+   ======================================== */
+
+.main-menu__wrapper-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.main-menu__left {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.main-menu__right {
+    flex-shrink: 0;
+}
+
+/* SOLUCIÓN PARA DROPDOWN QUE SE CIERRA */
+.main-menu__list li.dropdown:hover > ul,
+.main-menu__list li.dropdown > ul:hover {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition-delay: 0s !important;
+}
+
+.main-menu__list .dropdown ul {
+    pointer-events: auto !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Área invisible para evitar que el dropdown se cierre al mover el mouse */
+.main-menu__list .dropdown > a::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: transparent;
+}
+
+/* ========================================
+   2. NOTIFICACIÓN DE TRADUCCIÓN
+   ======================================== */
+
+.translate-notice {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #2c5aa0;
+    color: white;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 14px;
+    z-index: 10000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    max-width: 300px;
+    display: none;
+}
+
+.translate-notice button {
+    background: white;
+    color: #2c5aa0;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 4px;
+    margin-top: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* ========================================
+   3. IMAGE SLIDER / CARRUSEL HERO
+   ======================================== */
+
+.image-slider {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.image-slider img {
+    position: absolute;
+    inset: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0;
+    animation: sliderFade 12s infinite;
+}
+
+/* Tiempos para que se muestren una tras otra (3 fotos = 4s cada una visible) */
+.image-slider img:nth-child(1) { animation-delay: 0s; }
+.image-slider img:nth-child(2) { animation-delay: 4s; }
+.image-slider img:nth-child(3) { animation-delay: 8s; }
+
+/* Keyframes: entrada, stay, salida */
+@keyframes sliderFade {
+    0%   { opacity: 0; transform: scale(1.03); }
+    6%   { opacity: 1; transform: scale(1); }
+    33%  { opacity: 1; transform: scale(1); }
+    41%  { opacity: 0; transform: scale(0.97); }
+    100% { opacity: 0; transform: scale(0.97); }
+}
+
+/* Overlay para mantener legibilidad del texto */
+.image-slider-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 1;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Asegura que el contenido (texto/logo) quede encima */
+.swiper-slide > .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* ========================================
+   4. FIX SCROLL HORIZONTAL - SOLUCIÓN PRINCIPAL
+   ======================================== */
+
+/* Prevenir overflow horizontal en elementos principales */
+html {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+}
+
+body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal de la página */
+.page-wrapper {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+}
+
+/* FIX DEL SWIPER SLIDE */
+.swiper-slide {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    overflow: hidden !important;
+    position: relative;
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
+/* Eliminar los <br> que causan espacio extra */
+.swiper-slide br {
+    display: none;
+}
+
+/* Contenedores Bootstrap */
+.container,
+.container-fluid {
+    max-width: 100% !important;
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow-x: hidden !important;
+}
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+    max-width: 100% !important;
+}
+
+/* Todas las secciones - AJUSTADO PARA SERVICIOS */
+section {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    overflow-y: visible !important; /* Permite que el contenido vertical sea visible */
+}
+
+/* Excepción para la sección de servicios */
+.services-one {
+    overflow: visible !important; /* Las tarjetas necesitan espacio */
+}
+
+/* Header y Navigation */
+.main-header,
+.main-menu,
+.main-menu__wrapper {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+}
+
+/* Footer */
+.site-footer,
+.site-footer-bg,
+.site-footer__top,
+.site-footer__bottom {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+}
+
+/* Carruseles - FIX PARA QUE NO SE CORTEN LAS TARJETAS */
+.owl-carousel,
+.services-one__carousel {
+    max-width: 100% !important;
+    overflow: visible !important; /* Cambiado a visible */
+}
+
+.owl-stage-outer {
+    overflow: visible !important; /* Cambiado a visible */
+}
+
+.services-one {
+    overflow: visible !important; /* Permitir que las tarjetas se vean completas */
+}
+
+.services-one__bottom {
+    overflow: visible !important;
+    padding: 20px 0; /* Espacio extra para las tarjetas */
+}
+
+/* Imágenes responsivas globales */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Shapes decorativas del hero */
+.main-slider-three-shape-1,
+.main-slider-three-shape-2,
+.main-slider-three-shape-3 {
+    max-width: 100%;
+}
+
+.main-slider-three__content {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+/* Curved circle */
+.main-slider-three__right {
+    max-width: 100%;
+    overflow: visible;
+}
+
+.main-slider-two__curved-circle-box {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.curved-circle {
+    max-width: 100%;
+    position: relative;
+}
+
+/* Box sizing global */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* ========================================
+   5. MEDIA QUERIES - RESPONSIVE
+   ======================================== */
+
+/* Desktop grande - Mostrar elementos del menú */
+@media (min-width: 1200px) {
+    .main-menu__right {
+        display: flex !important;
+    }
+}
+
+/* Desktop pequeño y tablets - Ocultar elementos del menú */
+@media (max-width: 1199px) {
+    .main-menu__right {
+        display: none !important;
+    }
+    
+    .main-menu__wrapper-inner {
+        justify-content: space-between;
+    }
+    
+    .container {
+        max-width: 100% !important;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 991px) {
+    .main-menu__logo img {
+        max-height: 70px !important;
+    }
+    
+    .mobile-nav__toggler {
+        display: block !important;
+    }
+    
+    .main-menu__main-menu-box .main-menu__list {
         display: none;
     }
-    .translate-notice button {
-        background: white;
-        color: #2c5aa0;
-        border: none;
-        padding: 4px 12px;
-        border-radius: 4px;
-        margin-top: 8px;
-        cursor: pointer;
-        font-weight: bold;
+    
+    .swiper-slide {
+        padding-top: 100px;
+        padding-bottom: 100px;
     }
-    </style>
+    
+    .main-slider-three__title {
+        font-size: 28px !important;
+    }
+    
+    .main-slider-two__curved-circle-box {
+        transform: scale(0.8);
+    }
+}
+
+/* Móviles */
+@media (max-width: 767px) {
+    .main-menu__logo img {
+        max-height: 60px !important;
+    }
+    
+    .main-menu__wrapper {
+        padding: 10px 0;
+    }
+    
+    .container {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    
+    .row {
+        margin-left: -10px !important;
+        margin-right: -10px !important;
+    }
+    
+    .swiper-slide {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    
+    /* Hero en móvil */
+    .main-slider-three__title {
+        font-size: 24px !important;
+        line-height: 1.3 !important;
+        word-wrap: break-word;
+    }
+    
+    .main-slider-three__content {
+        padding: 0 10px;
+    }
+    
+    .main-slider-three__btn-box {
+        margin-top: 20px;
+    }
+    
+    .thm-btn {
+        padding: 12px 20px !important;
+        font-size: 14px !important;
+        white-space: normal;
+        text-align: center;
+        display: inline-block;
+    }
+    
+    /* Ocultar curved circle en móvil */
+    .main-slider-three__right {
+        display: none;
+    }
+    
+    .col-xl-8 {
+        max-width: 100%;
+    }
+    
+    /* Botones CTA en móvil */
+    div[style*="display: flex; justify-content: center"] {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    div[style*="display: flex; justify-content: center"] a {
+        width: 90% !important;
+        margin: 5px 0 !important;
+        text-align: center;
+    }
+}
+
+/* ========================================
+   6. FIX PARA TARJETAS DE SERVICIOS
+   ======================================== */
+
+/* Asegurar que las tarjetas se vean completas */
+.services-one__single {
+    overflow: visible !important;
+    margin-bottom: 30px; /* Espacio extra abajo */
+}
+
+.services-one__img {
+    overflow: hidden; /* Solo la imagen tiene overflow */
+    border-radius: 10px;
+}
+
+.services-one__content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Asegurar que el carrusel tenga espacio suficiente */
+.owl-stage {
+    padding-bottom: 20px !important;
+}
+
+/* Dots del carrusel con espacio */
+.owl-dots {
+    margin-top: 30px !important;
+}
+
+/* Para pantallas pequeñas - más espacio */
+@media (max-width: 767px) {
+    .services-one__single {
+        margin-bottom: 40px;
+    }
+    
+    .services-one__bottom {
+        padding: 30px 0;
+    }
+}
+</style>
 
     <meta name="description" content="Liderazgo claro. Equipos alineados. Resultados reales. Consultoría boutique en liderazgo, cultura organizacional e inteligencia financiera. Working Genius Certified®." />
 
@@ -135,130 +533,7 @@
     </div>
    
    <!-- ESTILOS PARA NAVBAR RESPONSIVE Y DROPDOWN -->
-<style>
-/* ========================================
-   NAVBAR RESPONSIVE - SOLUCIÓN COMPLETA
-   ======================================== */
 
-/* Asegurar que el navbar se ajuste correctamente */
-.main-menu__wrapper-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: nowrap;
-}
-
-.main-menu__left {
-    display: flex;
-    align-items: center;
-    flex: 1;
-}
-
-.main-menu__right {
-    flex-shrink: 0;
-}
-
-/* SOLUCIÓN PARA DROPDOWN QUE SE CIERRA */
-.main-menu__list li.dropdown:hover > ul,
-.main-menu__list li.dropdown > ul:hover {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    transition-delay: 0s !important;
-}
-
-.main-menu__list .dropdown ul {
-    pointer-events: auto !important;
-    transition: all 0.3s ease !important;
-}
-
-/* Crear un área invisible entre el enlace y el dropdown para evitar que se cierre */
-.main-menu__list .dropdown > a::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 100%;
-    height: 20px;
-    background: transparent;
-}
-
-/* ========================================
-   MEDIA QUERIES - RESPONSIVE
-   ======================================== */
-
-/* Pantallas grandes (≥1200px) - Mostrar todo */
-@media (min-width: 1200px) {
-    .main-menu__right {
-        display: flex !important;
-    }
-}
-
-/* Pantallas medianas y pequeñas (<1200px) - Ocultar teléfono y email */
-@media (max-width: 1199px) {
-    .main-menu__right {
-        display: none !important;
-    }
-    
-    .main-menu__wrapper-inner {
-        justify-content: space-between;
-    }
-}
-
-/* Tablets (≤991px) */
-@media (max-width: 991px) {
-    .main-menu__logo img {
-        max-height: 70px !important;
-    }
-    
-    .mobile-nav__toggler {
-        display: block !important;
-    }
-    
-    .main-menu__main-menu-box .main-menu__list {
-        display: none;
-    }
-}
-
-/* Móviles (≤767px) */
-@media (max-width: 767px) {
-    .main-menu__logo img {
-        max-height: 60px !important;
-    }
-    
-    .main-menu__wrapper {
-        padding: 10px 0;
-    }
-}
-
-/* NOTIFICACIÓN DE TRADUCCIÓN */
-.translate-notice {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #2c5aa0;
-    color: white;
-    border-radius: 8px;
-    padding: 12px 16px;
-    font-size: 14px;
-    z-index: 10000;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    max-width: 300px;
-    display: none;
-}
-
-.translate-notice button {
-    background: white;
-    color: #2c5aa0;
-    border: none;
-    padding: 4px 12px;
-    border-radius: 4px;
-    margin-top: 8px;
-    cursor: pointer;
-    font-weight: bold;
-}
-</style>
 
 <!-- HEADER PRINCIPAL -->
 <header class="main-header">
@@ -336,44 +611,7 @@
 
     <!--Main Slider Start-->
        <!-- SLIDE: varias fotos que pasan sin JS (CSS only) -->
-<style>
-/* Puedes mover esto a tu CSS principal si prefieres */
-.image-slider { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
-.image-slider img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  opacity: 0;
-  animation: sliderFade 12s infinite;
-}
-/* tiempos para que se muestren una tras otra (3 fotos = 4s cada una visible) */
-.image-slider img:nth-child(1) { animation-delay: 0s; }
-.image-slider img:nth-child(2) { animation-delay: 4s; }
-.image-slider img:nth-child(3) { animation-delay: 8s; }
 
-/* keyframes: entrada, stay, salida */
-@keyframes sliderFade {
-  0%   { opacity: 0; transform: scale(1.03); }
-  6%   { opacity: 1; transform: scale(1); }
-  33%  { opacity: 1; transform: scale(1); }
-  41%  { opacity: 0; transform: scale(0.97); }
-  100% { opacity: 0; transform: scale(0.97); }
-}
-
-/* overlay para mantener legibilidad del texto */
-.image-slider-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-  z-index: 1;
-}
-
-/* asegura que el contenido (texto/logo) quede encima */
-.swiper-slide > .container { position: relative; z-index: 2; }
-</style>
 
 <div class="swiper-slide"><BR></BR><BR><BR>
   <!-- slider de imágenes (reemplaza las rutas por las tuyas) -->
